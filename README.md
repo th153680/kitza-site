@@ -52,14 +52,17 @@ ADMIN_PASSWORD=sua_senha_aqui npm start
 ## Estrutura
 
 ```
-server.js          — Backend Express + SQLite
-tracker.js         — Script de tracking (incluido em todas as paginas)
-admin.html         — Painel de analytics (protegido)
-admin-login.html   — Tela de login
-analytics.db       — Banco de dados SQLite (criado automaticamente)
-index.html         — Pagina principal da loja
-sobre.html         — Sobre a KITZA
-privacidade.html   — Politica de privacidade
-termos.html        — Termos de uso
-trocas.html        — Trocas e devolucoes
+server.js            — Backend Express + SQLite
+admin.html           — Painel de analytics (protegido)
+admin-login.html     — Tela de login
+analytics.db         — Banco de dados SQLite (criado automaticamente)
+public/              — Arquivos publicos servidos pelo Express
+  index.html         — Pagina principal da loja
+  sobre.html         — Sobre a KITZA
+  privacidade.html   — Politica de privacidade
+  termos.html        — Termos de uso
+  trocas.html        — Trocas e devolucoes
+  tracker.js         — Script de tracking
+  qrcode.js          — Lib QR Code
+  produtos/          — Imagens dos produtos
 ```

@@ -43,16 +43,8 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000, // 24h
 }));
 
-// Block direct access to admin files
-app.use((req, res, next) => {
-  if (req.path === '/admin.html' || req.path === '/admin-login.html') {
-    return res.status(404).end('Not found');
-  }
-  next();
-});
-
-// Serve static files
-app.use(express.static(__dirname, {
+// Serve only the public directory (prevents exposure of server.js, analytics.db, etc.)
+app.use(express.static(path.join(__dirname, 'public'), {
   index: 'index.html',
   extensions: ['html'],
 }));
