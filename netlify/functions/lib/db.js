@@ -6,8 +6,14 @@ function getDb() {
   if (!sql) {
     const url = process.env.DATABASE_URL
       || process.env.NETLIFY_DATABASE_URL
+      || process.env.NEON_DATABASE_URL
+      || process.env.POSTGRES_URL
+      || process.env.POSTGRES_URL_NON_POOLING
       || '';
-    if (!url) throw new Error('DATABASE_URL not set');
+    if (!url) {
+      const keys = Object.keys(process.env).filter(k => k.includes('DATABASE') || k.includes('POSTGRES') || k.includes('NEON') || k.includes('PG'));
+      throw new Error('DATABASE_URL not set. Available DB-related vars: ' + (keys.join(', ') || 'none'));
+    }
     sql = neon(url);
   }
   return sql;

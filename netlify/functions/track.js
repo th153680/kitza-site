@@ -33,6 +33,6 @@ exports.handler = async (event) => {
     };
   } catch (err) {
     console.error('Track error:', err.message);
-    return { statusCode: 500, body: JSON.stringify({ ok: false }) };
+    return { statusCode: 500, body: JSON.stringify({ ok: false, error: err.message }) };
   }
 };
