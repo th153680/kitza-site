@@ -1,0 +1,5 @@
+node_modules/
+analytics.db
+analytics.db-wal
+analytics.db-shm
+.env
