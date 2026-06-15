@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Acessos · KITZA Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f5c518;--gold-2:#ffd95a;--gold-deep:#c99409;--bg:#0b0b0d;--bg-2:#121216;--bg-3:#17171c;--green:#1db954;--ink:#f4f4f5;--muted:#a9a9b2;--line:rgba(255,255,255,.08);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+a{color:var(--gold-2);text-decoration:none;}
+
+/* Header */
+.admin-header{background:var(--bg-2);border-bottom:1px solid var(--line);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);}
+.admin-header .logo{font-family:'Anton';font-size:22px;display:flex;align-items:center;gap:8px;}
+.admin-header .crown{color:var(--gold);}
+.admin-header .tag{background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.3);color:var(--gold-2);font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;}
+.admin-header .right{display:flex;align-items:center;gap:14px;}
+.btn-sm{padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:700;font-size:13px;cursor:pointer;transition:.2s;}
+.btn-sm:hover{border-color:var(--gold);color:var(--gold);}
+.btn-logout{border-color:rgba(255,100,100,.3);color:#ff6b6b;}
+.btn-logout:hover{border-color:#ff6b6b;background:rgba(255,100,100,.08);}
+
+/* Layout */
+.admin-wrap{max-width:1300px;margin:0 auto;padding:24px;}
+
+/* Period selector */
+.period-bar{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;align-items:center;}
+.period-bar button{padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:700;font-size:13px;cursor:pointer;transition:.2s;}
+.period-bar button:hover,.period-bar button.active{border-color:var(--gold);color:var(--gold);background:rgba(245,197,24,.08);}
+.period-bar .label{font-size:13px;color:var(--muted);font-weight:700;margin-right:6px;}
+
+/* Stat cards */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px;}
+.stat-card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:20px;transition:border-color .3s;}
+.stat-card:hover{border-color:rgba(245,197,24,.3);}
+.stat-card .sc-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.stat-card .sc-value{font-family:'Anton';font-size:36px;color:var(--ink);}
+.stat-card .sc-value.gold{color:var(--gold);}
+
+/* Chart area */
+.chart-section{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:24px;}
+.chart-section h3{font-family:'Anton';font-size:18px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px;color:var(--gold-2);}
+.chart-bar-wrap{display:flex;align-items:flex-end;gap:4px;height:180px;padding-top:10px;}
+.chart-bar{flex:1;min-width:8px;background:linear-gradient(180deg,var(--gold),var(--gold-deep));border-radius:4px 4px 0 0;position:relative;transition:height .4s ease;cursor:pointer;}
+.chart-bar:hover{background:linear-gradient(180deg,var(--gold-2),var(--gold));box-shadow:0 0 12px rgba(245,197,24,.4);}
+.chart-bar .tip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#222;color:#fff;font-size:11px;font-weight:700;padding:4px 8px;border-radius:6px;white-space:nowrap;z-index:10;}
+.chart-bar:hover .tip{display:block;}
+.chart-labels{display:flex;gap:4px;margin-top:6px;}
+.chart-labels span{flex:1;text-align:center;font-size:9px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* Two col grid */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;}}
+
+/* List items */
+.list-section{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:20px;}
+.list-section h3{font-family:'Anton';font-size:18px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px;color:var(--gold-2);}
+.list-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;}
+.list-item:last-child{border-bottom:none;}
+.list-item .li-name{color:var(--ink);font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:12px;}
+.list-item .li-count{color:var(--gold);font-family:'Anton';font-size:18px;flex:0 0 auto;}
+
+/* Pill badges */
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;}
+.pill-chrome{background:rgba(66,133,244,.15);color:#4285f4;}
+.pill-firefox{background:rgba(255,150,50,.15);color:#ff9632;}
+.pill-safari{background:rgba(0,200,255,.15);color:#00c8ff;}
+.pill-edge{background:rgba(0,120,215,.15);color:#0078d7;}
+.pill-outro{background:rgba(255,255,255,.08);color:var(--muted);}
+.pill-mobile{background:rgba(29,185,84,.15);color:var(--green);}
+.pill-desktop{background:rgba(245,197,24,.12);color:var(--gold);}
+.pill-tablet{background:rgba(160,100,255,.15);color:#a064ff;}
+
+/* Table */
+.table-wrap{overflow-x:auto;margin-top:24px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead{position:sticky;top:60px;z-index:5;}
+th{background:var(--bg-3);color:var(--gold);font-weight:700;text-align:left;padding:12px;border-bottom:2px solid var(--line);letter-spacing:.5px;text-transform:uppercase;font-size:11px;white-space:nowrap;}
+td{padding:10px 12px;border-bottom:1px solid var(--line);color:#d6d6dc;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+tr:hover td{background:rgba(245,197,24,.03);}
+.ip-cell{font-family:monospace;font-size:12px;color:var(--muted);}
+.page-cell{color:var(--gold-2);font-weight:600;}
+.date-cell{font-size:12px;color:var(--muted);white-space:nowrap;}
+
+/* Pagination */
+.pager{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:18px;}
+.pager button{padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:700;font-size:13px;cursor:pointer;transition:.2s;}
+.pager button:hover:not(:disabled){border-color:var(--gold);color:var(--gold);}
+.pager button:disabled{opacity:.3;cursor:default;}
+.pager .info{font-size:13px;color:var(--muted);}
+
+/* Loading */
+.loading{text-align:center;color:var(--muted);padding:40px;font-weight:700;}
+.spin{display:inline-block;width:24px;height:24px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .7s linear infinite;margin-right:8px;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Responsive */
+@media(max-width:600px){
+  .admin-wrap{padding:14px;}
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  .admin-header{padding:0 14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="admin-header">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <div class="logo">KITZA <span class="crown">👑</span></div>
+    <span class="tag">Analytics</span>
+  </div>
+  <div class="right">
+    <a href="/api/export" class="btn-sm">Exportar CSV</a>
+    <a href="/" class="btn-sm">Ver site</a>
+    <a href="/admin/logout" class="btn-sm btn-logout">Sair</a>
+  </div>
+</div>
+
+<div class="admin-wrap">
+
+  <!-- Period selector -->
+  <div class="period-bar">
+    <span class="label">Periodo:</span>
+    <button onclick="loadStats(1)" data-d="1">Hoje</button>
+    <button onclick="loadStats(7)" data-d="7" class="active">7 dias</button>
+    <button onclick="loadStats(30)" data-d="30">30 dias</button>
+    <button onclick="loadStats(90)" data-d="90">90 dias</button>
+    <button onclick="loadStats(365)" data-d="365">1 ano</button>
+  </div>
+
+  <!-- Stats cards -->
+  <div class="stat-grid" id="statGrid">
+    <div class="stat-card"><div class="sc-label">Total de Visitas</div><div class="sc-value gold" id="sTotalVisits"><span class="spin"></span></div></div>
+    <div class="stat-card"><div class="sc-label">Visitantes Unicos (IP)</div><div class="sc-value" id="sUniqueIPs">—</div></div>
+    <div class="stat-card"><div class="sc-label">Media / Dia</div><div class="sc-value" id="sAvgDay">—</div></div>
+    <div class="stat-card"><div class="sc-label">Pagina Mais Visitada</div><div class="sc-value" id="sTopPage" style="font-size:18px;word-break:break-all;">—</div></div>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart-section">
+    <h3>Visitas por dia</h3>
+    <div class="chart-bar-wrap" id="chartBars"></div>
+    <div class="chart-labels" id="chartLabels"></div>
+  </div>
+
+  <!-- Two column: Pages + Browsers/Devices -->
+  <div class="two-col">
+    <div class="list-section">
+      <h3>Paginas mais acessadas</h3>
+      <div id="topPages"></div>
+    </div>
+    <div>
+      <div class="list-section" style="margin-bottom:20px;">
+        <h3>Navegadores</h3>
+        <div id="browsers"></div>
+      </div>
+      <div class="list-section">
+        <h3>Dispositivos</h3>
+        <div id="devices"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Referrers -->
+  <div class="list-section" style="margin-bottom:24px;">
+    <h3>Origem do trafego (Referrers)</h3>
+    <div id="referrers"></div>
+  </div>
+
+  <!-- Recent visits table -->
+  <div class="chart-section">
+    <h3>Visitas recentes</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data/Hora</th><th>Pagina</th><th>IP</th><th>Navegador</th><th>Dispositivo</th><th>Tela</th><th>Idioma</th><th>Referrer</th></tr>
+        </thead>
+        <tbody id="recentTable">
+          <tr><td colspan="8" class="loading"><span class="spin"></span> Carregando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Full visits with pagination -->
+  <div class="chart-section" style="margin-top:24px;">
+    <h3>Todos os acessos</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Data/Hora</th><th>Pagina</th><th>IP</th><th>User-Agent</th><th>Tela</th><th>Idioma</th><th>Plataforma</th><th>Referrer</th></tr>
+        </thead>
+        <tbody id="allTable">
+          <tr><td colspan="9" class="loading"><span class="spin"></span> Carregando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager" id="pager"></div>
+  </div>
+
+</div>
+
+<script>
+var currentDays = 7;
+var currentPage = 1;
+
+function detectBrowser(ua) {
+  if (!ua) return 'Desconhecido';
+  if (ua.includes('Edg')) return 'Edge';
+  if (ua.includes('Chrome')) return 'Chrome';
+  if (ua.includes('Firefox')) return 'Firefox';
+  if (ua.includes('Safari')) return 'Safari';
+  return 'Outro';
+}
+
+function detectDevice(ua) {
+  if (!ua) return 'Desconhecido';
+  if (/Mobile|Android/i.test(ua)) return 'Mobile';
+  if (/Tablet|iPad/i.test(ua)) return 'Tablet';
+  return 'Desktop';
+}
+
+function browserPill(name) {
+  var cls = {'Chrome':'pill-chrome','Firefox':'pill-firefox','Safari':'pill-safari','Edge':'pill-edge'}[name] || 'pill-outro';
+  return '<span class="pill '+cls+'">'+name+'</span>';
+}
+
+function devicePill(name) {
+  var cls = {'Mobile':'pill-mobile','Desktop':'pill-desktop','Tablet':'pill-tablet'}[name] || 'pill-outro';
+  return '<span class="pill '+cls+'">'+name+'</span>';
+}
+
+function fmtDate(d) {
+  if (!d) return '—';
+  return d.replace('T',' ').replace(/\.\d+Z?$/,'');
+}
+
+function loadStats(days) {
+  currentDays = days;
+  document.querySelectorAll('.period-bar button').forEach(function(b){
+    b.classList.toggle('active', parseInt(b.dataset.d)===days);
+  });
+
+  fetch('/api/stats?days='+days)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      document.getElementById('sTotalVisits').textContent = d.totalVisits.toLocaleString('pt-BR');
+      document.getElementById('sUniqueIPs').textContent = d.uniqueIPs.toLocaleString('pt-BR');
+      var avg = d.visitsByDay.length ? Math.round(d.totalVisits / d.visitsByDay.length) : 0;
+      document.getElementById('sAvgDay').textContent = avg.toLocaleString('pt-BR');
+      document.getElementById('sTopPage').textContent = d.topPages.length ? d.topPages[0].page : '—';
+
+      // Chart
+      renderChart(d.visitsByDay);
+
+      // Top pages
+      renderList('topPages', d.topPages, 'page', 'views');
+
+      // Browsers
+      renderListPill('browsers', d.browsers, 'browser', 'views', browserPill);
+
+      // Devices
+      renderListPill('devices', d.devices, 'device', 'views', devicePill);
+
+      // Referrers
+      renderList('referrers', d.topReferrers, 'referrer', 'views');
+
+      // Recent
+      renderRecent(d.recentVisits);
+    })
+    .catch(function(e){
+      console.error(e);
+    });
+
+  loadVisits(1);
+}
+
+function renderChart(data) {
+  var wrap = document.getElementById('chartBars');
+  var labels = document.getElementById('chartLabels');
+  if (!data.length) {
+    wrap.innerHTML = '<div style="color:var(--muted);text-align:center;width:100%;padding:40px;">Sem dados para o periodo</div>';
+    labels.innerHTML = '';
+    return;
+  }
+  var max = Math.max.apply(null, data.map(function(d){return d.views;}));
+  wrap.innerHTML = data.map(function(d){
+    var h = max ? Math.max(4, (d.views/max)*170) : 4;
+    return '<div class="chart-bar" style="height:'+h+'px"><div class="tip">'+d.day+'<br>'+d.views+' visitas</div></div>';
+  }).join('');
+  labels.innerHTML = data.map(function(d){
+    return '<span>'+d.day.slice(5)+'</span>';
+  }).join('');
+}
+
+function renderList(elId, items, nameKey, countKey) {
+  var el = document.getElementById(elId);
+  if (!items.length) { el.innerHTML = '<div style="color:var(--muted);padding:12px;font-size:13px;">Sem dados</div>'; return; }
+  el.innerHTML = items.map(function(it){
+    return '<div class="list-item"><span class="li-name" title="'+it[nameKey]+'">'+it[nameKey]+'</span><span class="li-count">'+it[countKey]+'</span></div>';
+  }).join('');
+}
+
+function renderListPill(elId, items, nameKey, countKey, pillFn) {
+  var el = document.getElementById(elId);
+  if (!items.length) { el.innerHTML = '<div style="color:var(--muted);padding:12px;font-size:13px;">Sem dados</div>'; return; }
+  el.innerHTML = items.map(function(it){
+    return '<div class="list-item"><span class="li-name">'+pillFn(it[nameKey])+'</span><span class="li-count">'+it[countKey]+'</span></div>';
+  }).join('');
+}
+
+function renderRecent(rows) {
+  var tb = document.getElementById('recentTable');
+  if (!rows.length) { tb.innerHTML = '<tr><td colspan="8" style="color:var(--muted);text-align:center;padding:20px;">Nenhuma visita registrada ainda</td></tr>'; return; }
+  tb.innerHTML = rows.map(function(r){
+    return '<tr>'+
+      '<td class="date-cell">'+fmtDate(r.created_at)+'</td>'+
+      '<td class="page-cell" title="'+r.page+'">'+r.page+'</td>'+
+      '<td class="ip-cell">'+r.ip+'</td>'+
+      '<td>'+browserPill(detectBrowser(r.user_agent))+'</td>'+
+      '<td>'+devicePill(detectDevice(r.user_agent))+'</td>'+
+      '<td>'+(r.screen_w?r.screen_w+'x'+r.screen_h:'—')+'</td>'+
+      '<td>'+(r.language||'—')+'</td>'+
+      '<td title="'+(r.referrer||'')+'">'+(r.referrer?r.referrer.slice(0,40):'—')+'</td>'+
+    '</tr>';
+  }).join('');
+}
+
+function loadVisits(page) {
+  currentPage = page;
+  fetch('/api/visits?page='+page+'&limit=50')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var tb = document.getElementById('allTable');
+      if (!d.rows.length) { tb.innerHTML = '<tr><td colspan="9" style="color:var(--muted);text-align:center;padding:20px;">Nenhuma visita</td></tr>'; return; }
+      tb.innerHTML = d.rows.map(function(r){
+        return '<tr>'+
+          '<td>'+r.id+'</td>'+
+          '<td class="date-cell">'+fmtDate(r.created_at)+'</td>'+
+          '<td class="page-cell" title="'+r.page+'">'+r.page+'</td>'+
+          '<td class="ip-cell">'+r.ip+'</td>'+
+          '<td title="'+r.user_agent+'">'+detectBrowser(r.user_agent)+'</td>'+
+          '<td>'+(r.screen_w?r.screen_w+'x'+r.screen_h:'—')+'</td>'+
+          '<td>'+(r.language||'—')+'</td>'+
+          '<td>'+(r.platform||'—')+'</td>'+
+          '<td title="'+(r.referrer||'')+'">'+(r.referrer?r.referrer.slice(0,30):'—')+'</td>'+
+        '</tr>';
+      }).join('');
+
+      var totalPages = Math.ceil(d.total / d.limit);
+      var pager = document.getElementById('pager');
+      pager.innerHTML =
+        '<button onclick="loadVisits('+(page-1)+')"'+(page<=1?' disabled':'')+'>← Anterior</button>'+
+        '<span class="info">Pagina '+page+' de '+totalPages+' ('+d.total+' registros)</span>'+
+        '<button onclick="loadVisits('+(page+1)+')"'+(page>=totalPages?' disabled':'')+'>Proxima →</button>';
+    });
+}
+
+loadStats(7);
+</script>
+</body>
+</html>
