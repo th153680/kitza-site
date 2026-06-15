@@ -1,19 +1,19 @@
 {
   "name": "kitza-site",
-  "version": "1.0.0",
-  "description": "KITZA Store — site com analytics de acessos",
-  "main": "server.js",
+  "version": "2.0.0",
+  "description": "KITZA Store — site com analytics de acessos (Netlify + Neon PostgreSQL)",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "netlify dev",
+    "build": "echo 'No build step needed'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "^12.11.1",
-    "cookie-session": "^2.1.1",
-    "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "@neondatabase/serverless": "^1.0.0",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "netlify-cli": "^19.0.0"
   }
 }

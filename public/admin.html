@@ -358,7 +358,16 @@ function loadVisits(page) {
     });
 }
 
-loadStats(7);
+// Check auth before loading — redirect to login if not authenticated
+fetch('/api/stats?days=1').then(function(r){
+  if (r.status === 401) {
+    window.location.href = '/admin-login.html' + window.location.search;
+    return;
+  }
+  loadStats(7);
+}).catch(function(){
+  window.location.href = '/admin-login.html';
+});
 </script>
 </body>
 </html>

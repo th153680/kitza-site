@@ -1,42 +1,43 @@
 # KITZA Store — Site com Analytics de Acessos
 
-Site da KITZA Store com sistema de monitoramento de acessos integrado.
+Site da KITZA Store com sistema de monitoramento de acessos integrado, hospedado no Netlify com banco de dados PostgreSQL (Neon).
 
 ## Como funciona
 
-- **Banco de dados SQLite** registra cada visita automaticamente
+- **Banco de dados Neon PostgreSQL** (integrado ao Netlify) registra cada visita automaticamente
 - **Painel admin protegido por senha** em `/admin` mostra todos os acessos
+- **Netlify Functions** processam as APIs (tracking, stats, login)
 - Dados coletados: pagina, IP, navegador, dispositivo, tela, idioma, referrer, data/hora
 
-## Instalacao
+## Deploy no Netlify
+
+1. Conecte este repositorio ao Netlify
+2. O Netlify detecta automaticamente o `netlify.toml`
+3. Configure as variaveis de ambiente no painel do Netlify:
+   - `DATABASE_URL` — String de conexao do banco Neon (a versao read/write)
+   - `ADMIN_PASSWORD` — Senha do painel admin (padrao: `kitza2026`)
+   - `JWT_SECRET` — Chave secreta para tokens de autenticacao
+
+## Desenvolvimento local
 
 ```bash
 npm install
+# Defina DATABASE_URL no arquivo .env
+echo 'DATABASE_URL=postgresql://...' > .env
+npx netlify dev
 ```
-
-## Rodar o servidor
-
-```bash
-npm start
-```
-
-O site fica disponivel em `http://localhost:3000` e o painel admin em `http://localhost:3000/admin`.
 
 ## Senha do painel
 
-A senha padrao e `kitza2026`. Para alterar, defina a variavel de ambiente:
-
-```bash
-ADMIN_PASSWORD=sua_senha_aqui npm start
-```
+A senha padrao e `kitza2026`. Para alterar, defina a variavel `ADMIN_PASSWORD` no Netlify.
 
 ## Variaveis de ambiente
 
 | Variavel | Padrao | Descricao |
 |---|---|---|
-| `PORT` | `3000` | Porta do servidor |
+| `DATABASE_URL` | (obrigatorio) | String de conexao PostgreSQL (Neon) |
 | `ADMIN_PASSWORD` | `kitza2026` | Senha do painel admin |
-| `SESSION_SECRET` | (aleatorio) | Chave para cookies de sessao |
+| `JWT_SECRET` | (padrao interno) | Chave para tokens JWT |
 
 ## Recursos do painel
 
@@ -52,17 +53,25 @@ ADMIN_PASSWORD=sua_senha_aqui npm start
 ## Estrutura
 
 ```
-server.js            — Backend Express + SQLite
-admin.html           — Painel de analytics (protegido)
-admin-login.html     — Tela de login
-analytics.db         — Banco de dados SQLite (criado automaticamente)
-public/              — Arquivos publicos servidos pelo Express
-  index.html         — Pagina principal da loja
-  sobre.html         — Sobre a KITZA
-  privacidade.html   — Politica de privacidade
-  termos.html        — Termos de uso
-  trocas.html        — Trocas e devolucoes
-  tracker.js         — Script de tracking
-  qrcode.js          — Lib QR Code
-  produtos/          — Imagens dos produtos
+netlify.toml             — Config Netlify (redirects, functions)
+netlify/functions/       — Netlify Functions (APIs serverless)
+  track.js               — POST /api/track (registra visita)
+  stats.js               — GET /api/stats (dados do dashboard)
+  visits.js              — GET /api/visits (lista paginada)
+  export.js              — GET /api/export (CSV)
+  login.js               — POST /api/login (autenticacao)
+  logout.js              — GET /admin/logout
+  lib/db.js              — Conexao com Neon PostgreSQL
+  lib/auth.js            — JWT auth helpers
+public/                  — Arquivos estaticos
+  index.html             — Pagina principal da loja
+  sobre.html             — Sobre a KITZA
+  privacidade.html       — Politica de privacidade
+  termos.html            — Termos de uso
+  trocas.html            — Trocas e devolucoes
+  admin.html             — Painel de analytics
+  admin-login.html       — Tela de login
+  tracker.js             — Script de tracking
+  qrcode.js              — Lib QR Code
+  produtos/              — Imagens dos produtos
 ```
