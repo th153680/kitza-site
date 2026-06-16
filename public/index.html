@@ -291,6 +291,26 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 .wa-float:hover{transform:scale(1.08);}
 .wa-float img{width:100%;height:100%;border-radius:50%;}
 @keyframes wapulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 14px rgba(37,211,102,0)}}
+.wa-float .wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:#25D366;color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.3);pointer-events:none;animation:watooltip 6s ease-in-out infinite;}
+.wa-float .wa-tooltip::after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#25D366;}
+@keyframes watooltip{0%,80%,100%{opacity:1;transform:translateY(-50%)}40%,60%{opacity:0;transform:translateY(-50%) translateX(-4px)}}
+
+/* Countdown timer */
+.countdown-bar{background:linear-gradient(90deg,#ff4444,#cc0000);color:#fff;text-align:center;font-weight:800;font-size:14px;padding:10px 12px;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.countdown-bar .cd-timer{font-family:'Anton';font-size:20px;letter-spacing:1px;background:rgba(0,0,0,.3);padding:4px 10px;border-radius:8px;}
+
+/* Stock indicator */
+.stock-alert{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#ff6b6b;margin-bottom:8px;}
+.stock-dot{width:7px;height:7px;border-radius:50%;background:#ff4444;animation:stockpulse 1.2s infinite;}
+@keyframes stockpulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Save badge */
+.save-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.35);color:var(--green);font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px;margin-left:8px;}
+
+/* FOMO viewers */
+.fomo-bar{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);margin-top:10px;}
+.fomo-bar .fomo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:stockpulse 1.5s infinite;}
+.fomo-bar b{color:var(--ink);}
 
 /* Sticky mobile CTA */
 .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:940;background:rgba(11,11,13,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px;align-items:center;gap:12px;}
@@ -331,6 +351,12 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
   .hero-cta{flex-direction:column;width:100%;}
   .hero-cta .btn{width:100%;}
   .hero-trust{justify-content:center;gap:14px;row-gap:8px;margin-top:18px;font-size:12px;}
+  .fomo-bar{justify-content:center;font-size:12px;margin-top:8px;}
+  .save-badge{font-size:11px;padding:5px 9px;margin-left:0;margin-top:4px;}
+  .price-row{flex-direction:row;flex-wrap:wrap;}
+  .countdown-bar{font-size:12px;padding:8px 10px;}
+  .countdown-bar .cd-timer{font-size:16px;}
+  .wa-float .wa-tooltip{display:none;}
   .stage{min-height:300px;gap:0;}
   .stage .halo{width:100%;height:78%;}
   .stage .s-side{flex:0 0 35%;}
@@ -389,7 +415,8 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 </head>
 <body>
 
-<div class="topbar">Frete grátis para todo o Brasil · Pagamento via PIX · Troca em 7 dias</div>
+<div class="topbar">🚚 Frete grátis para todo o Brasil · Pagamento via PIX · Troca em 7 dias</div>
+<div class="countdown-bar" id="countdownBar">🔥 PROMOÇÃO ENCERRA EM <span class="cd-timer" id="cdTimer">00:00:00</span> — Garanta sua camisa!</div>
 
 <header>
   <div class="wrap nav">
@@ -424,27 +451,29 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
     <div class="hero-left">
       <span class="hero-eyebrow">👑 Chegou na KITZA Store</span>
       <h1 class="display">
-        <span class="l1">Camisa do</span>
-        <span class="l2">Brasil</span>
-        <span class="l3">2026</span>
+        <span class="l1">A camisa que todo</span>
+        <span class="l2">Torcedor</span>
+        <span class="l3">quer 2026</span>
       </h1>
       <div class="rating"><span class="stars">★★★★★</span> 4,9/5 • +1.800 torcedores vestindo</div>
-      <p class="hero-tag"><b>Qualidade que você sente,</b> estilo que te representa. Versão Premium importada, tecido respirável e acabamento impecável.</p>
+      <p class="hero-tag"><b>Versão Premium Importada</b> com tecido respirável e acabamento impecável. Vista a camisa do Hexa antes de todo mundo.</p>
       <div class="price-row">
         <span class="price-old">R$ 149,90</span>
         <span class="price-now"><sup>R$</sup>89<small>,90</small></span>
         <span class="price-pill">-40% HOJE</span>
+        <span class="save-badge">💰 Economize R$ 60</span>
       </div>
       <div class="installment">ou <b>3x de R$ 29,97</b> sem juros • <b>PIX com aprovação na hora</b></div>
       <div class="hero-cta">
-        <a href="#camisas" class="btn btn-gold">Ver coleção</a>
-        <a href="#pedido" class="btn btn-ghost">Meu carrinho</a>
+        <a href="#camisas" class="btn btn-gold">🔥 GARANTIR A MINHA</a>
+        <a href="#pedido" class="btn btn-ghost">🛒 Meu carrinho</a>
       </div>
       <div class="hero-trust">
         <span><span class="ic">🚚</span> Frete grátis Brasil</span>
         <span><span class="ic">🔄</span> Troca em 7 dias</span>
         <span><span class="ic">🔒</span> Pagamento seguro</span>
       </div>
+      <div class="fomo-bar" id="fomoHero"><span class="fomo-dot"></span> <b id="fomoCount">17</b> pessoas olhando agora</div>
     </div>
     <div class="hero-right">
       <div class="hero-feat">
@@ -666,7 +695,8 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5575988231829" target="_blank" rel="noopener" aria-label="Fale no WhatsApp"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzUuMjE2IDE3NS41NTIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9Ijg1LjkxNSIgeDI9Ijg2LjUzNSIgeTE9IjMyLjU2NyIgeTI9IjEzNy4wOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1N2QxNjMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyM2IzM2EiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIxLjExNSIgaGVpZ2h0PSIxLjExNCIgeD0iLS4wNTciIHk9Ii0uMDU3IiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNTMxIi8+PC9maWx0ZXI+PC9kZWZzPjxwYXRoIGZpbGw9IiNiM2IzYjMiIGQ9Im01NC41MzIgMTM4LjQ1IDIuMjM1IDEuMzI0YzkuMzg3IDUuNTcxIDIwLjE1IDguNTE4IDMxLjEyNiA4LjUyM2guMDIzYzMzLjcwNyAwIDYxLjEzOS0yNy40MjYgNjEuMTUzLTYxLjEzNS4wMDYtMTYuMzM1LTYuMzQ5LTMxLjY5Ni0xNy44OTUtNDMuMjUxQTYwLjc1IDYwLjc1IDAgMCAwIDg3Ljk0IDI1Ljk4M2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OHptLTQwLjgxMSAyMy41NDRMMjQuMTYgMTIzLjg4Yy02LjQzOC0xMS4xNTQtOS44MjUtMjMuODA4LTkuODIxLTM2Ljc3Mi4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6bTAgMCIgZmlsdGVyPSJ1cmwoI2EpIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTEyLjk2NiAxNjEuMjM4IDEwLjQzOS0zOC4xMTRhNzMuNDIgNzMuNDIgMCAwIDEtOS44MjEtMzYuNzcyYy4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6Ii8+PHBhdGggZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudDE3ODApIiBkPSJNODcuMTg0IDI1LjIyN2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OSAyMy4xNDYtNi4wNjkgMi4yMzUgMS4zMjRjOS4zODcgNS41NzEgMjAuMTUgOC41MTggMzEuMTI2IDguNTI0aC4wMjNjMzMuNzA3IDAgNjEuMTQtMjcuNDI2IDYxLjE1My02MS4xMzVhNjAuNzUgNjAuNzUgMCAwIDAtMTcuODk1LTQzLjI1MSA2MC43NSA2MC43NSAwIDAgMC00My4yMzUtMTcuOTI5eiIvPjxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik04Ny4xODQgMjUuMjI3Yy0zMy43MzMgMC02MS4xNjYgMjcuNDIzLTYxLjE3OCA2MS4xM2E2MC45OCA2MC45OCAwIDAgMCA5LjM0OSAzMi41MzVsMS40NTUgMi4zMTMtNi4xNzkgMjIuNTU4IDIzLjE0Ni02LjA2OSAyLjIzNSAxLjMyNGM5LjM4NyA1LjU3MSAyMC4xNSA4LjUxNyAzMS4xMjYgOC41MjNoLjAyM2MzMy43MDcgMCA2MS4xNC0yNy40MjYgNjEuMTUzLTYxLjEzNWE2MC43NSA2MC43NSAwIDAgMC0xNy44OTUtNDMuMjUxIDYwLjc1IDYwLjc1IDAgMCAwLTQzLjIzNS0xNy45Mjh6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNjguNzcyIDU1LjYwM2MtMS4zNzgtMy4wNjEtMi44MjgtMy4xMjMtNC4xMzctMy4xNzZsLTMuNTI0LS4wNDNjLTEuMjI2IDAtMy4yMTguNDYtNC45MDIgMi4zcy02LjQzNSA2LjI4Ny02LjQzNSAxNS4zMzIgNi41ODggMTcuNzg1IDcuNTA2IDE5LjAxMyAxMi43MTggMjAuMzgxIDMxLjQwNSAyNy43NWMxNS41MjkgNi4xMjQgMTguNjg5IDQuOTA2IDIyLjA2MSA0LjZzMTAuODc3LTQuNDQ3IDEyLjQwOC04Ljc0IDEuNTMyLTcuOTcxIDEuMDczLTguNzQtMS42ODUtMS4yMjYtMy41MjUtMi4xNDYtMTAuODc3LTUuMzY3LTEyLjU2Mi01Ljk4MS0yLjkxLS45MTktNC4xMzcuOTIxLTQuNzQ2IDUuOTc5LTUuODE5IDcuMjA2LTIuMTQ0IDEuMzgxLTMuOTg0LjQ2Mi03Ljc2LTIuODYxLTE0Ljc4NC05LjEyNGMtNS40NjUtNC44NzMtOS4xNTQtMTAuODkxLTEwLjIyOC0xMi43M3MtLjExNC0yLjgzNS44MDgtMy43NTFjLjgyNS0uODI0IDEuODM4LTIuMTQ3IDIuNzU5LTMuMjJzMS4yMjQtMS44NCAxLjgzNi0zLjA2NS4zMDctMi4zMDEtLjE1My0zLjIyLTQuMDMyLTEwLjAxMS01LjY2Ni0xMy42NDciLz48L3N2Zz4=" alt="WhatsApp"></a>
+<a class="wa-float" href="https://wa.me/5575988231829" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+  <span class="wa-tooltip">Dúvidas? Fale conosco!</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzUuMjE2IDE3NS41NTIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9Ijg1LjkxNSIgeDI9Ijg2LjUzNSIgeTE9IjMyLjU2NyIgeTI9IjEzNy4wOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1N2QxNjMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyM2IzM2EiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIxLjExNSIgaGVpZ2h0PSIxLjExNCIgeD0iLS4wNTciIHk9Ii0uMDU3IiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNTMxIi8+PC9maWx0ZXI+PC9kZWZzPjxwYXRoIGZpbGw9IiNiM2IzYjMiIGQ9Im01NC41MzIgMTM4LjQ1IDIuMjM1IDEuMzI0YzkuMzg3IDUuNTcxIDIwLjE1IDguNTE4IDMxLjEyNiA4LjUyM2guMDIzYzMzLjcwNyAwIDYxLjEzOS0yNy40MjYgNjEuMTUzLTYxLjEzNS4wMDYtMTYuMzM1LTYuMzQ5LTMxLjY5Ni0xNy44OTUtNDMuMjUxQTYwLjc1IDYwLjc1IDAgMCAwIDg3Ljk0IDI1Ljk4M2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OHptLTQwLjgxMSAyMy41NDRMMjQuMTYgMTIzLjg4Yy02LjQzOC0xMS4xNTQtOS44MjUtMjMuODA4LTkuODIxLTM2Ljc3Mi4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6bTAgMCIgZmlsdGVyPSJ1cmwoI2EpIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTEyLjk2NiAxNjEuMjM4IDEwLjQzOS0zOC4xMTRhNzMuNDIgNzMuNDIgMCAwIDEtOS44MjEtMzYuNzcyYy4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6Ii8+PHBhdGggZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudDE3ODApIiBkPSJNODcuMTg0IDI1LjIyN2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OSAyMy4xNDYtNi4wNjkgMi4yMzUgMS4zMjRjOS4zODcgNS41NzEgMjAuMTUgOC41MTggMzEuMTI2IDguNTI0aC4wMjNjMzMuNzA3IDAgNjEuMTQtMjcuNDI2IDYxLjE1My02MS4xMzVhNjAuNzUgNjAuNzUgMCAwIDAtMTcuODk1LTQzLjI1MSA2MC43NSA2MC43NSAwIDAgMC00My4yMzUtMTcuOTI5eiIvPjxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik04Ny4xODQgMjUuMjI3Yy0zMy43MzMgMC02MS4xNjYgMjcuNDIzLTYxLjE3OCA2MS4xM2E2MC45OCA2MC45OCAwIDAgMCA5LjM0OSAzMi41MzVsMS40NTUgMi4zMTMtNi4xNzkgMjIuNTU4IDIzLjE0Ni02LjA2OSAyLjIzNSAxLjMyNGM5LjM4NyA1LjU3MSAyMC4xNSA4LjUxNyAzMS4xMjYgOC41MjNoLjAyM2MzMy43MDcgMCA2MS4xNC0yNy40MjYgNjEuMTUzLTYxLjEzNWE2MC43NSA2MC43NSAwIDAgMC0xNy44OTUtNDMuMjUxIDYwLjc1IDYwLjc1IDAgMCAwLTQzLjIzNS0xNy45Mjh6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNjguNzcyIDU1LjYwM2MtMS4zNzgtMy4wNjEtMi44MjgtMy4xMjMtNC4xMzctMy4xNzZsLTMuNTI0LS4wNDNjLTEuMjI2IDAtMy4yMTguNDYtNC45MDIgMi4zcy02LjQzNSA2LjI4Ny02LjQzNSAxNS4zMzIgNi41ODggMTcuNzg1IDcuNTA2IDE5LjAxMyAxMi43MTggMjAuMzgxIDMxLjQwNSAyNy43NWMxNS41MjkgNi4xMjQgMTguNjg5IDQuOTA2IDIyLjA2MSA0LjZzMTAuODc3LTQuNDQ3IDEyLjQwOC04Ljc0IDEuNTMyLTcuOTcxIDEuMDczLTguNzQtMS42ODUtMS4yMjYtMy41MjUtMi4xNDYtMTAuODc3LTUuMzY3LTEyLjU2Mi01Ljk4MS0yLjkxLS45MTktNC4xMzcuOTIxLTQuNzQ2IDUuOTc5LTUuODE5IDcuMjA2LTIuMTQ0IDEuMzgxLTMuOTg0LjQ2Mi03Ljc2LTIuODYxLTE0Ljc4NC05LjEyNGMtNS40NjUtNC44NzMtOS4xNTQtMTAuODkxLTEwLjIyOC0xMi43M3MtLjExNC0yLjgzNS44MDgtMy43NTFjLjgyNS0uODI0IDEuODM4LTIuMTQ3IDIuNzU5LTMuMjJzMS4yMjQtMS44NCAxLjgzNi0zLjA2NS4zMDctMi4zMDEtLjE1My0zLjIyLTQuMDMyLTEwLjAxMS01LjY2Ni0xMy42NDciLz48L3N2Zz4=" alt="WhatsApp"></a>
 
 <div class="sticky-cta">
   <div class="sc-price" id="scPrice">R$ 0,00<small id="scCount">Carrinho vazio</small></div>
@@ -725,6 +755,8 @@ function fmt(n){return n.toFixed(2).replace('.',',');}
 function renderProducts(){
   var g=document.getElementById('productGrid');if(!g)return;
   g.innerHTML=PRODUCTS.map(function(p,i){
+    var stockNum=Math.floor(Math.random()*12)+3;
+    var stockHtml='<div class="stock-alert"><span class="stock-dot"></span> Apenas '+stockNum+' unidades restantes</div>';
     return '<div class="pcard reveal">'+
       (p.tag?'<span class="tag">'+p.tag+'</span>':'')+
       '<div class="pimg"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div>'+
@@ -733,8 +765,9 @@ function renderProducts(){
       '<div class="pold">'+brl(p.old)+'</div>'+
       '<div class="prow"><div class="pprice"><sup>R$</sup>'+fmt(p.now)+'</div></div>'+
       '<div class="pinst">3x de '+brl(p.now/3)+' sem juros</div>'+
+      stockHtml+
       '<select class="psize" aria-label="Tamanho">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select>'+
-      '<button class="btn btn-gold btn-block" onclick="addToCart('+i+',this)">Adicionar</button>'+
+      '<button class="btn btn-gold btn-block" onclick="addToCart('+i+',this)">🔥 Adicionar</button>'+
     '</div>';
   }).join('');
 }
@@ -877,12 +910,32 @@ function copyPix(){var t=document.getElementById('pixCode');t.select();t.setSele
 document.getElementById('pixModal').addEventListener('click',function(e){if(e.target===this)closePix();});
 
 renderProducts();updateCartUI();
+
+/* === COUNTDOWN TIMER (promo encerra meia-noite) === */
+(function(){
+  var end=new Date();end.setHours(23,59,59,0);
+  function tick(){
+    var now=new Date(),d=Math.max(0,end-now);
+    var h=String(Math.floor(d/3600000)).padStart(2,'0');d%=3600000;
+    var m=String(Math.floor(d/60000)).padStart(2,'0');d%=60000;
+    var s=String(Math.floor(d/1000)).padStart(2,'0');
+    var el=document.getElementById('cdTimer');if(el)el.textContent=h+':'+m+':'+s;
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* === FOMO: viewers count random flutuação === */
+(function(){
+  var el=document.getElementById('fomoCount');if(!el)return;
+  function upd(){el.textContent=Math.floor(Math.random()*18)+8;}
+  setInterval(upd,Math.floor(Math.random()*8000)+5000);
+})();
 var obs2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs2.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('#productGrid .reveal').forEach(function(el){obs2.observe(el);});
 
 async function buscaCep(i){var c=i.value.replace(/\D/g,'');if(c.length!==8)return;try{var r=await fetch('https://viacep.com.br/ws/'+c+'/json/');var d=await r.json();if(!d.erro){document.getElementById('rua').value=d.logradouro||'';document.getElementById('cidade').value=d.localidade||'';document.getElementById('estado').value=d.uf||'';document.getElementById('num').focus();}}catch(e){}}
 
-(function(){var e=new Date();e.setHours(23,59,59,0);function u(){var n=new Date();var d=Math.max(0,e-n);var h=String(Math.floor(d/3600000)).padStart(2,'0');d%=3600000;var m=String(Math.floor(d/60000)).padStart(2,'0');d%=60000;var s=String(Math.floor(d/1000)).padStart(2,'0');var t=document.getElementById('timer');if(t)t.textContent=h+':'+m+':'+s;}u();setInterval(u,1000);})();
+/* old timer removed — now using #cdTimer above */
 
 (function(){var t=document.getElementById('ttrack');if(!t)return;t.querySelectorAll('.tcard').forEach(function(c){t.appendChild(c.cloneNode(true));});})();
 
