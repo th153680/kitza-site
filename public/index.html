@@ -362,11 +362,25 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 
 /* Checkout steps */
 .chk-steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:22px;}
-.chk-step{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);}
+.chk-step{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;transition:all .2s;}
 .chk-step.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold);}
+.chk-step.done{background:rgba(29,185,84,.1);border-color:rgba(29,185,84,.3);color:var(--green);}
 .chk-step .snum{width:22px;height:22px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;}
 .chk-step.active .snum{background:var(--gold);color:#0b0b0d;}
+.chk-step.done .snum{background:var(--green);color:#fff;}
 .chk-sep{width:30px;height:2px;background:var(--line);}
+.chk-sep.done{background:var(--green);}
+.chk-panel{display:none;}
+.chk-panel.active{display:block;}
+.chk-addr-preview{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:10px;}
+.chk-addr-preview b{color:var(--ink);display:block;margin-bottom:2px;}
+.chk-addr-edit{color:var(--gold);font-size:12px;font-weight:700;cursor:pointer;margin-left:auto;white-space:nowrap;}
+.chk-addr-edit:hover{text-decoration:underline;}
+.btn-continue{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1a1a00;font-weight:800;font-size:15px;border:none;cursor:pointer;border-radius:12px;padding:14px 20px;width:100%;margin-top:14px;transition:transform .2s,box-shadow .2s;}
+.btn-continue:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(245,197,24,.4);}
+.btn-continue:disabled{opacity:.4;pointer-events:none;}
+.btn-back{background:none;border:1px solid var(--line);color:var(--muted);font-weight:700;font-size:13px;border-radius:10px;padding:10px 16px;width:100%;margin-top:8px;cursor:pointer;}
+.btn-back:hover{border-color:var(--gold);color:var(--gold);}
 
 /* Sticky mobile CTA */
 .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:940;background:rgba(11,11,13,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px;align-items:center;gap:12px;}
@@ -417,9 +431,9 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
   .promo-popup h4{font-size:18px;}
   .purch-notif{bottom:84px;left:12px;max-width:260px;padding:12px;}
   .purch-notif .pn-text{font-size:11.5px;}
-  .chk-steps{flex-wrap:wrap;gap:6px;}
-  .chk-step{padding:6px 10px;font-size:11px;}
-  .chk-sep{width:16px;}
+  .chk-steps{flex-wrap:nowrap;gap:4px;}
+  .chk-step{padding:6px 8px;font-size:10px;}
+  .chk-sep{width:12px;}
   .sz-card{padding:20px 16px;}
   .sz-table{font-size:12px;}
   .stage{min-height:300px;gap:0;}
@@ -669,42 +683,58 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
     <div class="chk-box reveal">
       <div class="ct">Finalizar pedido</div>
       <div class="chk-steps">
-        <div class="chk-step active" id="step1"><span class="snum">1</span> Carrinho</div>
-        <div class="chk-sep"></div>
-        <div class="chk-step" id="step2"><span class="snum">2</span> Dados</div>
-        <div class="chk-sep"></div>
+        <div class="chk-step active" id="step1" onclick="goStep(1)"><span class="snum">1</span> Carrinho</div>
+        <div class="chk-sep" id="sep1"></div>
+        <div class="chk-step" id="step2" onclick="goStep(2)"><span class="snum">2</span> Dados</div>
+        <div class="chk-sep" id="sep2"></div>
         <div class="chk-step" id="step3"><span class="snum">3</span> Pagamento</div>
       </div>
-      <div class="fg">
-        <label>Seu carrinho</label>
-        <div id="cartList"></div>
-      </div>
-      <div class="fg"><label>Nome completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
-      <div class="fg-row">
-        <div class="fg"><label>WhatsApp</label><input type="tel" id="tel" placeholder="(00) 00000-0000"></div>
-        <div class="fg"><label>CPF</label><input type="tel" id="cpf" placeholder="000.000.000-00" maxlength="14"></div>
-      </div>
-      <div class="fg"><label>E-mail</label><input type="email" id="email" placeholder="seu@email.com"></div>
-      <div class="fg-row">
-        <div class="fg"><label>CEP</label><input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="buscaCep(this)"></div>
-        <div class="fg"><label>Número</label><input type="text" id="num" placeholder="123"></div>
-      </div>
-      <div class="fg"><label>Rua / Avenida</label><input type="text" id="rua" placeholder="Nome da rua"></div>
-      <div class="fg-row">
-        <div class="fg"><label>Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div>
-        <div class="fg"><label>Estado</label>
-          <select id="estado">
-            <option value="">UF</option>
-            <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
-          </select>
+
+      <!-- PANEL 1: CARRINHO -->
+      <div class="chk-panel active" id="panel1">
+        <div class="fg">
+          <label>Seu carrinho</label>
+          <div id="cartList"></div>
         </div>
+        <div class="cart-tot">Total <b id="cartTotal">R$ 0,00</b></div>
+        <div class="pix-discount" id="pixDiscount" style="display:none;">💰 No PIX você paga <b id="pixDiscountVal">R$ 0,00</b> (5% OFF)</div>
+        <button class="btn-continue" id="btnToStep2" disabled onclick="goStep(2)">CONTINUAR →</button>
+        <div class="pix-msg" id="pixMsg">Adicione pelo menos uma camisa ao carrinho</div>
       </div>
-      <div class="cart-tot">Total <b id="cartTotal">R$ 0,00</b></div>
-      <div class="pix-discount" id="pixDiscount" style="display:none;">💰 No PIX você paga <b id="pixDiscountVal">R$ 0,00</b> (5% OFF)</div>
-      <button onclick="openPix()" class="btn btn-gold btn-block btn-pix disabled" id="btnPix">⚡ Pagar via PIX — 5% OFF</button>
-      <button onclick="finalizeWA()" class="btn btn-wa btn-block disabled" id="btnWA" style="margin-top:10px;">Finalizar pedido no WhatsApp</button>
-      <div class="pix-msg" id="pixMsg">Adicione pelo menos uma camisa ao carrinho</div>
-      <div class="sec-badges">
+
+      <!-- PANEL 2: DADOS -->
+      <div class="chk-panel" id="panel2">
+        <div class="fg"><label>Nome completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
+        <div class="fg"><label>WhatsApp</label><input type="tel" id="tel" placeholder="(00) 00000-0000"></div>
+        <div class="fg-row">
+          <div class="fg"><label>CEP</label><input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="buscaCep(this)"></div>
+          <div class="fg"><label>Número</label><input type="text" id="num" placeholder="123"></div>
+        </div>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:-6px;margin-bottom:10px;">📍 O endereço é preenchido automaticamente pelo CEP</p>
+        <!-- Hidden fields auto-filled by CEP -->
+        <input type="hidden" id="rua">
+        <input type="hidden" id="cidade">
+        <input type="hidden" id="estado">
+        <button class="btn-continue" id="btnToStep3" onclick="validateAndGoStep3()">CONTINUAR PARA PAGAMENTO →</button>
+        <button class="btn-back" onclick="goStep(1)">← Voltar ao carrinho</button>
+      </div>
+
+      <!-- PANEL 3: PAGAMENTO -->
+      <div class="chk-panel" id="panel3">
+        <div class="chk-addr-preview" id="addrPreview">
+          <span>📍</span>
+          <div><b id="addrLine1">Endereço</b><span id="addrLine2">Preencha o CEP na etapa anterior</span></div>
+          <span class="chk-addr-edit" onclick="goStep(2)">Editar</span>
+        </div>
+        <div class="fg"><label>CPF (necessário para o PIX)</label><input type="tel" id="cpf" placeholder="000.000.000-00" maxlength="14"></div>
+        <div class="fg"><label>E-mail (opcional)</label><input type="email" id="email" placeholder="seu@email.com"></div>
+        <div class="cart-tot">Total <b id="cartTotal2">R$ 0,00</b></div>
+        <button onclick="openPix()" class="btn btn-gold btn-block btn-pix" id="btnPix">⚡ PAGAR VIA PIX — <span id="pixPrice2">R$ 0,00</span></button>
+        <button onclick="finalizeWA()" class="btn btn-wa btn-block" id="btnWA" style="margin-top:10px;">💬 Finalizar no WhatsApp</button>
+        <button class="btn-back" onclick="goStep(2)" style="margin-top:8px;">← Voltar</button>
+      </div>
+
+      <div class="sec-badges" style="margin-top:16px;">
         <span class="sec-badge">🔒 Conexão SSL</span>
         <span class="sec-badge">⚡ PIX instantâneo</span>
         <span class="sec-badge">🛡️ Compra garantida</span>
@@ -914,23 +944,54 @@ function renderCart(){
     '</div>';
   }).join('');
 }
+var currentStep=1;
+function goStep(n){
+  if(n===2&&cartCount()===0)return;
+  if(n===3&&cartCount()===0)return;
+  currentStep=n;
+  for(var i=1;i<=3;i++){
+    var p=document.getElementById('panel'+i);
+    if(p){p.classList.toggle('active',i===n);}
+    var s=document.getElementById('step'+i);
+    if(s){s.classList.remove('active','done');if(i<n)s.classList.add('done');if(i===n)s.classList.add('active');}
+    var sep=document.getElementById('sep'+i);
+    if(sep){sep.classList.toggle('done',i<n);}
+  }
+  if(n===3)updateAddrPreview();
+  var box=document.querySelector('.chk-box');
+  if(box)box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function validateAndGoStep3(){
+  var nome=val('nome'),tel=val('tel'),cep=val('cep'),num=val('num');
+  if(!nome){alert('Preencha seu nome');document.getElementById('nome').focus();return;}
+  if(!tel){alert('Preencha seu WhatsApp');document.getElementById('tel').focus();return;}
+  if(!cep||cep.replace(/\D/g,'').length<8){alert('Preencha o CEP');document.getElementById('cep').focus();return;}
+  if(!num){alert('Preencha o número');document.getElementById('num').focus();return;}
+  goStep(3);
+}
+function updateAddrPreview(){
+  var rua=val('rua')||'Rua não encontrada',num=val('num'),cid=val('cidade'),uf=val('estado'),cep=val('cep');
+  var l1=document.getElementById('addrLine1'),l2=document.getElementById('addrLine2');
+  if(l1)l1.textContent=rua+(num?', '+num:'');
+  if(l2)l2.textContent=(cid&&uf?cid+'/'+uf:'')+(cep?' · CEP '+cep:'');
+}
 function updateCartUI(){
   renderCart();
   var t=cartTotal(),c=cartCount();
   var cc=document.getElementById('cartCount');if(cc)cc.textContent=c;
   var ct=document.getElementById('cartTotal');if(ct)ct.textContent=brl(t);
+  var ct2=document.getElementById('cartTotal2');if(ct2)ct2.textContent=brl(t);
   var sp=document.getElementById('scPrice');if(sp&&sp.firstChild)sp.firstChild.textContent=brl(t);
   var scn=document.getElementById('scCount');if(scn)scn.textContent=c?(c+' item(ns) no carrinho'):'Carrinho vazio';
-  var wa=document.getElementById('btnWA'),px=document.getElementById('btnPix'),msg=document.getElementById('pixMsg');
-  if(c>0){if(wa)wa.classList.remove('disabled');if(px)px.classList.remove('disabled');if(msg)msg.style.display='none';}
-  else{if(wa)wa.classList.add('disabled');if(px)px.classList.add('disabled');if(msg)msg.style.display='block';}
+  var msg=document.getElementById('pixMsg');
+  var btnS2=document.getElementById('btnToStep2');
+  if(c>0){if(msg)msg.style.display='none';if(btnS2)btnS2.disabled=false;}
+  else{if(msg)msg.style.display='block';if(btnS2)btnS2.disabled=true;}
   /* PIX 5% discount display */
   var pd=document.getElementById('pixDiscount'),pv=document.getElementById('pixDiscountVal');
   if(pd&&pv){if(c>0){pd.style.display='flex';pv.textContent=brl(t*0.95);}else{pd.style.display='none';}}
-  /* Checkout steps highlight */
-  var s1=document.getElementById('step1'),s2=document.getElementById('step2'),s3=document.getElementById('step3');
-  if(s1)s1.classList.toggle('active',true);
-  if(s2)s2.classList.toggle('active',c>0);
+  var pp2=document.getElementById('pixPrice2');
+  if(pp2)pp2.textContent=brl(t*0.95);
 }
 
 /* === SIZE GUIDE === */
@@ -987,10 +1048,11 @@ function cpfValido(c){
 function openPix(){
   if(!cart.length)return;
   var nome=val('nome'),email=val('email'),cpf=pixDigits(val('cpf')),tel=pixDigits(val('tel'));
-  if(!nome||!email||cpf.length!==11||tel.length<10){
-    toast('Preencha nome, e-mail, CPF e WhatsApp');
-    var f=document.getElementById(!nome?'nome':!email?'email':cpf.length!==11?'cpf':'tel');
-    if(f){f.scrollIntoView({behavior:'smooth',block:'center'});f.focus();}
+  if(!nome||cpf.length!==11||tel.length<10){
+    toast('Preencha nome, CPF e WhatsApp');
+    if(!nome){goStep(2);setTimeout(function(){document.getElementById('nome').focus();},300);return;}
+    if(tel.length<10){goStep(2);setTimeout(function(){document.getElementById('tel').focus();},300);return;}
+    var f=document.getElementById('cpf');if(f){f.scrollIntoView({behavior:'smooth',block:'center'});f.focus();}
     return;
   }
   if(!cpfValido(cpf)){
@@ -1002,7 +1064,7 @@ function openPix(){
   pixShow('pixLoading');
   document.getElementById('pixModal').classList.add('open');
   document.body.style.overflow='hidden';
-  var body={amount:cartTotal(),client:{name:nome,email:email,document:cpf,phone:tel}};
+  var body={amount:cartTotal(),client:{name:nome,email:email||'cliente@kitzastore.store',document:cpf,phone:tel}};
   fetch(PIX_API+'/.netlify/functions/create-pix',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
     .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
     .then(function(res){
