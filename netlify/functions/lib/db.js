@@ -37,6 +37,22 @@ async function initDb() {
   `;
   await sql`CREATE INDEX IF NOT EXISTS idx_visits_created ON visits(created_at)`;
   await sql`CREATE INDEX IF NOT EXISTS idx_visits_page ON visits(page)`;
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS events (
+      id          SERIAL PRIMARY KEY,
+      event       TEXT    NOT NULL,
+      product     TEXT,
+      size        TEXT,
+      price       NUMERIC,
+      ip          TEXT,
+      user_agent  TEXT,
+      created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `;
+  await sql`CREATE INDEX IF NOT EXISTS idx_events_created ON events(created_at)`;
+  await sql`CREATE INDEX IF NOT EXISTS idx_events_event ON events(event)`;
+
   return sql;
 }
 

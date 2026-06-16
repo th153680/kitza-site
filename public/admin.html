@@ -135,6 +135,7 @@ tr:hover td{background:rgba(245,197,24,.03);}
     <div class="stat-card"><div class="sc-label">Visitantes Unicos (IP)</div><div class="sc-value" id="sUniqueIPs">—</div></div>
     <div class="stat-card"><div class="sc-label">Media / Dia</div><div class="sc-value" id="sAvgDay">—</div></div>
     <div class="stat-card"><div class="sc-label">Pagina Mais Visitada</div><div class="sc-value" id="sTopPage" style="font-size:18px;word-break:break-all;">—</div></div>
+    <div class="stat-card"><div class="sc-label">Itens Add. ao Carrinho</div><div class="sc-value gold" id="sCartAdds">—</div></div>
   </div>
 
   <!-- Chart -->
@@ -166,6 +167,27 @@ tr:hover td{background:rgba(245,197,24,.03);}
   <div class="list-section" style="margin-bottom:24px;">
     <h3>Origem do trafego (Referrers)</h3>
     <div id="referrers"></div>
+  </div>
+
+  <!-- Cart: Top products -->
+  <div class="list-section" style="margin-bottom:24px;">
+    <h3>🛒 Produtos mais adicionados ao carrinho</h3>
+    <div id="topProducts"></div>
+  </div>
+
+  <!-- Cart: Recent events -->
+  <div class="chart-section" style="margin-bottom:24px;">
+    <h3>🛒 Adicoes recentes ao carrinho</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data/Hora</th><th>Produto</th><th>Tamanho</th><th>Preco</th><th>IP</th><th>Navegador</th></tr>
+        </thead>
+        <tbody id="cartTable">
+          <tr><td colspan="6" class="loading"><span class="spin"></span> Carregando...</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- Recent visits table -->
@@ -266,6 +288,11 @@ function loadStats(days) {
       // Referrers
       renderList('referrers', d.topReferrers, 'referrer', 'views');
 
+      // Cart
+      document.getElementById('sCartAdds').textContent = (d.totalCartAdds || 0).toLocaleString('pt-BR');
+      renderList('topProducts', d.topProducts || [], 'product', 'adds');
+      renderCartEvents(d.recentCartEvents || []);
+
       // Recent
       renderRecent(d.recentVisits);
     })
@@ -355,6 +382,21 @@ function loadVisits(page) {
         '<span class="info">Pagina '+page+' de '+totalPages+' ('+d.total+' registros)</span>'+
         '<button onclick="loadVisits('+(page+1)+')"'+(page>=totalPages?' disabled':'')+'>Proxima →</button>';
     });
+}
+
+function renderCartEvents(rows) {
+  var tb = document.getElementById('cartTable');
+  if (!rows.length) { tb.innerHTML = '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px;">Nenhum item adicionado ao carrinho ainda</td></tr>'; return; }
+  tb.innerHTML = rows.map(function(r){
+    return '<tr>'+
+      '<td class="date-cell">'+fmtDate(r.created_at)+'</td>'+
+      '<td style="color:var(--gold-2);font-weight:600;">'+((r.product||'').length>50?r.product.slice(0,50)+'...':r.product||'—')+'</td>'+
+      '<td>'+(r.size||'—')+'</td>'+
+      '<td>'+(r.price?'R$ '+Number(r.price).toFixed(2).replace('.',','):'—')+'</td>'+
+      '<td class="ip-cell">'+(r.ip||'—')+'</td>'+
+      '<td>'+browserPill(detectBrowser(r.user_agent))+'</td>'+
+    '</tr>';
+  }).join('');
 }
 
 // Check auth before loading — redirect to login if not authenticated

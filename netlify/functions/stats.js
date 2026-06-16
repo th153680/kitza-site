@@ -81,10 +81,27 @@ exports.handler = async (event) => {
       ORDER BY created_at DESC LIMIT 10
     `;
 
+    // Cart events
+    const [{ c: totalCartAdds }] = await sql`
+      SELECT COUNT(*) as c FROM events WHERE event = 'add_to_cart' AND created_at >= NOW() - INTERVAL '1 day' * ${days}
+    `;
+
+    const topProducts = await sql`
+      SELECT product, COUNT(*) as adds FROM events
+      WHERE event = 'add_to_cart' AND created_at >= NOW() - INTERVAL '1 day' * ${days}
+      GROUP BY product ORDER BY adds DESC LIMIT 10
+    `;
+
+    const recentCartEvents = await sql`
+      SELECT * FROM events
+      WHERE event = 'add_to_cart' AND created_at >= NOW() - INTERVAL '1 day' * ${days}
+      ORDER BY created_at DESC LIMIT 20
+    `;
+
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ totalVisits: Number(totalVisits), uniqueIPs: Number(uniqueIPs), topPages, visitsByDay, topReferrers, browsers, devices, recentVisits }),
+      body: JSON.stringify({ totalVisits: Number(totalVisits), uniqueIPs: Number(uniqueIPs), topPages, visitsByDay, topReferrers, browsers, devices, recentVisits, totalCartAdds: Number(totalCartAdds), topProducts, recentCartEvents }),
     };
   } catch (err) {
     console.error('Stats error:', err.message);

@@ -27,6 +27,11 @@
   status = 200
 
 [[redirects]]
+  from = "/api/event"
+  to = "/.netlify/functions/event"
+  status = 200
+
+[[redirects]]
   from = "/api/login"
   to = "/.netlify/functions/login"
   status = 200

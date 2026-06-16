@@ -752,11 +752,13 @@ function addToCart(i,btn){
   var f=cart.filter(function(x){return !x.kit&&x.idx===i&&x.size===size;})[0];
   if(f)f.qty++;else cart.push({idx:i,size:size,qty:1});
   saveCart();updateCartUI();toast('Adicionado ao carrinho ✓');
+  if(window.kitzaEvent)window.kitzaEvent('add_to_cart',{product:PRODUCTS[i].name,size:size,price:PRODUCTS[i].now});
 }
 function addKit(){
   var f=cart.filter(function(x){return x.kit;})[0];
   if(f)f.qty++;else cart.push({kit:true,size:'-',qty:1});
   saveCart();updateCartUI();goCart();
+  if(window.kitzaEvent)window.kitzaEvent('add_to_cart',{product:KIT.name,size:'-',price:KIT.now});
 }
 function chQty(n,d){cart[n].qty+=d;if(cart[n].qty<=0)cart.splice(n,1);saveCart();updateCartUI();}
 function rmItem(n){cart.splice(n,1);saveCart();updateCartUI();}
