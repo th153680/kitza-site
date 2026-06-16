@@ -706,15 +706,27 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
       <div class="chk-panel" id="panel2">
         <div class="fg"><label>Nome completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
         <div class="fg"><label>WhatsApp</label><input type="tel" id="tel" placeholder="(00) 00000-0000"></div>
-        <div class="fg-row">
-          <div class="fg"><label>CEP</label><input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="buscaCep(this)"></div>
-          <div class="fg"><label>Número</label><input type="text" id="num" placeholder="123"></div>
+        <div class="fg"><label>CEP</label><input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="buscaCep(this)"></div>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:-6px;margin-bottom:10px;">📍 Digite o CEP para preencher automaticamente</p>
+        <div id="addrFields" style="display:none;">
+          <div class="fg-row">
+            <div class="fg" style="flex:3;"><label>Endereço</label><input type="text" id="rua" placeholder="Rua / Avenida"></div>
+            <div class="fg" style="flex:1;"><label>Número</label><input type="text" id="num" placeholder="123"></div>
+          </div>
+          <div class="fg-row">
+            <div class="fg"><label>Complemento <small style="color:var(--muted);font-weight:400;">(opcional)</small></label><input type="text" id="complemento" placeholder="Apto, bloco, sala..."></div>
+            <div class="fg"><label>Bairro</label><input type="text" id="bairro" placeholder="Seu bairro"></div>
+          </div>
+          <div class="fg-row">
+            <div class="fg" style="flex:2;"><label>Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div>
+            <div class="fg" style="flex:1;"><label>Estado</label>
+              <select id="estado">
+                <option value="">UF</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <p style="font-size:11.5px;color:var(--muted);margin-top:-6px;margin-bottom:10px;">📍 O endereço é preenchido automaticamente pelo CEP</p>
-        <!-- Hidden fields auto-filled by CEP -->
-        <input type="hidden" id="rua">
-        <input type="hidden" id="cidade">
-        <input type="hidden" id="estado">
         <button class="btn-continue" id="btnToStep3" onclick="validateAndGoStep3()">CONTINUAR PARA PAGAMENTO →</button>
         <button class="btn-back" onclick="goStep(1)">← Voltar ao carrinho</button>
       </div>
@@ -962,18 +974,22 @@ function goStep(n){
   if(box)box.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function validateAndGoStep3(){
-  var nome=val('nome'),tel=val('tel'),cep=val('cep'),num=val('num');
+  var nome=val('nome'),tel=val('tel'),cep=val('cep'),num=val('num'),rua=val('rua'),bairro=val('bairro'),cidade=val('cidade'),estado=val('estado');
   if(!nome){alert('Preencha seu nome');document.getElementById('nome').focus();return;}
   if(!tel){alert('Preencha seu WhatsApp');document.getElementById('tel').focus();return;}
   if(!cep||cep.replace(/\D/g,'').length<8){alert('Preencha o CEP');document.getElementById('cep').focus();return;}
-  if(!num){alert('Preencha o número');document.getElementById('num').focus();return;}
+  if(!rua){alert('Preencha o endere\u00e7o');document.getElementById('rua').focus();return;}
+  if(!num){alert('Preencha o n\u00famero');document.getElementById('num').focus();return;}
+  if(!bairro){alert('Preencha o bairro');document.getElementById('bairro').focus();return;}
+  if(!cidade){alert('Preencha a cidade');document.getElementById('cidade').focus();return;}
+  if(!estado){alert('Selecione o estado');document.getElementById('estado').focus();return;}
   goStep(3);
 }
 function updateAddrPreview(){
-  var rua=val('rua')||'Rua não encontrada',num=val('num'),cid=val('cidade'),uf=val('estado'),cep=val('cep');
+  var rua=val('rua')||'Rua n\u00e3o encontrada',num=val('num'),bairro=val('bairro'),compl=val('complemento'),cid=val('cidade'),uf=val('estado'),cep=val('cep');
   var l1=document.getElementById('addrLine1'),l2=document.getElementById('addrLine2');
-  if(l1)l1.textContent=rua+(num?', '+num:'');
-  if(l2)l2.textContent=(cid&&uf?cid+'/'+uf:'')+(cep?' · CEP '+cep:'');
+  if(l1)l1.textContent=rua+(num?', '+num:'')+(compl?' — '+compl:'');
+  if(l2)l2.textContent=(bairro?bairro+' · ':'')+(cid&&uf?cid+'/'+uf:'')+(cep?' · CEP '+cep:'');
 }
 function updateCartUI(){
   renderCart();
@@ -1018,10 +1034,10 @@ function finalizeWA(){
   var parts=['Olá! Quero finalizar meu pedido na KITZA:',''];
   cart.forEach(function(it){parts.push('• '+it.qty+'x '+itemName(it)+(it.kit?'':' (Tam '+it.size+')')+' — '+brl(itemPrice(it)*it.qty));});
   parts.push('');parts.push('Total: '+brl(cartTotal()));
-  var nome=val('nome'),tel=val('tel'),cep=val('cep'),rua=val('rua'),num=val('num'),cid=val('cidade'),uf=val('estado');
+  var nome=val('nome'),tel=val('tel'),cep=val('cep'),rua=val('rua'),num=val('num'),compl=val('complemento'),bairro=val('bairro'),cid=val('cidade'),uf=val('estado');
   if(nome)parts.push('Nome: '+nome);
   if(tel)parts.push('WhatsApp: '+tel);
-  if(rua||cid)parts.push('Endereço: '+rua+', '+num+' - '+cid+'/'+uf+' (CEP '+cep+')');
+  if(rua||cid)parts.push('Endereço: '+rua+', '+num+(compl?' — '+compl:'')+' · '+bairro+' · '+cid+'/'+uf+' · CEP '+cep);
   window.open('https://wa.me/5575988231829?text='+encodeURIComponent(parts.join('\n')),'_blank');
 }
 function goCart(){closeMenu();var t=document.getElementById('pedido');if(t)t.scrollIntoView({behavior:'smooth'});}
@@ -1107,7 +1123,7 @@ renderProducts();updateCartUI();
 var obs2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs2.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('#productGrid .reveal').forEach(function(el){obs2.observe(el);});
 
-async function buscaCep(i){var c=i.value.replace(/\D/g,'');if(c.length!==8)return;try{var r=await fetch('https://viacep.com.br/ws/'+c+'/json/');var d=await r.json();if(!d.erro){document.getElementById('rua').value=d.logradouro||'';document.getElementById('cidade').value=d.localidade||'';document.getElementById('estado').value=d.uf||'';document.getElementById('num').focus();}}catch(e){}}
+async function buscaCep(i){var c=i.value.replace(/\D/g,'');if(c.length!==8)return;try{var r=await fetch('https://viacep.com.br/ws/'+c+'/json/');var d=await r.json();if(!d.erro){document.getElementById('rua').value=d.logradouro||'';document.getElementById('bairro').value=d.bairro||'';document.getElementById('cidade').value=d.localidade||'';document.getElementById('estado').value=d.uf||'';document.getElementById('addrFields').style.display='block';document.getElementById('num').focus();}}catch(e){}}
 
 /* old timer removed — now using #cdTimer above */
 
