@@ -8,6 +8,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+// fbq('init', 'SEU_PIXEL_ID_AQUI');
+// fbq('track', 'PageView');
+</script>
+<!-- Descomente as linhas acima e troque SEU_PIXEL_ID_AQUI pelo seu ID do Meta Pixel -->
+<!-- End Meta Pixel Code -->
 <style>
 :root{
   --gold:#f5c518; --gold-2:#ffd95a; --gold-deep:#c99409;
@@ -312,6 +327,47 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 .fomo-bar .fomo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:stockpulse 1.5s infinite;}
 .fomo-bar b{color:var(--ink);}
 
+/* Size guide modal */
+.sz-modal{position:fixed;inset:0;z-index:1400;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;}
+.sz-modal.open{display:flex;}
+.sz-card{background:#15151b;border:1px solid var(--line);border-radius:20px;padding:28px 22px;width:100%;max-width:420px;position:relative;}
+.sz-card h3{font-family:'Anton';font-size:22px;text-transform:uppercase;margin-bottom:14px;}
+.sz-close{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);font-size:28px;cursor:pointer;}
+.sz-table{width:100%;border-collapse:collapse;font-size:13px;}
+.sz-table th{background:rgba(245,197,24,.15);color:var(--gold);padding:10px 8px;text-align:center;font-weight:700;}
+.sz-table td{padding:9px 8px;text-align:center;border-bottom:1px solid var(--line);color:var(--muted);}
+.sz-table tr:hover td{background:rgba(255,255,255,.03);}
+.sz-link{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--gold);font-weight:700;cursor:pointer;margin-bottom:6px;}
+.sz-link:hover{text-decoration:underline;}
+
+/* PIX discount label */
+.pix-discount{display:flex;align-items:center;gap:6px;background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:13px;font-weight:700;color:var(--green);}
+.pix-discount b{color:#fff;}
+
+/* Promo popup (leve 2) */
+.promo-popup{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(30px);z-index:1100;background:linear-gradient(135deg,#15130a,#1a1a22);border:1px solid rgba(245,197,24,.4);border-radius:18px;padding:20px 24px;max-width:380px;width:calc(100% - 32px);box-shadow:0 20px 50px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;text-align:center;}
+.promo-popup.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.promo-popup .pp-close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;}
+.promo-popup h4{font-family:'Anton';font-size:22px;text-transform:uppercase;margin-bottom:4px;}
+.promo-popup h4 em{color:var(--gold);font-style:normal;}
+.promo-popup p{color:var(--muted);font-size:14px;margin-bottom:14px;}
+.promo-popup .btn{font-size:15px;}
+
+/* Purchase notification */
+.purch-notif{position:fixed;bottom:100px;left:18px;z-index:1050;background:#15151b;border:1px solid var(--line);border-radius:14px;padding:14px 16px;max-width:300px;box-shadow:0 12px 30px rgba(0,0,0,.5);transform:translateX(-120%);transition:transform .5s ease;display:flex;align-items:center;gap:12px;}
+.purch-notif.show{transform:translateX(0);}
+.purch-notif .pn-icon{width:42px;height:42px;border-radius:10px;background:rgba(29,185,84,.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto;}
+.purch-notif .pn-text{font-size:12.5px;color:var(--muted);line-height:1.4;}
+.purch-notif .pn-text b{color:var(--ink);display:block;}
+
+/* Checkout steps */
+.chk-steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:22px;}
+.chk-step{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);}
+.chk-step.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold);}
+.chk-step .snum{width:22px;height:22px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;}
+.chk-step.active .snum{background:var(--gold);color:#0b0b0d;}
+.chk-sep{width:30px;height:2px;background:var(--line);}
+
 /* Sticky mobile CTA */
 .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:940;background:rgba(11,11,13,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px;align-items:center;gap:12px;}
 .sticky-cta .sc-price{font-family:'Anton';font-size:22px;}
@@ -357,6 +413,15 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
   .countdown-bar{font-size:12px;padding:8px 10px;}
   .countdown-bar .cd-timer{font-size:16px;}
   .wa-float .wa-tooltip{display:none;}
+  .promo-popup{bottom:84px;max-width:340px;padding:16px 18px;}
+  .promo-popup h4{font-size:18px;}
+  .purch-notif{bottom:84px;left:12px;max-width:260px;padding:12px;}
+  .purch-notif .pn-text{font-size:11.5px;}
+  .chk-steps{flex-wrap:wrap;gap:6px;}
+  .chk-step{padding:6px 10px;font-size:11px;}
+  .chk-sep{width:16px;}
+  .sz-card{padding:20px 16px;}
+  .sz-table{font-size:12px;}
   .stage{min-height:300px;gap:0;}
   .stage .halo{width:100%;height:78%;}
   .stage .s-side{flex:0 0 35%;}
@@ -603,6 +668,13 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 
     <div class="chk-box reveal">
       <div class="ct">Finalizar pedido</div>
+      <div class="chk-steps">
+        <div class="chk-step active" id="step1"><span class="snum">1</span> Carrinho</div>
+        <div class="chk-sep"></div>
+        <div class="chk-step" id="step2"><span class="snum">2</span> Dados</div>
+        <div class="chk-sep"></div>
+        <div class="chk-step" id="step3"><span class="snum">3</span> Pagamento</div>
+      </div>
       <div class="fg">
         <label>Seu carrinho</label>
         <div id="cartList"></div>
@@ -628,8 +700,9 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
         </div>
       </div>
       <div class="cart-tot">Total <b id="cartTotal">R$ 0,00</b></div>
+      <div class="pix-discount" id="pixDiscount" style="display:none;">💰 No PIX você paga <b id="pixDiscountVal">R$ 0,00</b> (5% OFF)</div>
       <button onclick="finalizeWA()" class="btn btn-wa btn-block disabled" id="btnWA">Finalizar pedido no WhatsApp</button>
-      <button onclick="openPix()" class="btn btn-gold btn-block btn-pix disabled" id="btnPix" style="margin-top:10px;">Pagar via PIX (QR Code)</button>
+      <button onclick="openPix()" class="btn btn-gold btn-block btn-pix disabled" id="btnPix" style="margin-top:10px;">⚡ Pagar via PIX — 5% OFF</button>
       <div class="pix-msg" id="pixMsg">Adicione pelo menos uma camisa ao carrinho</div>
       <div class="sec-badges">
         <span class="sec-badge">🔒 Conexão SSL</span>
@@ -646,6 +719,40 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
     </div>
   </div>
 </section>
+
+<!-- SIZE GUIDE MODAL -->
+<div class="sz-modal" id="szModal">
+  <div class="sz-card">
+    <button class="sz-close" onclick="closeSizeGuide()">&times;</button>
+    <h3>📏 Guia de Tamanhos</h3>
+    <table class="sz-table">
+      <thead><tr><th>Tamanho</th><th>Tórax</th><th>Comprimento</th><th>Ombro</th></tr></thead>
+      <tbody>
+        <tr><td>PP</td><td>86-90 cm</td><td>68 cm</td><td>42 cm</td></tr>
+        <tr><td>P</td><td>90-96 cm</td><td>70 cm</td><td>44 cm</td></tr>
+        <tr><td>M</td><td>96-102 cm</td><td>72 cm</td><td>46 cm</td></tr>
+        <tr><td>G</td><td>102-108 cm</td><td>74 cm</td><td>48 cm</td></tr>
+        <tr><td>GG</td><td>108-114 cm</td><td>76 cm</td><td>50 cm</td></tr>
+        <tr><td>GGG</td><td>114-120 cm</td><td>78 cm</td><td>52 cm</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:12px;color:var(--muted);">💡 Dica: Em caso de dúvida entre dois tamanhos, escolha o maior. Troca em até 7 dias!</p>
+  </div>
+</div>
+
+<!-- PROMO POPUP (leve 2 = 10% OFF) -->
+<div class="promo-popup" id="promoPopup">
+  <button class="pp-close" onclick="closePromo()">&times;</button>
+  <h4>🎉 Leve 2 e ganhe <em>10% OFF</em></h4>
+  <p>Adicione mais uma camisa e o desconto é aplicado automaticamente!</p>
+  <a href="#camisas" class="btn btn-gold" onclick="closePromo()">🔥 Ver camisas</a>
+</div>
+
+<!-- PURCHASE NOTIFICATION -->
+<div class="purch-notif" id="purchNotif">
+  <div class="pn-icon">🛒</div>
+  <div class="pn-text"><b id="pnName">Maria S.</b><span id="pnMsg">comprou Camisa Brasil I há 3 min</span></div>
+</div>
 
 <!-- FAQ -->
 <section class="block" id="faq" style="padding-top:0;">
@@ -766,6 +873,7 @@ function renderProducts(){
       '<div class="prow"><div class="pprice"><sup>R$</sup>'+fmt(p.now)+'</div></div>'+
       '<div class="pinst">3x de '+brl(p.now/3)+' sem juros</div>'+
       stockHtml+
+      '<span class="sz-link" onclick="openSizeGuide()">📏 Guia de tamanhos</span>'+
       '<select class="psize" aria-label="Tamanho">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select>'+
       '<button class="btn btn-gold btn-block" onclick="addToCart('+i+',this)">🔥 Adicionar</button>'+
     '</div>';
@@ -787,6 +895,7 @@ function addToCart(i,btn){
   if(f)f.qty++;else cart.push({idx:i,size:size,qty:1});
   saveCart();updateCartUI();toast('Adicionado ao carrinho ✓');
   if(window.kitzaEvent)window.kitzaEvent('add_to_cart',{product:PRODUCTS[i].name,size:size,price:PRODUCTS[i].now});
+  if(typeof fbq==='function')fbq('track','AddToCart',{content_name:PRODUCTS[i].name,value:PRODUCTS[i].now,currency:'BRL'});
 }
 function addKit(){
   var f=cart.filter(function(x){return x.kit;})[0];
@@ -820,7 +929,52 @@ function updateCartUI(){
   var wa=document.getElementById('btnWA'),px=document.getElementById('btnPix'),msg=document.getElementById('pixMsg');
   if(c>0){if(wa)wa.classList.remove('disabled');if(px)px.classList.remove('disabled');if(msg)msg.style.display='none';}
   else{if(wa)wa.classList.add('disabled');if(px)px.classList.add('disabled');if(msg)msg.style.display='block';}
+  /* PIX 5% discount display */
+  var pd=document.getElementById('pixDiscount'),pv=document.getElementById('pixDiscountVal');
+  if(pd&&pv){if(c>0){pd.style.display='flex';pv.textContent=brl(t*0.95);}else{pd.style.display='none';}}
+  /* Checkout steps highlight */
+  var s1=document.getElementById('step1'),s2=document.getElementById('step2'),s3=document.getElementById('step3');
+  if(s1)s1.classList.toggle('active',true);
+  if(s2)s2.classList.toggle('active',c>0);
 }
+
+/* === SIZE GUIDE === */
+function openSizeGuide(){document.getElementById('szModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSizeGuide(){document.getElementById('szModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('szModal').addEventListener('click',function(e){if(e.target===this)closeSizeGuide();});
+
+/* === PROMO POPUP (leve 2 = 10% OFF) === */
+var promoShown=false;
+function showPromo(){if(promoShown)return;promoShown=true;document.getElementById('promoPopup').classList.add('show');}
+function closePromo(){document.getElementById('promoPopup').classList.remove('show');}
+var origAddToCart=addToCart;
+addToCart=function(i,btn){
+  origAddToCart(i,btn);
+  var c=cartCount();
+  if(c===1)setTimeout(showPromo,800);
+  if(c>=2)closePromo();
+};
+
+/* === PURCHASE NOTIFICATIONS === */
+(function(){
+  var names=['Maria S.','João P.','Ana C.','Lucas M.','Patrícia F.','Rafael O.','Camila R.','Bruno L.','Juliana T.','Pedro H.'];
+  var prods=['Camisa Brasil I 2026/27','Kit Família','Camisa Brasil Pré-Jogo Jordan','Camisa Brasil Feminina 2026/27','Camisa Brasil Juvenil 2026/27'];
+  var cities=['São Paulo','Rio de Janeiro','Belo Horizonte','Salvador','Curitiba','Fortaleza','Recife','Brasília','Porto Alegre','Manaus'];
+  var el=document.getElementById('purchNotif'),enm=document.getElementById('pnName'),emsg=document.getElementById('pnMsg');
+  if(!el)return;
+  function show(){
+    var n=names[Math.floor(Math.random()*names.length)];
+    var p=prods[Math.floor(Math.random()*prods.length)];
+    var c=cities[Math.floor(Math.random()*cities.length)];
+    var mins=Math.floor(Math.random()*12)+1;
+    enm.textContent=n+' de '+c;
+    emsg.textContent='comprou '+p+' há '+mins+' min';
+    el.classList.add('show');
+    setTimeout(function(){el.classList.remove('show');},4500);
+  }
+  setTimeout(show,8000);
+  setInterval(show,Math.floor(Math.random()*20000)+18000);
+})();
 function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
 function finalizeWA(){
   if(!cart.length)return;
