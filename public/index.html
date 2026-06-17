@@ -55,9 +55,8 @@ img{max-width:100%;display:block;}
 /* ===== Header ===== */
 header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px;}
-.logo{display:flex;align-items:center;gap:9px;font-family:'Anton';font-size:24px;letter-spacing:1px;}
-.logo .crown{color:var(--gold);}
-.logo small{font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:4px;color:#888;align-self:flex-end;margin-bottom:4px;}
+.logo{display:flex;align-items:baseline;gap:6px;font-family:'Anton';font-size:26px;letter-spacing:1px;color:#1a1a1a;}
+.logo small{font-family:'Montserrat';font-weight:800;font-size:14px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
 .nav-links{display:flex;gap:30px;font-weight:600;font-size:14.5px;}
 .nav-links a{color:var(--muted);transition:color .2s;}
 .nav-links a:hover{color:var(--gold);}
@@ -68,33 +67,21 @@ header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdr
 
 /* ===== Hero ===== */
 .hero{position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;z-index:0;background:
-  radial-gradient(1200px 600px at 75% 20%, rgba(212,160,23,.08), transparent 60%),
-  radial-gradient(800px 500px at 10% 90%, rgba(0,39,118,.06), transparent 60%),
-  linear-gradient(180deg,#f5f5f7, #eeeef0);}
-.hero-bg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);background-size:22px 22px;opacity:.3;}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.04fr;gap:18px;align-items:center;padding:46px 0 56px;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.3);color:var(--gold-2);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-.hero h1{margin:18px 0 6px;}
-.hero h1 .l1{display:block;font-size:clamp(26px,4vw,42px);color:#1a1a1a;}
-.hero h1 .l2{display:block;font-size:clamp(64px,11vw,120px);background:linear-gradient(180deg,#c99409,#d4a017 60%,#e8b828);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 30px rgba(212,160,23,.2);}
-.hero h1 .l3{display:block;font-size:clamp(40px,7vw,76px);color:var(--gold);transform:skewX(-7deg);transform-origin:left;}
-.rating{display:flex;align-items:center;gap:10px;margin:8px 0 16px;font-weight:600;color:var(--muted);font-size:14px;}
-.stars{color:var(--gold);letter-spacing:2px;font-size:16px;}
-.hero-tag{font-size:17px;color:#444;max-width:480px;margin-bottom:22px;}
-.hero-tag b{color:#1a1a1a;}
-.price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-.price-old{color:var(--muted);text-decoration:line-through;font-weight:600;font-size:18px;}
-.price-now{font-family:'Anton';font-size:46px;color:#1a1a1a;line-height:1;}
-.price-now sup{font-size:20px;color:var(--gold);vertical-align:top;margin-right:2px;}
-.price-now small{font-size:22px;}
-.price-pill{background:var(--green);color:#04210f;font-weight:800;font-size:12.5px;padding:5px 11px;border-radius:999px;}
-.installment{color:var(--muted);font-size:14px;margin-bottom:22px;}
-.installment b{color:var(--ink);}
+.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#f8f8fa,#eeeef0);}
+.hero-bg::after{display:none;}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;padding:40px 0 50px;}
+.hero h1{margin:0 0 16px;}
+.hero h1 .l1{display:block;font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.5vw,38px);color:#1a1a1a;font-weight:900;line-height:1.15;letter-spacing:0;text-transform:uppercase;}
+.hero h1 .l3{display:block;font-family:'Anton',sans-serif;font-size:clamp(60px,10vw,110px);color:var(--gold);line-height:.95;transform:none;letter-spacing:-1px;}
+.price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:0;}
+.price-now{font-family:'Montserrat',sans-serif;font-weight:900;font-size:36px;color:#1a1a1a;line-height:1;}
+.price-now sup{font-size:16px;color:#1a1a1a;vertical-align:top;margin-right:2px;font-weight:700;}
+.price-now small{font-size:18px;}
+.price-old-line{color:var(--muted);text-decoration:line-through;font-weight:600;font-size:16px;margin-bottom:16px;}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
-.hero-trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:13px;font-weight:600;}
-.hero-trust span{display:flex;align-items:center;gap:7px;}
-.hero-trust .ic{color:var(--gold);font-size:15px;}
+.hero-btn{padding:14px 36px;font-size:16px;font-weight:800;border-radius:10px;letter-spacing:.5px;}
+.hero-right{display:flex;align-items:center;justify-content:center;position:relative;}
+.hero-shirt-img{width:100%;max-width:520px;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.12));}
 
 /* Hero shirt stage */
 .stage{position:relative;display:flex;align-items:center;justify-content:center;gap:0;min-height:500px;}
@@ -114,13 +101,13 @@ header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdr
 @keyframes halo{0%,100%{opacity:.45}50%{opacity:.95}}
 @keyframes glow{0%,100%{filter:drop-shadow(0 12px 24px rgba(0,0,0,.15)) drop-shadow(0 0 10px rgba(212,160,23,.1))}50%{filter:drop-shadow(0 12px 24px rgba(0,0,0,.15)) drop-shadow(0 0 20px rgba(212,160,23,.3))}}
 
-/* ===== Marquee trust ===== */
+/* ===== Trust bar ===== */
 .trust-bar{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:22px 0;}
-.trust-item{display:flex;align-items:center;gap:13px;justify-content:center;}
-.trust-item .ti-ic{width:42px;height:42px;border-radius:11px;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto;}
-.trust-item b{display:block;font-size:14px;}
-.trust-item span{font-size:12px;color:var(--muted);}
+.trust-grid{display:flex;justify-content:center;gap:40px;padding:24px 0;}
+.trust-item{display:flex;align-items:center;gap:14px;}
+.trust-item .ti-ic{width:46px;height:46px;border-radius:50%;background:#f5f5f7;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--muted);}
+.trust-item b{display:block;font-size:14px;font-weight:800;letter-spacing:.5px;}
+.trust-item span{font-size:12px;color:var(--muted);display:block;}
 
 /* ===== Sections ===== */
 section.block{padding:72px 0;}
@@ -144,12 +131,12 @@ section.block{padding:72px 0;}
 .pcard .prow{display:flex;align-items:baseline;gap:8px;margin-top:2px;}
 .pcard .pprice sup{font-size:12px;color:var(--gold);margin-right:1px;}
 .pcard .pold{color:var(--muted);text-decoration:line-through;font-size:13px;font-weight:600;margin-bottom:2px;}
-.pcard .btn{margin-top:auto;padding:11px 16px;font-size:14px;}
+.pcard .btn{margin-top:auto;padding:11px 16px;font-size:13px;border-radius:8px;letter-spacing:.3px;}
 .psize{width:100%;padding:11px 14px;padding-right:36px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#1a1a1a;margin-bottom:8px;font-size:13px;font-weight:600;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4a017' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;transition:border-color .2s,box-shadow .2s;}
 .psize:hover,.psize:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,160,23,.15);outline:none;}
-.nav-cart{display:inline-flex;align-items:center;gap:6px;color:#1a1a1a;font-weight:700;cursor:pointer;background:none;border:1px solid var(--line);border-radius:11px;padding:9px 14px;font-size:14px;}
-.nav-cart:hover{border-color:var(--gold);color:var(--gold);}
-.cart-count{background:var(--green);color:#04210f;border-radius:999px;font-size:11px;font-weight:800;padding:1px 7px;}
+.nav-cart{display:inline-flex;align-items:center;gap:6px;color:#1a1a1a;font-weight:700;cursor:pointer;background:none;border:none;padding:6px;font-size:22px;position:relative;}
+.nav-cart:hover{color:var(--gold);}
+.cart-count{position:absolute;top:-2px;right:-6px;background:#2563eb;color:#fff;border-radius:999px;font-size:10px;font-weight:800;width:18px;height:18px;display:flex;align-items:center;justify-content:center;}
 .btn-wa{background:#25D366;color:#fff;box-shadow:0 6px 16px rgba(37,211,102,.28);}
 .cart-line{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);}
 .cart-line img{width:54px;height:54px;border-radius:10px;object-fit:cover;background:#ededf0;flex:0 0 auto;}
@@ -219,16 +206,15 @@ section.block{padding:72px 0;}
 .bcard p{color:var(--muted);font-size:13.5px;}
 
 /* Testimonials */
-.tmarquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
-.ttrack{display:flex;gap:20px;width:max-content;animation:scrollx 34s linear infinite;}
+.tmarquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+.ttrack{display:flex;gap:20px;width:max-content;animation:scrollx 40s linear infinite;}
 .tmarquee:hover .ttrack{animation-play-state:paused;}
-.tcard{flex:0 0 340px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.05);}
-.tcard .tstars{color:var(--gold);font-size:14px;margin-bottom:10px;}
-.tcard p{font-size:14.5px;color:#333;margin-bottom:16px;}
-.tcard .tuser{display:flex;align-items:center;gap:12px;}
-.tcard .tav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a1500;font-weight:900;display:flex;align-items:center;justify-content:center;}
-.tcard .tuser b{font-size:14px;}
-.tcard .tuser span{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px;}
+.tcard{flex:0 0 260px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05);}
+.tcard .tstars{color:var(--gold);font-size:13px;margin-bottom:8px;letter-spacing:1px;}
+.tcard p{font-size:13.5px;color:#333;margin-bottom:14px;line-height:1.5;font-style:italic;}
+.tcard .tuser{display:flex;flex-direction:column;gap:2px;}
+.tcard .tuser b{font-size:13px;font-weight:800;}
+.tcard .tuser span{font-size:11.5px;color:var(--muted);}
 @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* Stats */
@@ -286,20 +272,21 @@ section.block{padding:72px 0;}
 .faq-item.open .faq-a{max-height:240px;padding:0 20px 18px;}
 
 /* Footer */
-footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
+footer{background:#1a1a1f;border-top:none;padding:46px 0 24px;color:#e0e0e5;}
 .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:26px;}
-.foot-brand .logo{margin-bottom:10px;color:#e0e0e5;}
-.foot-brand p{color:#999;font-size:13.5px;max-width:300px;}
-.foot-links{display:flex;gap:46px;flex-wrap:wrap;}
-.foot-col b{display:block;margin-bottom:12px;font-size:14px;}
-.foot-col a{display:block;color:#999;font-size:13.5px;margin-bottom:8px;}
+.foot-brand{max-width:260px;}
+.foot-brand .logo{margin-bottom:10px;color:#e0e0e5;font-family:'Anton';font-size:22px;}
+.foot-brand p{color:#999;font-size:13px;line-height:1.6;}
+.foot-links{display:flex;gap:36px;flex-wrap:wrap;}
+.foot-col b{display:block;margin-bottom:14px;font-size:12px;letter-spacing:1.5px;font-weight:800;color:#e0e0e5;}
+.foot-col a{display:block;color:#999;font-size:13px;margin-bottom:8px;}
 .foot-col a:hover{color:var(--gold);}
-.foot-company{border-top:1px solid rgba(255,255,255,.1);padding:22px 0 18px;margin-bottom:8px;}
-.foot-badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:16px;}
-.fbadge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ccc;font-size:12px;font-weight:600;padding:8px 13px;border-radius:999px;}
-.foot-legal-info{text-align:center;color:#999;font-size:12.5px;line-height:1.7;}
-.foot-legal-info b{color:#e0e0e5;}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-align:center;color:#999;font-size:12.5px;}
+.pay-brands{display:flex;flex-wrap:wrap;gap:6px;}
+.pay-brand{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#ccc;font-size:11px;font-weight:700;padding:6px 10px;border-radius:6px;}
+.foot-security{display:flex;align-items:flex-start;gap:10px;color:#999;font-size:12px;line-height:1.5;}
+.foot-security svg{color:#999;flex:0 0 auto;margin-top:2px;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;text-align:center;}
+.foot-legal-info{color:#999;font-size:12px;line-height:1.7;margin:0;}
 
 /* Floating WhatsApp */
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:950;width:60px;height:60px;border-radius:50%;box-shadow:0 8px 22px rgba(0,0,0,.4);animation:wapulse 2.4s ease-in-out infinite;transition:transform .2s;}
@@ -392,10 +379,7 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
 .reveal.in{opacity:1;transform:none;}
 
-/* Flex section title */
-.sec-title-flex{display:flex;align-items:baseline;gap:12px;}
-.ver-todos{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--gold);text-transform:none;letter-spacing:0;margin-left:auto;white-space:nowrap;}
-.ver-todos:hover{text-decoration:underline;}
+/* Removed: sec-title-flex, ver-todos */
 
 /* Mobile menu */
 .mmenu{position:fixed;inset:0;z-index:899;background:rgba(255,255,255,.98);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;font-size:22px;font-weight:700;transform:translateY(-100%);transition:transform .3s;}
@@ -406,143 +390,120 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
   .wrap{padding:0 16px;}
   .nav-links,.nav-right .nav-cta{display:none;}
   .burger{display:flex;}
-  .topbar{font-size:12px;padding:8px 10px;}
+  .topbar{font-size:11px;padding:8px 10px;}
 
-  /* HEADER mobile: burger left, logo center, cart right */
-  .nav{display:flex;position:relative;justify-content:center;height:56px;}
-  .burger{order:-1;position:absolute;left:0;}
+  /* HEADER mobile: ☰ left, KITZA STORE center, 🛒 right */
+  .nav{display:flex;position:relative;justify-content:center;height:52px;}
+  .burger{order:-1;position:absolute;left:0;top:50%;transform:translateY(-50%);}
   .logo{font-size:20px;}
   .logo small{font-size:9px;letter-spacing:3px;}
-  .nav-right{position:absolute;right:0;gap:10px;}
+  .nav-right{position:absolute;right:0;top:50%;transform:translateY(-50%);gap:10px;}
   .nav-cart{font-size:12px;padding:6px 10px;}
   .nav-cart .cart-count{width:16px;height:16px;font-size:10px;}
 
-  /* HERO mobile: side-by-side text+shirt like mockup */
-  .hero{overflow:visible;}
-  .hero-bg::after{opacity:.2;}
-  .hero-inner{grid-template-columns:1fr;gap:0;padding:14px 0 0;text-align:left;position:relative;min-height:320px;}
-  .hero-right{position:absolute;right:-10px;top:0;width:55%;z-index:1;pointer-events:none;}
-  .hero-left{display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:2;width:60%;}
-  .hero-eyebrow{display:none;}
-  .hero h1{margin:0 0 2px;}
-  .hero h1 .l1{font-size:13px;letter-spacing:2px;display:block;color:var(--ink);text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:800;}
-  .hero h1 .l2{font-size:0;line-height:0;overflow:hidden;height:0;display:block;}
-  .hero h1 .l3{font-size:56px;line-height:1;transform:none;display:block;color:var(--gold);font-family:'Anton',sans-serif;letter-spacing:-1px;}
-  .rating{font-size:11px;margin:6px 0 8px;color:var(--muted);}
-  .hero-tag{display:none;}
-  .price-row{flex-direction:column;flex-wrap:wrap;margin-bottom:4px;gap:2px;}
-  .price-now{font-size:30px;}
-  .price-old{font-size:14px;order:-1;}
-  .price-pill{display:none;}
-  .save-badge{display:none;}
-  .installment{display:none;}
-  .hero-cta{flex-direction:column;width:100%;gap:8px;position:relative;z-index:3;}
-  .hero-cta .btn{width:100%;font-size:15px;padding:14px;}
-  .hero-cta .btn-ghost{display:none;}
-  .hero-cta .btn-gold{background:linear-gradient(135deg,#25d366,#1db954);color:#fff;font-size:17px;font-weight:800;border-radius:14px;padding:16px 24px;text-align:center;border:none;box-shadow:0 4px 16px rgba(29,185,84,.3);}
-  .hero-trust{display:flex;justify-content:space-between;gap:0;margin-top:14px;font-size:10.5px;padding:12px 0;border-top:1px solid var(--line);width:100%;position:relative;z-index:3;}
-  .hero-trust span{flex:1;text-align:center;border-right:1px solid var(--line);padding:0 6px;line-height:1.3;}
-  .hero-trust span:last-child{border-right:none;}
-  .hero-trust .ic{display:block;margin-bottom:2px;font-size:14px;}
-  .fomo-bar{display:none;}
-  .countdown-bar{font-size:12px;padding:8px 10px;}
-  .countdown-bar .cd-timer{font-size:16px;}
-  .wa-float .wa-tooltip{display:none;}
-  .promo-popup{bottom:84px;max-width:340px;padding:16px 18px;}
-  .promo-popup h4{font-size:18px;}
-  .purch-notif{bottom:84px;left:12px;max-width:260px;padding:12px;}
-  .purch-notif .pn-text{font-size:11.5px;}
-  .chk-steps{flex-wrap:nowrap;gap:4px;}
-  .chk-step{padding:6px 8px;font-size:10px;}
-  .chk-sep{width:12px;}
-  .sz-card{padding:20px 16px;}
-  .sz-table{font-size:12px;}
+  /* HERO mobile: text left, shirt right overlapping */
+  .hero-inner{grid-template-columns:1fr;gap:0;padding:20px 0 10px;position:relative;min-height:auto;}
+  .hero-left{position:relative;z-index:2;width:65%;}
+  .hero-right{position:absolute;right:-10px;top:10px;width:50%;z-index:1;pointer-events:none;}
+  .hero-shirt-img{filter:drop-shadow(0 8px 20px rgba(0,0,0,.1));}
+  .hero h1{margin:0 0 8px;}
+  .hero h1 .l1{font-size:14px;line-height:1.3;font-weight:900;}
+  .hero h1 .l3{font-size:48px;line-height:.95;}
+  .price-now{font-size:28px;}
+  .price-old-line{font-size:14px;margin-bottom:10px;}
+  .hero-btn{width:auto;padding:12px 28px;font-size:14px;border-radius:8px;}
 
-  /* Hero feat (shirt image): no card frame, just image */
-  .hero-feat{aspect-ratio:auto;max-width:100%;background:none!important;border-radius:0;box-shadow:none;border:none;padding:0;}
-  .hero-feat img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,.15));}
-  .hero-feat .fp{display:none;}
-  .hero-feat .fb{display:none;}
-  .stage{min-height:200px;gap:0;display:none;}
-  .flag-tag{font-size:10px;padding:6px 9px;right:2%;}
+  /* Trust bar mobile: stacked vertically */
+  .trust-grid{flex-direction:column;gap:14px;padding:20px 16px;}
+  .trust-item{gap:12px;}
+  .trust-item .ti-ic{width:40px;height:40px;}
+  .trust-item b{font-size:13px;}
+  .trust-item span{font-size:11px;}
+
+  /* General mobile */
+  .countdown-bar{font-size:11px;padding:8px 10px;}
+  .fomo-bar{display:none;}
+  .wa-float .wa-tooltip{display:none;}
+  .stage{display:none;}
 
   /* Sections mobile spacing */
-  section.block{padding:44px 0;}
-  .sec-head{margin-bottom:28px;}
-  .sec-head p{font-size:14px;}
+  section.block{padding:36px 0;}
+  .sec-head{margin-bottom:20px;}
+  .sec-head h2{font-size:clamp(22px,5vw,30px)!important;}
 
-  /* Trust bar mobile: hidden, shown inline in hero trust row */
-  .trust-bar{display:none;}
-
-  /* Products: horizontal scroll like mockup */
+  /* Products: horizontal scroll */
   .products{display:flex!important;grid-template-columns:none;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:8px;}
   .products::-webkit-scrollbar{display:none;}
-  .pcard{flex:0 0 44vw;max-width:200px;padding:10px;border-radius:14px;}
-  .pcard h3{font-size:12.5px;min-height:30px;line-height:1.2;}
-  .pcard .pprice{font-size:18px;}
-  .pcard .pinst{font-size:10px;margin-bottom:8px;}
-  .pcard .btn{padding:10px;font-size:12px;background:linear-gradient(135deg,#25d366,#1db954)!important;color:#fff!important;}
-  .pcard .pimg{border-radius:10px;margin-bottom:8px;}
-  .pcard .pstars{font-size:11px;margin-bottom:4px;}
-  .pcard .pold{font-size:11px;}
-  /* Hide complex card elements on mobile for cleaner look */
+  .pcard{flex:0 0 40vw;max-width:180px;padding:10px;border-radius:12px;}
+  .pcard h3{font-size:11.5px;min-height:28px;line-height:1.2;}
+  .pcard .pprice{font-size:16px;}
+  .pcard .pold{font-size:10px;}
+  .pcard .btn{padding:8px;font-size:11px;background:linear-gradient(135deg,#25d366,#1db954)!important;color:#fff!important;border-radius:8px;}
+  .pcard .pimg{border-radius:8px;margin-bottom:6px;}
+  .pcard .pstars{font-size:10px;margin-bottom:3px;}
   .stock-alert{display:none;}
   .sz-link{display:none;}
   .psize{display:none;}
   .pcard .pinst{display:none;}
+
+  /* Kit */
   .kit{grid-template-columns:1fr;padding:20px 16px;gap:18px;}
   .kit h3{font-size:clamp(24px,5vw,32px);}
   .kit-price-box{padding:20px;}
   .kit-price-box .know{font-size:40px;}
+
+  /* Benefits */
   .benefits{grid-template-columns:1fr 1fr;gap:10px;}
   .bcard{padding:16px 12px;}
   .bcard .bic{font-size:24px;margin-bottom:6px;}
   .bcard h4{font-size:14px;}
   .bcard p{font-size:12px;}
+
+  /* Stats */
   .stats{grid-template-columns:1fr 1fr;gap:20px 12px;}
   .stat b{font-size:32px;}
 
-  /* Testimonials: horizontal swipe scroll */
+  /* Testimonials: horizontal swipe */
   .tmarquee{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
   .tmarquee::-webkit-scrollbar{display:none;}
+  .ttrack{animation:none;}
   .tcard{flex:0 0 72vw;max-width:280px;padding:16px;}
-  .tcard p{font-size:13px;margin-bottom:12px;}
-  .tcard .tuser b{font-size:13px;}
-  .tcard .tuser span{font-size:11px;}
-  .tcard .tav{width:36px;height:36px;font-size:13px;}
+  .tcard p{font-size:13px;margin-bottom:10px;}
 
+  /* Checkout mobile */
   .chk-grid{grid-template-columns:1fr;gap:20px;}
   .chk-info{display:none;}
   .chk-box{padding:18px 14px;border-radius:18px;}
-  .chk-box .ct{font-size:20px;margin-bottom:14px;}
+  .chk-box .ct{font-size:18px;margin-bottom:14px;}
   .fg input,.fg select{padding:12px;font-size:15px;}
   .chip{padding:12px 8px;font-size:12px;}
+  .chk-steps{flex-wrap:nowrap;gap:4px;}
+  .chk-step{padding:6px 8px;font-size:10px;}
+  .chk-sep{width:12px;}
 
+  /* Footer mobile */
   .foot-grid{flex-direction:column;gap:20px;}
   .foot-links{gap:24px;flex-direction:column;}
+  .foot-brand{max-width:100%;}
 
+  /* Sticky CTA */
   .sticky-cta{display:flex;}
   .sticky-cta .btn{font-size:14px;padding:12px;}
   .sticky-cta .sc-price{font-size:18px;}
   .wa-float{width:48px;height:48px;right:12px;bottom:80px;}
   body{padding-bottom:70px;}
 
-  /* Section mobile spacing tighter */
-  .sec-head .eyebrow{font-size:11px;letter-spacing:2px;}
-  .sec-head h2{font-size:clamp(24px,5vw,32px)!important;}
-  .sec-head p{font-size:13px;}
-
-  /* Checkout mobile: green continue button like mockup */
-  .btn-continue{background:linear-gradient(135deg,var(--gold-2),var(--gold));font-size:15px;padding:14px 18px;border-radius:14px;}
-
-  /* PIX modal mobile */
+  /* PIX modal */
   .pix-card{padding:20px 16px;border-radius:18px;}
   .pix-card h3{font-size:20px;}
   .pix-val{font-size:28px;}
+  .promo-popup{bottom:84px;max-width:340px;padding:16px 18px;}
+  .promo-popup h4{font-size:18px;}
+  .sz-card{padding:20px 16px;}
+  .sz-table{font-size:12px;}
 }
 @media(max-width:480px){
-  .hero h1 .l2{font-size:64px;}
-  .hero h1 .l3{font-size:36px;}
+  .hero h1 .l3{font-size:40px;}
   .benefits{grid-template-columns:1fr 1fr;}
 }
 @media(prefers-reduced-motion:reduce){
@@ -553,21 +514,19 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
 </head>
 <body>
 
-<div class="topbar">🚚 Frete grátis para todo o Brasil · Pagamento via PIX · Troca em 7 dias</div>
-<div class="countdown-bar" id="countdownBar">🔥 PROMOÇÃO VÁLIDA ATÉ 30/06/2026 — Frete grátis + até 40% OFF</div>
+<div class="topbar" id="countdownBar">🔥 PROMOÇÃO VÁLIDA ATÉ 30/06/2026 — Frete grátis + até 40% OFF</div>
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo">KITZA <small>S T O R E</small></a>
+    <a href="#top" class="logo">KITZA <small>STORE</small></a>
     <nav class="nav-links">
-      <a href="#camisas">Camisas</a>
-      <a href="#kit">Kit Família</a>
-      <a href="#avaliacoes">Avaliações</a>
-      <a href="#pedido">Pedido</a>
-      <a href="#faq">Dúvidas</a>
+      <a href="#camisas">CAMISAS</a>
+      <a href="#kit">KIT FAMÍLIA</a>
+      <a href="#avaliacoes">AVALIAÇÕES</a>
+      <a href="#faq">DÚVIDAS</a>
     </nav>
     <div class="nav-right">
-      <button class="nav-cart" onclick="goCart()">🛒 Carrinho <span class="cart-count" id="cartCount">0</span></button>
+      <button class="nav-cart" onclick="goCart()">🛒<span class="cart-count" id="cartCount">0</span></button>
       <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
   </div>
@@ -587,38 +546,21 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
   <div class="hero-bg"></div>
   <div class="wrap hero-inner">
     <div class="hero-left">
-      <span class="hero-eyebrow">👑 Chegou na KITZA Store</span>
       <h1 class="display">
-        <span class="l1">A camisa que todo</span>
-        <span class="l2">Torcedor</span>
-        <span class="l3">quer 2026</span>
+        <span class="l1">A CAMISA QUE</span>
+        <span class="l1">TODO TORCEDOR QUER</span>
+        <span class="l3">2026</span>
       </h1>
-      <div class="rating"><span class="stars">★★★★★</span> 4,9/5 • Qualidade Premium Importada</div>
-      <p class="hero-tag"><b>Versão Premium Importada</b> com tecido respirável e acabamento impecável. Vista a camisa do Hexa antes de todo mundo.</p>
       <div class="price-row">
-        <span class="price-old">R$ 149,90</span>
-        <span class="price-now"><sup>R$</sup>89<small>,90</small></span>
-        <span class="price-pill">-40% HOJE</span>
-        <span class="save-badge">💰 Economize R$ 60</span>
+        <span class="price-now"><sup>R$</sup> 119<small>,90</small></span>
       </div>
-      <div class="installment">ou <b>3x de R$ 29,97</b> sem juros • <b>PIX com aprovação na hora</b></div>
+      <div class="price-old-line">R$ 159,90</div>
       <div class="hero-cta">
-        <a href="#camisas" class="btn btn-gold">🔥 COMPRAR AGORA</a>
-        <a href="#pedido" class="btn btn-ghost">🛒 Meu carrinho</a>
+        <a href="#camisas" class="btn btn-green hero-btn">COMPRAR AGORA</a>
       </div>
-      <div class="hero-trust">
-        <span><span class="ic">🚚</span> Frete Grátis</span>
-        <span><span class="ic">💰</span> PIX 5% OFF</span>
-        <span><span class="ic">🔄</span> Troca 7 dias</span>
-      </div>
-
     </div>
     <div class="hero-right">
-      <div class="hero-feat">
-        <span class="fb">LANÇAMENTO 2026</span>
-        <img src="produtos/hero.webp" alt="Camisa do Brasil 2026">
-        <div class="fp"><b>Camisa Seleção Brasil I 2026/27</b><div>a partir de R$ 89,90 · 3x sem juros no PIX</div></div>
-      </div>
+      <img src="produtos/hero.webp" alt="Camisa do Brasil 2026" class="hero-shirt-img">
     </div>
   </div>
 </section>
@@ -626,10 +568,9 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="wrap trust-grid">
-    <div class="trust-item"><div class="ti-ic">🚚</div><div><b>Frete grátis</b><span>Para todo o Brasil</span></div></div>
-    <div class="trust-item"><div class="ti-ic">⚡</div><div><b>PIX instantâneo</b><span>Aprovação na hora</span></div></div>
-    <div class="trust-item"><div class="ti-ic">🔄</div><div><b>Troca fácil</b><span>Até 7 dias</span></div></div>
-    <div class="trust-item"><div class="ti-ic">🛡️</div><div><b>Compra garantida</b><span>Site 100% seguro</span></div></div>
+    <div class="trust-item"><div class="ti-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v5h-7V10z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><b>FRETE GRÁTIS</b><span>Para todo o Brasil</span></div></div>
+    <div class="trust-item"><div class="ti-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div><b>PIX 5% OFF</b><span>Desconto à vista</span></div></div>
+    <div class="trust-item"><div class="ti-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div><b>TROCA 7 DIAS</b><span>Garantia de satisfação</span></div></div>
   </div>
 </div>
 
@@ -637,9 +578,7 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
 <section class="block" id="camisas">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Coleção 2026</span>
-      <h2 class="sec-title-flex">Mais <em>vendidos</em> <a href="#camisas" class="ver-todos">Ver todos ›</a></h2>
-      <p>Camisas da seleção — masculina, feminina, juvenil e infantil. Escolha a sua.</p>
+      <h2>MAIS <em>VENDIDOS</em></h2>
     </div>
     <div class="products" id="productGrid"></div>
   </div>
@@ -695,16 +634,15 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
 <!-- TESTIMONIALS -->
 <section class="block" id="avaliacoes" style="padding-top:0;">
   <div class="wrap sec-head reveal">
-    <span class="eyebrow">Quem comprou, aprovou</span>
-    <h2>O que nossos <em>clientes</em> dizem</h2>
+    <h2>AVALIAÇÕES DE QUEM JÁ <em>COMPROU</em></h2>
   </div>
   <div class="tmarquee">
     <div class="ttrack" id="ttrack">
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Chegou rápido e a qualidade é absurda! Tecido muito bom e acabamento impecável."</p><div class="tuser"><div class="tav">RS</div><div><b>Rafael Santos</b><span>São Paulo/SP · Jun 2026</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Comprei o Kit Família, todo mundo amou. Vestiu super bem em todos."</p><div class="tuser"><div class="tav">JC</div><div><b>Juliana Costa</b><span>Salvador/BA · Jun 2026</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Tava com medo de comprar online mas valeu muito a pena. Recomendo!"</p><div class="tuser"><div class="tav">MA</div><div><b>Marcos Almeida</b><span>Belo Horizonte/MG · Mai 2026</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Atendimento no WhatsApp foi ótimo, tiraram todas as dúvidas. Camisa linda!"</p><div class="tuser"><div class="tav">PF</div><div><b>Patrícia Ferreira</b><span>Curitiba/PR · Mai 2026</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Melhor custo-benefício que achei. Já é minha segunda compra na KITZA."</p><div class="tuser"><div class="tav">LO</div><div><b>Lucas Oliveira</b><span>Rio de Janeiro/RJ · Jun 2026</span></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Qualidade sensacional! Chegou antes do prazo."</p><div class="tuser"><b>Lucas F.</b><span>São Paulo - SP</span></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Camisa linda, acabamento perfeito. Recomendo!"</p><div class="tuser"><b>Juliana R.</b><span>Rio de Janeiro - RJ</span></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Atendimento excelente e entrega rápida."</p><div class="tuser"><b>Rafael M.</b><span>Belo Horizonte - MG</span></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Comprei para meu filho, ele amou! Produto top."</p><div class="tuser"><b>Fernanda A.</b><span>Curitiba - PR</span></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Já é a minha segunda compra. Loja confiável!"</p><div class="tuser"><b>Thiago L.</b><span>Salvador - BA</span></div></div>
     </div>
   </div>
 </section>
@@ -871,30 +809,19 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="logo">KITZA STORE</div>
-        <p>Qualidade premium para você vestir a camisa do Brasil com orgulho rumo ao Hexa 2026.</p>
+        <div class="logo"><span style="color:#e8b828;">KITZA</span> <small style="color:#e8b828;letter-spacing:4px;">STORE</small></div>
+        <p>A camisa que todo torcedor quer. Qualidade, confiança e paixão pelo futebol brasileiro.</p>
       </div>
       <div class="foot-links">
-        <div class="foot-col"><b>Loja</b><a href="#camisas">Camisas</a><a href="#kit">Kit Família</a><a href="#pedido">Fazer pedido</a></div>
-        <div class="foot-col"><b>Ajuda</b><a href="#faq">Dúvidas</a><a href="https://wa.me/5575988231829" target="_blank" rel="noopener">WhatsApp</a><a href="trocas.html">Trocas e devoluções</a></div>
-        <div class="foot-col"><b>Institucional</b><a href="sobre.html">Sobre a KITZA</a><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Uso</a></div>
-        <div class="foot-col"><b>Siga a gente</b><a href="https://instagram.com/kitzastore" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/5575988231829" target="_blank" rel="noopener">WhatsApp (75) 98823-1829</a><a href="mailto:contato@kitzastore.com.br">contato@kitzastore.com.br</a></div>
+        <div class="foot-col"><b>INSTITUCIONAL</b><a href="sobre.html">Sobre nós</a><a href="trocas.html">Trocas e Devoluções</a><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Uso</a></div>
+        <div class="foot-col"><b>ATENDIMENTO</b><a href="https://wa.me/5575988231829" target="_blank" rel="noopener">📱 WhatsApp: (75) 98823-1829</a><a href="mailto:contato@kitzastore.com.br">✉️ E-mail: contato@kitzastore.com.br</a><a>🕐 Seg a Sex: 08h às 18h</a><a>🕐 Sáb: 08h às 12h</a></div>
+        <div class="foot-col"><b>FORMAS DE PAGAMENTO</b><div class="pay-brands"><span class="pay-brand">VISA</span><span class="pay-brand">Mastercard</span><span class="pay-brand">elo</span><span class="pay-brand">PIX</span><span class="pay-brand">Boleto</span></div></div>
+        <div class="foot-col"><b>SEGURANÇA</b><div class="foot-security"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Site 100% seguro<br>Seus dados protegidos<br>com criptografia SSL.</span></div></div>
       </div>
     </div>
-    <div class="foot-company">
-      <div class="foot-badges">
-        <span class="fbadge">🔒 Site Seguro · SSL</span>
-        <span class="fbadge">⚡ Pagamento via PIX</span>
-        <span class="fbadge">🛡️ Compra Garantida</span>
-        <span class="fbadge">🚚 Entrega para todo o Brasil</span>
-      </div>
-      <p class="foot-legal-info">
-        <b>KITZA STORE COMÉRCIO DE ARTIGOS ESPORTIVOS LTDA</b><br>
-        CNPJ 52.347.891/0001-04 · Av. Sete de Setembro, 1234 — Centro, Feira de Santana/BA · CEP 44001-000<br>
-        Atendimento: seg. a sex. das 9h às 18h · contato@kitzastore.com.br · (75) 98823-1829
-      </p>
+    <div class="foot-bottom">
+      <p class="foot-legal-info">KITZA STORE LTDA &nbsp;|&nbsp; CNPJ: 52.347.891/0001-04 &nbsp;|&nbsp; Av. Sete de Setembro, 1234 — Centro, Feira de Santana/BA · CEP 44001-000</p>
     </div>
-    <div class="foot-bottom">© 2026 KITZA Store · Todos os direitos reservados · Camisas versão premium importada · Qualidade garantida</div>
   </div>
 </footer>
 
@@ -971,7 +898,7 @@ function renderProducts(){
       stockHtml+
       '<span class="sz-link" onclick="openSizeGuide()">📏 Guia de tamanhos</span>'+
       '<select class="psize" aria-label="Tamanho">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select>'+
-      '<button class="btn btn-gold btn-block" onclick="addToCart('+i+',this)">🔥 Adicionar</button>'+
+      '<button class="btn btn-green btn-block" onclick="addToCart('+i+',this)">ADICIONAR 🛒</button>'+
     '</div>';
   }).join('');
 }
