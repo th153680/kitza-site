@@ -409,10 +409,13 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
   .topbar{font-size:12px;padding:8px 10px;}
 
   /* HEADER mobile: burger left, logo center, cart right */
-  .nav{position:relative;}
-  .burger{order:-1;}
-  .logo{position:absolute;left:50%;transform:translateX(-50%);}
-  .nav-right{margin-left:auto;}
+  .nav{display:flex;position:relative;justify-content:center;height:56px;}
+  .burger{order:-1;position:absolute;left:0;}
+  .logo{font-size:20px;}
+  .logo small{font-size:9px;letter-spacing:3px;}
+  .nav-right{position:absolute;right:0;gap:10px;}
+  .nav-cart{font-size:12px;padding:6px 10px;}
+  .nav-cart .cart-count{width:16px;height:16px;font-size:10px;}
 
   /* HERO mobile: side-by-side text+shirt like mockup */
   .hero{overflow:visible;}
@@ -482,9 +485,11 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 28px;color:#e0e0e5;}
   .pcard .pimg{border-radius:10px;margin-bottom:8px;}
   .pcard .pstars{font-size:11px;margin-bottom:4px;}
   .pcard .pold{font-size:11px;}
-  .stock-alert{font-size:10px;margin-bottom:4px;}
-  .sz-link{font-size:10px;margin-bottom:4px;}
-  .psize{padding:8px 10px;font-size:12px;margin-bottom:6px;}
+  /* Hide complex card elements on mobile for cleaner look */
+  .stock-alert{display:none;}
+  .sz-link{display:none;}
+  .psize{display:none;}
+  .pcard .pinst{display:none;}
   .kit{grid-template-columns:1fr;padding:20px 16px;gap:18px;}
   .kit h3{font-size:clamp(24px,5vw,32px);}
   .kit-price-box{padding:20px;}
