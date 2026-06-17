@@ -67,21 +67,21 @@ header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdr
 
 /* ===== Hero ===== */
 .hero{position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#f8f8fa,#eeeef0);}
+.hero-bg{position:absolute;inset:0;z-index:0;background:#ffffff;}
 .hero-bg::after{display:none;}
 .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;padding:40px 0 50px;}
 .hero h1{margin:0 0 16px;}
 .hero h1 .l1{display:block;font-family:'Montserrat',sans-serif;font-size:clamp(24px,3.5vw,38px);color:#1a1a1a;font-weight:900;line-height:1.15;letter-spacing:0;text-transform:uppercase;}
 .hero h1 .l3{display:block;font-family:'Anton',sans-serif;font-size:clamp(60px,10vw,110px);color:var(--gold);line-height:.95;transform:none;letter-spacing:-1px;}
-.price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:0;}
-.price-now{font-family:'Montserrat',sans-serif;font-weight:900;font-size:36px;color:#1a1a1a;line-height:1;}
-.price-now sup{font-size:16px;color:#1a1a1a;vertical-align:top;margin-right:2px;font-weight:700;}
+.price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px;}
+.price-now{font-family:'Montserrat',sans-serif;font-weight:900;font-size:34px;color:#1a1a1a;line-height:1;}
+.price-now sup{font-size:18px;color:#1a1a1a;vertical-align:baseline;margin-right:4px;font-weight:800;}
 .price-now small{font-size:18px;}
-.price-old-line{color:var(--muted);text-decoration:line-through;font-weight:600;font-size:16px;margin-bottom:16px;}
+.price-old-line{color:#999;text-decoration:line-through;font-weight:500;font-size:16px;margin-bottom:16px;font-style:italic;}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
 .hero-btn{padding:14px 36px;font-size:16px;font-weight:800;border-radius:10px;letter-spacing:.5px;}
-.hero-right{display:flex;align-items:center;justify-content:center;position:relative;}
-.hero-shirt-img{width:100%;max-width:520px;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.12));}
+.hero-right{display:flex;align-items:center;justify-content:center;position:relative;overflow:visible;}
+.hero-shirt-img{width:110%;max-width:580px;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.08));object-fit:contain;}
 
 /* Hero shirt stage */
 .stage{position:relative;display:flex;align-items:center;justify-content:center;gap:0;min-height:500px;}
@@ -101,13 +101,12 @@ header{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.92);backdr
 @keyframes halo{0%,100%{opacity:.45}50%{opacity:.95}}
 @keyframes glow{0%,100%{filter:drop-shadow(0 12px 24px rgba(0,0,0,.15)) drop-shadow(0 0 10px rgba(212,160,23,.1))}50%{filter:drop-shadow(0 12px 24px rgba(0,0,0,.15)) drop-shadow(0 0 20px rgba(212,160,23,.3))}}
 
-/* ===== Trust bar ===== */
-.trust-bar{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.trust-grid{display:flex;justify-content:center;gap:40px;padding:24px 0;}
-.trust-item{display:flex;align-items:center;gap:14px;}
-.trust-item .ti-ic{width:46px;height:46px;border-radius:50%;background:#f5f5f7;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--muted);}
-.trust-item b{display:block;font-size:14px;font-weight:800;letter-spacing:.5px;}
-.trust-item span{font-size:12px;color:var(--muted);display:block;}
+/* ===== Trust badges (inside hero) ===== */
+.hero-trust-row{display:flex;gap:28px;margin-top:24px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;}
+.trust-item .ti-ic{width:40px;height:40px;border-radius:50%;background:#f5f5f7;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--muted);}
+.trust-item b{display:block;font-size:13px;font-weight:800;letter-spacing:.3px;}
+.trust-item span{font-size:11px;color:var(--muted);display:block;}
 
 /* ===== Sections ===== */
 section.block{padding:72px 0;}
@@ -136,9 +135,10 @@ section.block{padding:72px 0;}
 .sz-link{display:none;}
 .psize{width:100%;padding:8px 12px;padding-right:30px;border-radius:8px;border:1px solid var(--line);background:#f8f8fa;color:#1a1a1a;margin-bottom:8px;font-size:12px;font-weight:600;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;transition:border-color .2s;}
 .psize:hover,.psize:focus{border-color:var(--gold);outline:none;}
-.nav-cart{display:inline-flex;align-items:center;gap:6px;color:#1a1a1a;font-weight:700;cursor:pointer;background:none;border:none;padding:6px;font-size:22px;position:relative;}
+.nav-cart{display:inline-flex;align-items:center;gap:6px;color:#1a1a1a;font-weight:700;cursor:pointer;background:none;border:none;padding:8px;font-size:14px;position:relative;}
+.nav-cart svg{width:24px;height:24px;}
 .nav-cart:hover{color:var(--gold);}
-.cart-count{position:absolute;top:-2px;right:-6px;background:#2563eb;color:#fff;border-radius:999px;font-size:10px;font-weight:800;width:18px;height:18px;display:flex;align-items:center;justify-content:center;}
+.cart-count{position:absolute;top:0;right:0;background:#2563eb;color:#fff;border-radius:999px;font-size:10px;font-weight:800;min-width:18px;height:18px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
 .btn-wa{background:#25D366;color:#fff;box-shadow:0 6px 16px rgba(37,211,102,.28);}
 .cart-line{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);}
 .cart-line img{width:54px;height:54px;border-radius:10px;object-fit:cover;background:#ededf0;flex:0 0 auto;}
@@ -415,12 +415,12 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 24px;color:#e0e0e5;}
   .price-old-line{font-size:14px;margin-bottom:10px;}
   .hero-btn{width:auto;padding:12px 28px;font-size:14px;border-radius:8px;}
 
-  /* Trust bar mobile: stacked vertically */
-  .trust-grid{flex-direction:column;gap:14px;padding:20px 16px;}
-  .trust-item{gap:12px;}
-  .trust-item .ti-ic{width:40px;height:40px;}
-  .trust-item b{font-size:13px;}
-  .trust-item span{font-size:11px;}
+  /* Trust badges mobile: stacked vertically */
+  .hero-trust-row{flex-direction:column;gap:10px;margin-top:16px;}
+  .trust-item{gap:10px;}
+  .trust-item .ti-ic{width:34px;height:34px;}
+  .trust-item b{font-size:12px;}
+  .trust-item span{font-size:10px;}
 
   /* General mobile */
   .countdown-bar{font-size:11px;padding:8px 10px;}
@@ -519,13 +519,13 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 24px;color:#e0e0e5;}
   <div class="wrap nav">
     <a href="#top" class="logo">KITZA <small>STORE</small></a>
     <nav class="nav-links">
-      <a href="#camisas">CAMISAS</a>
+      <a href="#camisas">Camisas</a>
       <a href="#kit">KIT FAMÍLIA</a>
       <a href="#avaliacoes">AVALIAÇÕES</a>
       <a href="#faq">DÚVIDAS</a>
     </nav>
     <div class="nav-right">
-      <button class="nav-cart" onclick="goCart()">🛒<span class="cart-count" id="cartCount">0</span></button>
+      <button class="nav-cart" onclick="goCart()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><span class="cart-count" id="cartCount">0</span></button>
       <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
   </div>
@@ -557,21 +557,18 @@ footer{background:#1a1a1f;border-top:none;padding:46px 0 24px;color:#e0e0e5;}
       <div class="hero-cta">
         <a href="#camisas" class="btn btn-green hero-btn">COMPRAR AGORA</a>
       </div>
+      <!-- Trust badges inside hero -->
+      <div class="hero-trust-row">
+        <div class="trust-item"><div class="ti-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v5h-7V10z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><b>FRETE GRÁTIS</b><span>Para todo o Brasil</span></div></div>
+        <div class="trust-item"><div class="ti-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div><b>PIX 5% OFF</b><span>Desconto à vista</span></div></div>
+        <div class="trust-item"><div class="ti-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div><b>TROCA 7 DIAS</b><span>Garantia de satisfação</span></div></div>
+      </div>
     </div>
     <div class="hero-right">
-      <img src="produtos/hero.webp" alt="Camisa do Brasil 2026" class="hero-shirt-img">
+      <img src="produtos/p1.jpg" alt="Camisa do Brasil 2026" class="hero-shirt-img">
     </div>
   </div>
 </section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="wrap trust-grid">
-    <div class="trust-item"><div class="ti-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v5h-7V10z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div><div><b>FRETE GRÁTIS</b><span>Para todo o Brasil</span></div></div>
-    <div class="trust-item"><div class="ti-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div><b>PIX 5% OFF</b><span>Desconto à vista</span></div></div>
-    <div class="trust-item"><div class="ti-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div><div><b>TROCA 7 DIAS</b><span>Garantia de satisfação</span></div></div>
-  </div>
-</div>
 
 <!-- PRODUCTS -->
 <section class="block" id="camisas">
