@@ -8,6 +8,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+// fbq('init', 'SEU_PIXEL_ID_AQUI');
+// fbq('track', 'PageView');
+</script>
+<!-- Descomente as linhas acima e troque SEU_PIXEL_ID_AQUI pelo seu ID do Meta Pixel -->
+<!-- End Meta Pixel Code -->
 <style>
 :root{
   --gold:#f5c518; --gold-2:#ffd95a; --gold-deep:#c99409;
@@ -130,7 +145,8 @@ section.block{padding:72px 0;}
 .pcard .pprice sup{font-size:12px;color:var(--gold);margin-right:1px;}
 .pcard .pold{color:var(--muted);text-decoration:line-through;font-size:13px;font-weight:600;margin-bottom:2px;}
 .pcard .btn{margin-top:auto;padding:11px 16px;font-size:14px;}
-.psize{width:100%;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:#0e0e12;color:#fff;margin-bottom:8px;font-size:13px;}
+.psize{width:100%;padding:11px 14px;padding-right:36px;border-radius:10px;border:1px solid var(--line);background:#0e0e12;color:#fff;margin-bottom:8px;font-size:13px;font-weight:600;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f5c518' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;transition:border-color .2s,box-shadow .2s;}
+.psize:hover,.psize:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(245,197,24,.15);outline:none;}
 .nav-cart{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:700;cursor:pointer;background:none;border:1px solid var(--line);border-radius:11px;padding:9px 14px;font-size:14px;}
 .nav-cart:hover{border-color:var(--gold);color:var(--gold);}
 .cart-count{background:var(--green);color:#04210f;border-radius:999px;font-size:11px;font-weight:800;padding:1px 7px;}
@@ -167,7 +183,7 @@ section.block{padding:72px 0;}
 .pix-approved{padding:18px 6px 6px;}
 .pix-check{width:74px;height:74px;border-radius:50%;background:var(--green);color:#04210f;font-size:42px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;animation:pixpop .4s ease;}
 @keyframes pixpop{0%{transform:scale(.4);opacity:0;}100%{transform:scale(1);opacity:1;}}
-.hero-feat{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;max-width:440px;margin-left:auto;background:#ededf0;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid var(--line);}
+.hero-feat{position:relative;border-radius:0;overflow:hidden;aspect-ratio:4/5;max-width:500px;margin:0 auto;background:transparent;box-shadow:none;border:none;}
 .hero-feat img{width:100%;height:100%;object-fit:cover;display:block;}
 .hero-feat .fb{position:absolute;top:16px;left:16px;background:linear-gradient(90deg,#ffe89a,#f5c518);color:#0b0b0d;font-weight:800;font-size:12px;letter-spacing:.5px;padding:8px 13px;border-radius:999px;}
 .hero-feat .fp{position:absolute;bottom:0;left:0;right:0;padding:30px 18px 16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:#fff;}
@@ -290,6 +306,81 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 .wa-float:hover{transform:scale(1.08);}
 .wa-float img{width:100%;height:100%;border-radius:50%;}
 @keyframes wapulse{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 14px rgba(37,211,102,0)}}
+.wa-float .wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:#25D366;color:#fff;font-weight:700;font-size:13px;padding:8px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.3);pointer-events:none;animation:watooltip 6s ease-in-out infinite;}
+.wa-float .wa-tooltip::after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:#25D366;}
+@keyframes watooltip{0%,80%,100%{opacity:1;transform:translateY(-50%)}40%,60%{opacity:0;transform:translateY(-50%) translateX(-4px)}}
+
+/* Countdown timer */
+.countdown-bar{background:linear-gradient(90deg,#ff4444,#cc0000);color:#fff;text-align:center;font-weight:800;font-size:14px;padding:10px 12px;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.countdown-bar .cd-timer{font-family:'Anton';font-size:20px;letter-spacing:1px;background:rgba(0,0,0,.3);padding:4px 10px;border-radius:8px;}
+
+/* Stock indicator */
+.stock-alert{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#ff6b6b;margin-bottom:8px;}
+.stock-dot{width:7px;height:7px;border-radius:50%;background:#ff4444;animation:stockpulse 1.2s infinite;}
+@keyframes stockpulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Save badge */
+.save-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.35);color:var(--green);font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px;margin-left:8px;}
+
+/* FOMO viewers */
+.fomo-bar{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);margin-top:10px;}
+.fomo-bar .fomo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:stockpulse 1.5s infinite;}
+.fomo-bar b{color:var(--ink);}
+
+/* Size guide modal */
+.sz-modal{position:fixed;inset:0;z-index:1400;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;}
+.sz-modal.open{display:flex;}
+.sz-card{background:#15151b;border:1px solid var(--line);border-radius:20px;padding:28px 22px;width:100%;max-width:420px;position:relative;}
+.sz-card h3{font-family:'Anton';font-size:22px;text-transform:uppercase;margin-bottom:14px;}
+.sz-close{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);font-size:28px;cursor:pointer;}
+.sz-table{width:100%;border-collapse:collapse;font-size:13px;}
+.sz-table th{background:rgba(245,197,24,.15);color:var(--gold);padding:10px 8px;text-align:center;font-weight:700;}
+.sz-table td{padding:9px 8px;text-align:center;border-bottom:1px solid var(--line);color:var(--muted);}
+.sz-table tr:hover td{background:rgba(255,255,255,.03);}
+.sz-link{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--gold);font-weight:700;cursor:pointer;margin-bottom:6px;}
+.sz-link:hover{text-decoration:underline;}
+
+/* PIX discount label */
+.pix-discount{display:flex;align-items:center;gap:6px;background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);border-radius:10px;padding:8px 12px;margin-bottom:10px;font-size:13px;font-weight:700;color:var(--green);}
+.pix-discount b{color:#fff;}
+
+/* Promo popup (leve 2) */
+.promo-popup{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(30px);z-index:1100;background:linear-gradient(135deg,#15130a,#1a1a22);border:1px solid rgba(245,197,24,.4);border-radius:18px;padding:20px 24px;max-width:380px;width:calc(100% - 32px);box-shadow:0 20px 50px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;text-align:center;}
+.promo-popup.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.promo-popup .pp-close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;}
+.promo-popup h4{font-family:'Anton';font-size:22px;text-transform:uppercase;margin-bottom:4px;}
+.promo-popup h4 em{color:var(--gold);font-style:normal;}
+.promo-popup p{color:var(--muted);font-size:14px;margin-bottom:14px;}
+.promo-popup .btn{font-size:15px;}
+
+/* Purchase notification */
+.purch-notif{position:fixed;bottom:100px;left:18px;z-index:1050;background:#15151b;border:1px solid var(--line);border-radius:14px;padding:14px 16px;max-width:300px;box-shadow:0 12px 30px rgba(0,0,0,.5);transform:translateX(-120%);transition:transform .5s ease;display:flex;align-items:center;gap:12px;}
+.purch-notif.show{transform:translateX(0);}
+.purch-notif .pn-icon{width:42px;height:42px;border-radius:10px;background:rgba(29,185,84,.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto;}
+.purch-notif .pn-text{font-size:12.5px;color:var(--muted);line-height:1.4;}
+.purch-notif .pn-text b{color:var(--ink);display:block;}
+
+/* Checkout steps */
+.chk-steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:22px;}
+.chk-step{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;transition:all .2s;}
+.chk-step.active{background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.4);color:var(--gold);}
+.chk-step.done{background:rgba(29,185,84,.1);border-color:rgba(29,185,84,.3);color:var(--green);}
+.chk-step .snum{width:22px;height:22px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;}
+.chk-step.active .snum{background:var(--gold);color:#0b0b0d;}
+.chk-step.done .snum{background:var(--green);color:#fff;}
+.chk-sep{width:30px;height:2px;background:var(--line);}
+.chk-sep.done{background:var(--green);}
+.chk-panel{display:none;}
+.chk-panel.active{display:block;}
+.chk-addr-preview{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:10px;}
+.chk-addr-preview b{color:var(--ink);display:block;margin-bottom:2px;}
+.chk-addr-edit{color:var(--gold);font-size:12px;font-weight:700;cursor:pointer;margin-left:auto;white-space:nowrap;}
+.chk-addr-edit:hover{text-decoration:underline;}
+.btn-continue{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1a1a00;font-weight:800;font-size:15px;border:none;cursor:pointer;border-radius:12px;padding:14px 20px;width:100%;margin-top:14px;transition:transform .2s,box-shadow .2s;}
+.btn-continue:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(245,197,24,.4);}
+.btn-continue:disabled{opacity:.4;pointer-events:none;}
+.btn-back{background:none;border:1px solid var(--line);color:var(--muted);font-weight:700;font-size:13px;border-radius:10px;padding:10px 16px;width:100%;margin-top:8px;cursor:pointer;}
+.btn-back:hover{border-color:var(--gold);color:var(--gold);}
 
 /* Sticky mobile CTA */
 .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:940;background:rgba(11,11,13,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 14px;align-items:center;gap:12px;}
@@ -330,6 +421,21 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
   .hero-cta{flex-direction:column;width:100%;}
   .hero-cta .btn{width:100%;}
   .hero-trust{justify-content:center;gap:14px;row-gap:8px;margin-top:18px;font-size:12px;}
+  .fomo-bar{justify-content:center;font-size:12px;margin-top:8px;}
+  .save-badge{font-size:11px;padding:5px 9px;margin-left:0;margin-top:4px;}
+  .price-row{flex-direction:row;flex-wrap:wrap;}
+  .countdown-bar{font-size:12px;padding:8px 10px;}
+  .countdown-bar .cd-timer{font-size:16px;}
+  .wa-float .wa-tooltip{display:none;}
+  .promo-popup{bottom:84px;max-width:340px;padding:16px 18px;}
+  .promo-popup h4{font-size:18px;}
+  .purch-notif{bottom:84px;left:12px;max-width:260px;padding:12px;}
+  .purch-notif .pn-text{font-size:11.5px;}
+  .chk-steps{flex-wrap:nowrap;gap:4px;}
+  .chk-step{padding:6px 8px;font-size:10px;}
+  .chk-sep{width:12px;}
+  .sz-card{padding:20px 16px;}
+  .sz-table{font-size:12px;}
   .stage{min-height:300px;gap:0;}
   .stage .halo{width:100%;height:78%;}
   .stage .s-side{flex:0 0 35%;}
@@ -388,11 +494,12 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 </head>
 <body>
 
-<div class="topbar">Frete grátis para todo o Brasil · Pagamento via PIX · Troca em 7 dias</div>
+<div class="topbar">🚚 Frete grátis para todo o Brasil · Pagamento via PIX · Troca em 7 dias</div>
+<div class="countdown-bar" id="countdownBar">🔥 PROMOÇÃO VÁLIDA ATÉ 30/06/2026 — Frete grátis + até 40% OFF</div>
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo">KITZA <span class="crown">👑</span> <small>STORE</small></a>
+    <a href="#top" class="logo">KITZA <small>S T O R E</small></a>
     <nav class="nav-links">
       <a href="#camisas">Camisas</a>
       <a href="#kit">Kit Família</a>
@@ -423,33 +530,35 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
     <div class="hero-left">
       <span class="hero-eyebrow">👑 Chegou na KITZA Store</span>
       <h1 class="display">
-        <span class="l1">Camisa do</span>
-        <span class="l2">Brasil</span>
-        <span class="l3">2026</span>
+        <span class="l1">A camisa que todo</span>
+        <span class="l2">Torcedor</span>
+        <span class="l3">quer 2026</span>
       </h1>
-      <div class="rating"><span class="stars">★★★★★</span> 4,9/5 • +1.800 torcedores vestindo</div>
-      <p class="hero-tag"><b>Qualidade que você sente,</b> estilo que te representa. Versão Premium importada, tecido respirável e acabamento impecável.</p>
+      <div class="rating"><span class="stars">★★★★★</span> 4,9/5 • Qualidade Premium Importada</div>
+      <p class="hero-tag"><b>Versão Premium Importada</b> com tecido respirável e acabamento impecável. Vista a camisa do Hexa antes de todo mundo.</p>
       <div class="price-row">
         <span class="price-old">R$ 149,90</span>
         <span class="price-now"><sup>R$</sup>89<small>,90</small></span>
         <span class="price-pill">-40% HOJE</span>
+        <span class="save-badge">💰 Economize R$ 60</span>
       </div>
       <div class="installment">ou <b>3x de R$ 29,97</b> sem juros • <b>PIX com aprovação na hora</b></div>
       <div class="hero-cta">
-        <a href="#camisas" class="btn btn-gold">Ver coleção</a>
-        <a href="#pedido" class="btn btn-ghost">Meu carrinho</a>
+        <a href="#camisas" class="btn btn-gold">🔥 GARANTIR A MINHA</a>
+        <a href="#pedido" class="btn btn-ghost">🛒 Meu carrinho</a>
       </div>
       <div class="hero-trust">
         <span><span class="ic">🚚</span> Frete grátis Brasil</span>
         <span><span class="ic">🔄</span> Troca em 7 dias</span>
         <span><span class="ic">🔒</span> Pagamento seguro</span>
       </div>
+
     </div>
     <div class="hero-right">
       <div class="hero-feat">
         <span class="fb">LANÇAMENTO 2026</span>
-        <img src="produtos/p1.webp" alt="Camisa do Brasil 2026">
-        <div class="fp"><b>Camisa Brasil I 2024/25 Nike</b><div>a partir de R$ 89,90 · 3x sem juros no PIX</div></div>
+        <img src="produtos/hero.webp" alt="Camisa do Brasil 2026">
+        <div class="fp"><b>Camisa Seleção Brasil I 2026/27</b><div>a partir de R$ 89,90 · 3x sem juros no PIX</div></div>
       </div>
     </div>
   </div>
@@ -471,7 +580,7 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
     <div class="sec-head reveal">
       <span class="eyebrow">Coleção 2026</span>
       <h2>Nossa <em>coleção</em></h2>
-      <p>Camisas oficiais da seleção — masculina, feminina, juvenil e infantil. Escolha a sua.</p>
+      <p>Camisas da seleção — masculina, feminina, juvenil e infantil. Escolha a sua.</p>
     </div>
     <div class="products" id="productGrid"></div>
   </div>
@@ -528,15 +637,15 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 <section class="block" id="avaliacoes" style="padding-top:0;">
   <div class="wrap sec-head reveal">
     <span class="eyebrow">Quem comprou, aprovou</span>
-    <h2>Mais de <em>1.800</em> torcedores felizes</h2>
+    <h2>O que nossos <em>clientes</em> dizem</h2>
   </div>
   <div class="tmarquee">
     <div class="ttrack" id="ttrack">
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Chegou rápido e a qualidade é absurda! Parece a oficial, tecido muito bom."</p><div class="tuser"><div class="tav">RS</div><div><b>Rafael S.</b><span>✓ Compra verificada</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Comprei o Kit Família, todo mundo amou. Vestiu super bem em todos."</p><div class="tuser"><div class="tav">JC</div><div><b>Juliana C.</b><span>✓ Compra verificada</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Tava com medo de comprar online mas valeu muito a pena. Recomendo!"</p><div class="tuser"><div class="tav">MA</div><div><b>Marcos A.</b><span>✓ Compra verificada</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Atendimento no WhatsApp foi ótimo, tiraram todas as dúvidas. Camisa linda!"</p><div class="tuser"><div class="tav">PF</div><div><b>Patrícia F.</b><span>✓ Compra verificada</span></div></div></div>
-      <div class="tcard"><div class="tstars">★★★★★</div><p>"Melhor custo-benefício que achei. Já é minha segunda compra na KITZA."</p><div class="tuser"><div class="tav">LO</div><div><b>Lucas O.</b><span>✓ Compra verificada</span></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Chegou rápido e a qualidade é absurda! Tecido muito bom e acabamento impecável."</p><div class="tuser"><div class="tav">RS</div><div><b>Rafael Santos</b><span>São Paulo/SP · Jun 2026</span></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Comprei o Kit Família, todo mundo amou. Vestiu super bem em todos."</p><div class="tuser"><div class="tav">JC</div><div><b>Juliana Costa</b><span>Salvador/BA · Jun 2026</span></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Tava com medo de comprar online mas valeu muito a pena. Recomendo!"</p><div class="tuser"><div class="tav">MA</div><div><b>Marcos Almeida</b><span>Belo Horizonte/MG · Mai 2026</span></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Atendimento no WhatsApp foi ótimo, tiraram todas as dúvidas. Camisa linda!"</p><div class="tuser"><div class="tav">PF</div><div><b>Patrícia Ferreira</b><span>Curitiba/PR · Mai 2026</span></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p>"Melhor custo-benefício que achei. Já é minha segunda compra na KITZA."</p><div class="tuser"><div class="tav">LO</div><div><b>Lucas Oliveira</b><span>Rio de Janeiro/RJ · Jun 2026</span></div></div></div>
     </div>
   </div>
 </section>
@@ -544,9 +653,9 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 <!-- STATS -->
 <section class="block" style="padding-top:0;">
   <div class="wrap stats reveal">
-    <div class="stat"><b id="salesCount">1.800+</b><span>Camisas já entregues</span></div>
+    <div class="stat"><b>230+</b><span>Pedidos entregues</span></div>
     <div class="stat"><b>4,9★</b><span>Avaliação média</span></div>
-    <div class="stat"><b>98%</b><span>Clientes satisfeitos</span></div>
+    <div class="stat"><b>7 dias</b><span>Garantia de troca</span></div>
     <div class="stat"><b>24h</b><span>Envio após confirmação</span></div>
   </div>
 </section>
@@ -573,49 +682,114 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
 
     <div class="chk-box reveal">
       <div class="ct">Finalizar pedido</div>
-      <div class="fg">
-        <label>Seu carrinho</label>
-        <div id="cartList"></div>
+      <div class="chk-steps">
+        <div class="chk-step active" id="step1" onclick="goStep(1)"><span class="snum">1</span> Carrinho</div>
+        <div class="chk-sep" id="sep1"></div>
+        <div class="chk-step" id="step2" onclick="goStep(2)"><span class="snum">2</span> Dados</div>
+        <div class="chk-sep" id="sep2"></div>
+        <div class="chk-step" id="step3"><span class="snum">3</span> Pagamento</div>
       </div>
-      <div class="fg"><label>Nome completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
-      <div class="fg-row">
-        <div class="fg"><label>WhatsApp</label><input type="tel" id="tel" placeholder="(00) 00000-0000"></div>
-        <div class="fg"><label>CPF</label><input type="tel" id="cpf" placeholder="000.000.000-00" maxlength="14"></div>
-      </div>
-      <div class="fg"><label>E-mail</label><input type="email" id="email" placeholder="seu@email.com"></div>
-      <div class="fg-row">
-        <div class="fg"><label>CEP</label><input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="buscaCep(this)"></div>
-        <div class="fg"><label>Número</label><input type="text" id="num" placeholder="123"></div>
-      </div>
-      <div class="fg"><label>Rua / Avenida</label><input type="text" id="rua" placeholder="Nome da rua"></div>
-      <div class="fg-row">
-        <div class="fg"><label>Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div>
-        <div class="fg"><label>Estado</label>
-          <select id="estado">
-            <option value="">UF</option>
-            <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
-          </select>
+
+      <!-- PANEL 1: CARRINHO -->
+      <div class="chk-panel active" id="panel1">
+        <div class="fg">
+          <label>Seu carrinho</label>
+          <div id="cartList"></div>
         </div>
+        <div class="cart-tot">Total <b id="cartTotal">R$ 0,00</b></div>
+        <div class="pix-discount" id="pixDiscount" style="display:none;">💰 No PIX você paga <b id="pixDiscountVal">R$ 0,00</b> (5% OFF)</div>
+        <button class="btn-continue" id="btnToStep2" disabled onclick="goStep(2)">CONTINUAR →</button>
+        <div class="pix-msg" id="pixMsg">Adicione pelo menos uma camisa ao carrinho</div>
       </div>
-      <div class="cart-tot">Total <b id="cartTotal">R$ 0,00</b></div>
-      <button onclick="finalizeWA()" class="btn btn-wa btn-block disabled" id="btnWA">Finalizar pedido no WhatsApp</button>
-      <button onclick="openPix()" class="btn btn-gold btn-block btn-pix disabled" id="btnPix" style="margin-top:10px;">Pagar via PIX (QR Code)</button>
-      <div class="pix-msg" id="pixMsg">Adicione pelo menos uma camisa ao carrinho</div>
-      <div class="sec-badges">
+
+      <!-- PANEL 2: DADOS -->
+      <div class="chk-panel" id="panel2">
+        <div class="fg"><label>Nome completo</label><input type="text" id="nome" placeholder="Seu nome completo"></div>
+        <div class="fg"><label>WhatsApp</label><input type="tel" id="tel" placeholder="(00) 00000-0000"></div>
+        <div class="fg"><label>CEP</label><input type="text" id="cep" placeholder="00000-000" maxlength="9" oninput="buscaCep(this)"></div>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:-6px;margin-bottom:10px;">📍 Digite o CEP para preencher automaticamente</p>
+        <div id="addrFields" style="display:none;">
+          <div class="fg-row">
+            <div class="fg" style="flex:3;"><label>Endereço</label><input type="text" id="rua" placeholder="Rua / Avenida"></div>
+            <div class="fg" style="flex:1;"><label>Número</label><input type="text" id="num" placeholder="123"></div>
+          </div>
+          <div class="fg-row">
+            <div class="fg"><label>Complemento <small style="color:var(--muted);font-weight:400;">(opcional)</small></label><input type="text" id="complemento" placeholder="Apto, bloco, sala..."></div>
+            <div class="fg"><label>Bairro</label><input type="text" id="bairro" placeholder="Seu bairro"></div>
+          </div>
+          <div class="fg-row">
+            <div class="fg" style="flex:2;"><label>Cidade</label><input type="text" id="cidade" placeholder="Sua cidade"></div>
+            <div class="fg" style="flex:1;"><label>Estado</label>
+              <select id="estado">
+                <option value="">UF</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="btn-continue" id="btnToStep3" onclick="validateAndGoStep3()">CONTINUAR PARA PAGAMENTO →</button>
+        <button class="btn-back" onclick="goStep(1)">← Voltar ao carrinho</button>
+      </div>
+
+      <!-- PANEL 3: PAGAMENTO -->
+      <div class="chk-panel" id="panel3">
+        <div class="chk-addr-preview" id="addrPreview">
+          <span>📍</span>
+          <div><b id="addrLine1">Endereço</b><span id="addrLine2">Preencha o CEP na etapa anterior</span></div>
+          <span class="chk-addr-edit" onclick="goStep(2)">Editar</span>
+        </div>
+        <div class="fg"><label>CPF (necessário para o PIX)</label><input type="tel" id="cpf" placeholder="000.000.000-00" maxlength="14"></div>
+        <div class="fg"><label>E-mail (opcional)</label><input type="email" id="email" placeholder="seu@email.com"></div>
+        <div class="cart-tot">Total <b id="cartTotal2">R$ 0,00</b></div>
+        <button onclick="openPix()" class="btn btn-gold btn-block btn-pix" id="btnPix">⚡ PAGAR VIA PIX — <span id="pixPrice2">R$ 0,00</span></button>
+        <button onclick="finalizeWA()" class="btn btn-wa btn-block" id="btnWA" style="margin-top:10px;">💬 Finalizar no WhatsApp</button>
+        <button class="btn-back" onclick="goStep(2)" style="margin-top:8px;">← Voltar</button>
+      </div>
+
+      <div class="sec-badges" style="margin-top:16px;">
         <span class="sec-badge">🔒 Conexão SSL</span>
         <span class="sec-badge">⚡ PIX instantâneo</span>
         <span class="sec-badge">🛡️ Compra garantida</span>
         <span class="sec-badge">🔄 Troca em 7 dias</span>
       </div>
-      <a class="ra-badge" href="https://www.reclameaqui.com.br/" target="_blank" rel="noopener">
-        <span class="ra-ic">✔</span>
-        <span class="ra-tx"><b>Reputação Reclame Aqui</b><small>Loja avaliada pelos clientes</small></span>
-        <span class="ra-score">8,9</span>
-      </a>
+      <div class="ra-badge" style="cursor:default;">
+        <span class="ra-ic">🛡️</span>
+        <span class="ra-tx"><b>Garantia de 7 dias</b><small>Não gostou? Devolvemos seu dinheiro</small></span>
+      </div>
       <p class="ssl">AMBIENTE SEGURO · DADOS PROTEGIDOS · CNPJ 52.347.891/0001-04</p>
     </div>
   </div>
 </section>
+
+<!-- SIZE GUIDE MODAL -->
+<div class="sz-modal" id="szModal">
+  <div class="sz-card">
+    <button class="sz-close" onclick="closeSizeGuide()">&times;</button>
+    <h3>📏 Guia de Tamanhos</h3>
+    <table class="sz-table">
+      <thead><tr><th>Tamanho</th><th>Tórax</th><th>Comprimento</th><th>Ombro</th></tr></thead>
+      <tbody>
+        <tr><td>PP</td><td>86-90 cm</td><td>68 cm</td><td>42 cm</td></tr>
+        <tr><td>P</td><td>90-96 cm</td><td>70 cm</td><td>44 cm</td></tr>
+        <tr><td>M</td><td>96-102 cm</td><td>72 cm</td><td>46 cm</td></tr>
+        <tr><td>G</td><td>102-108 cm</td><td>74 cm</td><td>48 cm</td></tr>
+        <tr><td>GG</td><td>108-114 cm</td><td>76 cm</td><td>50 cm</td></tr>
+        <tr><td>GGG</td><td>114-120 cm</td><td>78 cm</td><td>52 cm</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:12px;color:var(--muted);">💡 Dica: Em caso de dúvida entre dois tamanhos, escolha o maior. Troca em até 7 dias!</p>
+  </div>
+</div>
+
+<!-- PROMO POPUP (leve 2 = 10% OFF) -->
+<div class="promo-popup" id="promoPopup">
+  <button class="pp-close" onclick="closePromo()">&times;</button>
+  <h4>🎉 Leve 2 e ganhe <em>10% OFF</em></h4>
+  <p>Adicione mais uma camisa e o desconto é aplicado automaticamente!</p>
+  <a href="#camisas" class="btn btn-gold" onclick="closePromo()">🔥 Ver camisas</a>
+</div>
+
+
 
 <!-- FAQ -->
 <section class="block" id="faq" style="padding-top:0;">
@@ -638,7 +812,7 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="logo">KITZA <span class="crown">👑</span></div>
+        <div class="logo">KITZA STORE</div>
         <p>Qualidade premium para você vestir a camisa do Brasil com orgulho rumo ao Hexa 2026.</p>
       </div>
       <div class="foot-links">
@@ -661,11 +835,12 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
         Atendimento: seg. a sex. das 9h às 18h · contato@kitzastore.com.br · (75) 98823-1829
       </p>
     </div>
-    <div class="foot-bottom">© 2026 KITZA Store · Todos os direitos reservados · Produto não oficial inspirado nas cores da Seleção Brasileira · Versão Premium Importada</div>
+    <div class="foot-bottom">© 2026 KITZA Store · Todos os direitos reservados · Camisas versão premium importada · Qualidade garantida</div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5575988231829" target="_blank" rel="noopener" aria-label="Fale no WhatsApp"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzUuMjE2IDE3NS41NTIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9Ijg1LjkxNSIgeDI9Ijg2LjUzNSIgeTE9IjMyLjU2NyIgeTI9IjEzNy4wOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1N2QxNjMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyM2IzM2EiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIxLjExNSIgaGVpZ2h0PSIxLjExNCIgeD0iLS4wNTciIHk9Ii0uMDU3IiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNTMxIi8+PC9maWx0ZXI+PC9kZWZzPjxwYXRoIGZpbGw9IiNiM2IzYjMiIGQ9Im01NC41MzIgMTM4LjQ1IDIuMjM1IDEuMzI0YzkuMzg3IDUuNTcxIDIwLjE1IDguNTE4IDMxLjEyNiA4LjUyM2guMDIzYzMzLjcwNyAwIDYxLjEzOS0yNy40MjYgNjEuMTUzLTYxLjEzNS4wMDYtMTYuMzM1LTYuMzQ5LTMxLjY5Ni0xNy44OTUtNDMuMjUxQTYwLjc1IDYwLjc1IDAgMCAwIDg3Ljk0IDI1Ljk4M2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OHptLTQwLjgxMSAyMy41NDRMMjQuMTYgMTIzLjg4Yy02LjQzOC0xMS4xNTQtOS44MjUtMjMuODA4LTkuODIxLTM2Ljc3Mi4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6bTAgMCIgZmlsdGVyPSJ1cmwoI2EpIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTEyLjk2NiAxNjEuMjM4IDEwLjQzOS0zOC4xMTRhNzMuNDIgNzMuNDIgMCAwIDEtOS44MjEtMzYuNzcyYy4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6Ii8+PHBhdGggZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudDE3ODApIiBkPSJNODcuMTg0IDI1LjIyN2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OSAyMy4xNDYtNi4wNjkgMi4yMzUgMS4zMjRjOS4zODcgNS41NzEgMjAuMTUgOC41MTggMzEuMTI2IDguNTI0aC4wMjNjMzMuNzA3IDAgNjEuMTQtMjcuNDI2IDYxLjE1My02MS4xMzVhNjAuNzUgNjAuNzUgMCAwIDAtMTcuODk1LTQzLjI1MSA2MC43NSA2MC43NSAwIDAgMC00My4yMzUtMTcuOTI5eiIvPjxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik04Ny4xODQgMjUuMjI3Yy0zMy43MzMgMC02MS4xNjYgMjcuNDIzLTYxLjE3OCA2MS4xM2E2MC45OCA2MC45OCAwIDAgMCA5LjM0OSAzMi41MzVsMS40NTUgMi4zMTMtNi4xNzkgMjIuNTU4IDIzLjE0Ni02LjA2OSAyLjIzNSAxLjMyNGM5LjM4NyA1LjU3MSAyMC4xNSA4LjUxNyAzMS4xMjYgOC41MjNoLjAyM2MzMy43MDcgMCA2MS4xNC0yNy40MjYgNjEuMTUzLTYxLjEzNWE2MC43NSA2MC43NSAwIDAgMC0xNy44OTUtNDMuMjUxIDYwLjc1IDYwLjc1IDAgMCAwLTQzLjIzNS0xNy45Mjh6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNjguNzcyIDU1LjYwM2MtMS4zNzgtMy4wNjEtMi44MjgtMy4xMjMtNC4xMzctMy4xNzZsLTMuNTI0LS4wNDNjLTEuMjI2IDAtMy4yMTguNDYtNC45MDIgMi4zcy02LjQzNSA2LjI4Ny02LjQzNSAxNS4zMzIgNi41ODggMTcuNzg1IDcuNTA2IDE5LjAxMyAxMi43MTggMjAuMzgxIDMxLjQwNSAyNy43NWMxNS41MjkgNi4xMjQgMTguNjg5IDQuOTA2IDIyLjA2MSA0LjZzMTAuODc3LTQuNDQ3IDEyLjQwOC04Ljc0IDEuNTMyLTcuOTcxIDEuMDczLTguNzQtMS42ODUtMS4yMjYtMy41MjUtMi4xNDYtMTAuODc3LTUuMzY3LTEyLjU2Mi01Ljk4MS0yLjkxLS45MTktNC4xMzcuOTIxLTQuNzQ2IDUuOTc5LTUuODE5IDcuMjA2LTIuMTQ0IDEuMzgxLTMuOTg0LjQ2Mi03Ljc2LTIuODYxLTE0Ljc4NC05LjEyNGMtNS40NjUtNC44NzMtOS4xNTQtMTAuODkxLTEwLjIyOC0xMi43M3MtLjExNC0yLjgzNS44MDgtMy43NTFjLjgyNS0uODI0IDEuODM4LTIuMTQ3IDIuNzU5LTMuMjJzMS4yMjQtMS44NCAxLjgzNi0zLjA2NS4zMDctMi4zMDEtLjE1My0zLjIyLTQuMDMyLTEwLjAxMS01LjY2Ni0xMy42NDciLz48L3N2Zz4=" alt="WhatsApp"></a>
+<a class="wa-float" href="https://wa.me/5575988231829" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+  <span class="wa-tooltip">Dúvidas? Fale conosco!</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzUuMjE2IDE3NS41NTIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgeDE9Ijg1LjkxNSIgeDI9Ijg2LjUzNSIgeTE9IjMyLjU2NyIgeTI9IjEzNy4wOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1N2QxNjMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyM2IzM2EiLz48L2xpbmVhckdyYWRpZW50PjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIxLjExNSIgaGVpZ2h0PSIxLjExNCIgeD0iLS4wNTciIHk9Ii0uMDU3IiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNTMxIi8+PC9maWx0ZXI+PC9kZWZzPjxwYXRoIGZpbGw9IiNiM2IzYjMiIGQ9Im01NC41MzIgMTM4LjQ1IDIuMjM1IDEuMzI0YzkuMzg3IDUuNTcxIDIwLjE1IDguNTE4IDMxLjEyNiA4LjUyM2guMDIzYzMzLjcwNyAwIDYxLjEzOS0yNy40MjYgNjEuMTUzLTYxLjEzNS4wMDYtMTYuMzM1LTYuMzQ5LTMxLjY5Ni0xNy44OTUtNDMuMjUxQTYwLjc1IDYwLjc1IDAgMCAwIDg3Ljk0IDI1Ljk4M2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OHptLTQwLjgxMSAyMy41NDRMMjQuMTYgMTIzLjg4Yy02LjQzOC0xMS4xNTQtOS44MjUtMjMuODA4LTkuODIxLTM2Ljc3Mi4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6bTAgMCIgZmlsdGVyPSJ1cmwoI2EpIi8+PHBhdGggZmlsbD0iI2ZmZiIgZD0ibTEyLjk2NiAxNjEuMjM4IDEwLjQzOS0zOC4xMTRhNzMuNDIgNzMuNDIgMCAwIDEtOS44MjEtMzYuNzcyYy4wMTctNDAuNTU2IDMzLjAyMS03My41NSA3My41NzgtNzMuNTUgMTkuNjgxLjAxIDM4LjE1NCA3LjY2OSA1Mi4wNDcgMjEuNTcyczIxLjUzNyAzMi4zODMgMjEuNTMgNTIuMDM3Yy0uMDE4IDQwLjU1My0zMy4wMjcgNzMuNTUzLTczLjU3OCA3My41NTNoLS4wMzJjLTEyLjMxMy0uMDA1LTI0LjQxMi0zLjA5NC0zNS4xNTktOC45NTR6Ii8+PHBhdGggZmlsbD0idXJsKCNsaW5lYXJHcmFkaWVudDE3ODApIiBkPSJNODcuMTg0IDI1LjIyN2MtMzMuNzMzIDAtNjEuMTY2IDI3LjQyMy02MS4xNzggNjEuMTNhNjAuOTggNjAuOTggMCAwIDAgOS4zNDkgMzIuNTM1bDEuNDU1IDIuMzEyLTYuMTc5IDIyLjU1OSAyMy4xNDYtNi4wNjkgMi4yMzUgMS4zMjRjOS4zODcgNS41NzEgMjAuMTUgOC41MTggMzEuMTI2IDguNTI0aC4wMjNjMzMuNzA3IDAgNjEuMTQtMjcuNDI2IDYxLjE1My02MS4xMzVhNjAuNzUgNjAuNzUgMCAwIDAtMTcuODk1LTQzLjI1MSA2MC43NSA2MC43NSAwIDAgMC00My4yMzUtMTcuOTI5eiIvPjxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik04Ny4xODQgMjUuMjI3Yy0zMy43MzMgMC02MS4xNjYgMjcuNDIzLTYxLjE3OCA2MS4xM2E2MC45OCA2MC45OCAwIDAgMCA5LjM0OSAzMi41MzVsMS40NTUgMi4zMTMtNi4xNzkgMjIuNTU4IDIzLjE0Ni02LjA2OSAyLjIzNSAxLjMyNGM5LjM4NyA1LjU3MSAyMC4xNSA4LjUxNyAzMS4xMjYgOC41MjNoLjAyM2MzMy43MDcgMCA2MS4xNC0yNy40MjYgNjEuMTUzLTYxLjEzNWE2MC43NSA2MC43NSAwIDAgMC0xNy44OTUtNDMuMjUxIDYwLjc1IDYwLjc1IDAgMCAwLTQzLjIzNS0xNy45Mjh6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNNjguNzcyIDU1LjYwM2MtMS4zNzgtMy4wNjEtMi44MjgtMy4xMjMtNC4xMzctMy4xNzZsLTMuNTI0LS4wNDNjLTEuMjI2IDAtMy4yMTguNDYtNC45MDIgMi4zcy02LjQzNSA2LjI4Ny02LjQzNSAxNS4zMzIgNi41ODggMTcuNzg1IDcuNTA2IDE5LjAxMyAxMi43MTggMjAuMzgxIDMxLjQwNSAyNy43NWMxNS41MjkgNi4xMjQgMTguNjg5IDQuOTA2IDIyLjA2MSA0LjZzMTAuODc3LTQuNDQ3IDEyLjQwOC04Ljc0IDEuNTMyLTcuOTcxIDEuMDczLTguNzQtMS42ODUtMS4yMjYtMy41MjUtMi4xNDYtMTAuODc3LTUuMzY3LTEyLjU2Mi01Ljk4MS0yLjkxLS45MTktNC4xMzcuOTIxLTQuNzQ2IDUuOTc5LTUuODE5IDcuMjA2LTIuMTQ0IDEuMzgxLTMuOTg0LjQ2Mi03Ljc2LTIuODYxLTE0Ljc4NC05LjEyNGMtNS40NjUtNC44NzMtOS4xNTQtMTAuODkxLTEwLjIyOC0xMi43M3MtLjExNC0yLjgzNS44MDgtMy43NTFjLjgyNS0uODI0IDEuODM4LTIuMTQ3IDIuNzU5LTMuMjJzMS4yMjQtMS44NCAxLjgzNi0zLjA2NS4zMDctMi4zMDEtLjE1My0zLjIyLTQuMDMyLTEwLjAxMS01LjY2Ni0xMy42NDciLz48L3N2Zz4=" alt="WhatsApp"></a>
 
 <div class="sticky-cta">
   <div class="sc-price" id="scPrice">R$ 0,00<small id="scCount">Carrinho vazio</small></div>
@@ -707,14 +882,14 @@ function toggleMenu(){document.getElementById('mmenu').classList.toggle('open');
 function closeMenu(){document.getElementById('mmenu').classList.remove('open');document.body.style.overflow='';}
 
 var PRODUCTS=[
- {img:'produtos/p1.webp',name:'Camisa Brasil I 2024/25 Torcedor Nike Masculina',old:159.90,now:119.90,tag:'Mais vendida'},
- {img:'produtos/p2.webp',name:'Camisa Brasil Pré-Jogo Jordan Masculina (Azul)',old:169.90,now:129.90,tag:'Novo'},
- {img:'produtos/p3.webp',name:'Camisa Brasil I 2024/25 Torcedor Nike Juvenil',old:129.90,now:99.90,tag:'Juvenil'},
- {img:'produtos/p4.webp',name:'Camisa Brasil I 2024/25 Torcedor Nike Feminina',old:149.90,now:109.90,tag:'Favorita'},
- {img:'produtos/p5.webp',name:'Camisa Brasil Pré-Jogo Jordan Juvenil (Azul)',old:124.90,now:94.90,tag:''},
- {img:'produtos/p6.webp',name:'Camisa Brasil Pré-Jogo Jordan Masculina (Verde)',old:179.90,now:139.90,tag:'Edição'},
- {img:'produtos/p7.webp',name:'Camisa Brasil Pré-Jogo Jordan Infantil (Azul)',old:119.90,now:89.90,tag:'Infantil'},
- {img:'produtos/p8.webp',name:'Camisa de Goleiro Brasil 2024/25 Nike Juvenil',old:174.90,now:134.90,tag:'Goleiro'}
+ {img:'produtos/p1.webp',name:'Camisa Seleção Brasil I 2026/27 — Masculina',old:159.90,now:119.90,tag:'Mais vendida'},
+ {img:'produtos/p2.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Masculina (Azul)',old:169.90,now:129.90,tag:'Novo'},
+ {img:'produtos/p3.webp',name:'Camisa Seleção Brasil I 2026/27 — Juvenil',old:129.90,now:99.90,tag:'Juvenil'},
+ {img:'produtos/p4.webp',name:'Camisa Seleção Brasil I 2026/27 — Feminina',old:149.90,now:109.90,tag:'Favorita'},
+ {img:'produtos/p5.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Juvenil (Azul)',old:124.90,now:94.90,tag:''},
+ {img:'produtos/p6.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Masculina (Verde)',old:179.90,now:139.90,tag:'Edição'},
+ {img:'produtos/p7.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Infantil (Azul)',old:119.90,now:89.90,tag:'Infantil'},
+ {img:'produtos/p8.webp',name:'Camisa Goleiro Brasil 2026/27 — Juvenil',old:174.90,now:134.90,tag:'Goleiro'}
 ];
 var KIT={name:'Kit Família (3 camisas)',old:329.70,now:269.70};
 var SIZES=['PP','P','M','G','GG','GGG'];
@@ -724,6 +899,8 @@ function fmt(n){return n.toFixed(2).replace('.',',');}
 function renderProducts(){
   var g=document.getElementById('productGrid');if(!g)return;
   g.innerHTML=PRODUCTS.map(function(p,i){
+    var stockNum=Math.floor(Math.random()*12)+3;
+    var stockHtml='<div class="stock-alert"><span class="stock-dot"></span> Apenas '+stockNum+' unidades restantes</div>';
     return '<div class="pcard reveal">'+
       (p.tag?'<span class="tag">'+p.tag+'</span>':'')+
       '<div class="pimg"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy"></div>'+
@@ -732,8 +909,10 @@ function renderProducts(){
       '<div class="pold">'+brl(p.old)+'</div>'+
       '<div class="prow"><div class="pprice"><sup>R$</sup>'+fmt(p.now)+'</div></div>'+
       '<div class="pinst">3x de '+brl(p.now/3)+' sem juros</div>'+
+      stockHtml+
+      '<span class="sz-link" onclick="openSizeGuide()">📏 Guia de tamanhos</span>'+
       '<select class="psize" aria-label="Tamanho">'+SIZES.map(function(s){return '<option>'+s+'</option>';}).join('')+'</select>'+
-      '<button class="btn btn-gold btn-block" onclick="addToCart('+i+',this)">Adicionar</button>'+
+      '<button class="btn btn-gold btn-block" onclick="addToCart('+i+',this)">🔥 Adicionar</button>'+
     '</div>';
   }).join('');
 }
@@ -752,11 +931,14 @@ function addToCart(i,btn){
   var f=cart.filter(function(x){return !x.kit&&x.idx===i&&x.size===size;})[0];
   if(f)f.qty++;else cart.push({idx:i,size:size,qty:1});
   saveCart();updateCartUI();toast('Adicionado ao carrinho ✓');
+  if(window.kitzaEvent)window.kitzaEvent('add_to_cart',{product:PRODUCTS[i].name,size:size,price:PRODUCTS[i].now});
+  if(typeof fbq==='function')fbq('track','AddToCart',{content_name:PRODUCTS[i].name,value:PRODUCTS[i].now,currency:'BRL'});
 }
 function addKit(){
   var f=cart.filter(function(x){return x.kit;})[0];
   if(f)f.qty++;else cart.push({kit:true,size:'-',qty:1});
   saveCart();updateCartUI();goCart();
+  if(window.kitzaEvent)window.kitzaEvent('add_to_cart',{product:KIT.name,size:'-',price:KIT.now});
 }
 function chQty(n,d){cart[n].qty+=d;if(cart[n].qty<=0)cart.splice(n,1);saveCart();updateCartUI();}
 function rmItem(n){cart.splice(n,1);saveCart();updateCartUI();}
@@ -774,27 +956,88 @@ function renderCart(){
     '</div>';
   }).join('');
 }
+var currentStep=1;
+function goStep(n){
+  if(n===2&&cartCount()===0)return;
+  if(n===3&&cartCount()===0)return;
+  currentStep=n;
+  for(var i=1;i<=3;i++){
+    var p=document.getElementById('panel'+i);
+    if(p){p.classList.toggle('active',i===n);}
+    var s=document.getElementById('step'+i);
+    if(s){s.classList.remove('active','done');if(i<n)s.classList.add('done');if(i===n)s.classList.add('active');}
+    var sep=document.getElementById('sep'+i);
+    if(sep){sep.classList.toggle('done',i<n);}
+  }
+  if(n===3)updateAddrPreview();
+  var box=document.querySelector('.chk-box');
+  if(box)box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function validateAndGoStep3(){
+  var nome=val('nome'),tel=val('tel'),cep=val('cep'),num=val('num'),rua=val('rua'),bairro=val('bairro'),cidade=val('cidade'),estado=val('estado');
+  if(!nome){alert('Preencha seu nome');document.getElementById('nome').focus();return;}
+  if(!tel){alert('Preencha seu WhatsApp');document.getElementById('tel').focus();return;}
+  if(!cep||cep.replace(/\D/g,'').length<8){alert('Preencha o CEP');document.getElementById('cep').focus();return;}
+  if(!rua){alert('Preencha o endere\u00e7o');document.getElementById('rua').focus();return;}
+  if(!num){alert('Preencha o n\u00famero');document.getElementById('num').focus();return;}
+  if(!bairro){alert('Preencha o bairro');document.getElementById('bairro').focus();return;}
+  if(!cidade){alert('Preencha a cidade');document.getElementById('cidade').focus();return;}
+  if(!estado){alert('Selecione o estado');document.getElementById('estado').focus();return;}
+  goStep(3);
+}
+function updateAddrPreview(){
+  var rua=val('rua')||'Rua n\u00e3o encontrada',num=val('num'),bairro=val('bairro'),compl=val('complemento'),cid=val('cidade'),uf=val('estado'),cep=val('cep');
+  var l1=document.getElementById('addrLine1'),l2=document.getElementById('addrLine2');
+  if(l1)l1.textContent=rua+(num?', '+num:'')+(compl?' — '+compl:'');
+  if(l2)l2.textContent=(bairro?bairro+' · ':'')+(cid&&uf?cid+'/'+uf:'')+(cep?' · CEP '+cep:'');
+}
 function updateCartUI(){
   renderCart();
   var t=cartTotal(),c=cartCount();
   var cc=document.getElementById('cartCount');if(cc)cc.textContent=c;
   var ct=document.getElementById('cartTotal');if(ct)ct.textContent=brl(t);
+  var ct2=document.getElementById('cartTotal2');if(ct2)ct2.textContent=brl(t);
   var sp=document.getElementById('scPrice');if(sp&&sp.firstChild)sp.firstChild.textContent=brl(t);
   var scn=document.getElementById('scCount');if(scn)scn.textContent=c?(c+' item(ns) no carrinho'):'Carrinho vazio';
-  var wa=document.getElementById('btnWA'),px=document.getElementById('btnPix'),msg=document.getElementById('pixMsg');
-  if(c>0){if(wa)wa.classList.remove('disabled');if(px)px.classList.remove('disabled');if(msg)msg.style.display='none';}
-  else{if(wa)wa.classList.add('disabled');if(px)px.classList.add('disabled');if(msg)msg.style.display='block';}
+  var msg=document.getElementById('pixMsg');
+  var btnS2=document.getElementById('btnToStep2');
+  if(c>0){if(msg)msg.style.display='none';if(btnS2)btnS2.disabled=false;}
+  else{if(msg)msg.style.display='block';if(btnS2)btnS2.disabled=true;}
+  /* PIX 5% discount display */
+  var pd=document.getElementById('pixDiscount'),pv=document.getElementById('pixDiscountVal');
+  if(pd&&pv){if(c>0){pd.style.display='flex';pv.textContent=brl(t*0.95);}else{pd.style.display='none';}}
+  var pp2=document.getElementById('pixPrice2');
+  if(pp2)pp2.textContent=brl(t*0.95);
 }
+
+/* === SIZE GUIDE === */
+function openSizeGuide(){document.getElementById('szModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSizeGuide(){document.getElementById('szModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('szModal').addEventListener('click',function(e){if(e.target===this)closeSizeGuide();});
+
+/* === PROMO POPUP (leve 2 = 10% OFF) === */
+var promoShown=false;
+function showPromo(){if(promoShown)return;promoShown=true;document.getElementById('promoPopup').classList.add('show');}
+function closePromo(){document.getElementById('promoPopup').classList.remove('show');}
+var origAddToCart=addToCart;
+addToCart=function(i,btn){
+  origAddToCart(i,btn);
+  var c=cartCount();
+  if(c===1)setTimeout(showPromo,800);
+  if(c>=2)closePromo();
+};
+
+
 function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
 function finalizeWA(){
   if(!cart.length)return;
   var parts=['Olá! Quero finalizar meu pedido na KITZA:',''];
   cart.forEach(function(it){parts.push('• '+it.qty+'x '+itemName(it)+(it.kit?'':' (Tam '+it.size+')')+' — '+brl(itemPrice(it)*it.qty));});
   parts.push('');parts.push('Total: '+brl(cartTotal()));
-  var nome=val('nome'),tel=val('tel'),cep=val('cep'),rua=val('rua'),num=val('num'),cid=val('cidade'),uf=val('estado');
+  var nome=val('nome'),tel=val('tel'),cep=val('cep'),rua=val('rua'),num=val('num'),compl=val('complemento'),bairro=val('bairro'),cid=val('cidade'),uf=val('estado');
   if(nome)parts.push('Nome: '+nome);
   if(tel)parts.push('WhatsApp: '+tel);
-  if(rua||cid)parts.push('Endereço: '+rua+', '+num+' - '+cid+'/'+uf+' (CEP '+cep+')');
+  if(rua||cid)parts.push('Endereço: '+rua+', '+num+(compl?' — '+compl:'')+' · '+bairro+' · '+cid+'/'+uf+' · CEP '+cep);
   window.open('https://wa.me/5575988231829?text='+encodeURIComponent(parts.join('\n')),'_blank');
 }
 function goCart(){closeMenu();var t=document.getElementById('pedido');if(t)t.scrollIntoView({behavior:'smooth'});}
@@ -821,10 +1064,11 @@ function cpfValido(c){
 function openPix(){
   if(!cart.length)return;
   var nome=val('nome'),email=val('email'),cpf=pixDigits(val('cpf')),tel=pixDigits(val('tel'));
-  if(!nome||!email||cpf.length!==11||tel.length<10){
-    toast('Preencha nome, e-mail, CPF e WhatsApp');
-    var f=document.getElementById(!nome?'nome':!email?'email':cpf.length!==11?'cpf':'tel');
-    if(f){f.scrollIntoView({behavior:'smooth',block:'center'});f.focus();}
+  if(!nome||cpf.length!==11||tel.length<10){
+    toast('Preencha nome, CPF e WhatsApp');
+    if(!nome){goStep(2);setTimeout(function(){document.getElementById('nome').focus();},300);return;}
+    if(tel.length<10){goStep(2);setTimeout(function(){document.getElementById('tel').focus();},300);return;}
+    var f=document.getElementById('cpf');if(f){f.scrollIntoView({behavior:'smooth',block:'center'});f.focus();}
     return;
   }
   if(!cpfValido(cpf)){
@@ -836,7 +1080,7 @@ function openPix(){
   pixShow('pixLoading');
   document.getElementById('pixModal').classList.add('open');
   document.body.style.overflow='hidden';
-  var body={amount:cartTotal(),client:{name:nome,email:email,document:cpf,phone:tel}};
+  var body={amount:cartTotal(),client:{name:nome,email:email||'cliente@kitzastore.store',document:cpf,phone:tel}};
   fetch(PIX_API+'/.netlify/functions/create-pix',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
     .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
     .then(function(res){
@@ -874,12 +1118,14 @@ function copyPix(){var t=document.getElementById('pixCode');t.select();t.setSele
 document.getElementById('pixModal').addEventListener('click',function(e){if(e.target===this)closePix();});
 
 renderProducts();updateCartUI();
+
+
 var obs2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs2.unobserve(e.target);}});},{threshold:.12});
 document.querySelectorAll('#productGrid .reveal').forEach(function(el){obs2.observe(el);});
 
-async function buscaCep(i){var c=i.value.replace(/\D/g,'');if(c.length!==8)return;try{var r=await fetch('https://viacep.com.br/ws/'+c+'/json/');var d=await r.json();if(!d.erro){document.getElementById('rua').value=d.logradouro||'';document.getElementById('cidade').value=d.localidade||'';document.getElementById('estado').value=d.uf||'';document.getElementById('num').focus();}}catch(e){}}
+async function buscaCep(i){var c=i.value.replace(/\D/g,'');if(c.length!==8)return;try{var r=await fetch('https://viacep.com.br/ws/'+c+'/json/');var d=await r.json();if(!d.erro){document.getElementById('rua').value=d.logradouro||'';document.getElementById('bairro').value=d.bairro||'';document.getElementById('cidade').value=d.localidade||'';document.getElementById('estado').value=d.uf||'';document.getElementById('addrFields').style.display='block';document.getElementById('num').focus();}}catch(e){}}
 
-(function(){var e=new Date();e.setHours(23,59,59,0);function u(){var n=new Date();var d=Math.max(0,e-n);var h=String(Math.floor(d/3600000)).padStart(2,'0');d%=3600000;var m=String(Math.floor(d/60000)).padStart(2,'0');d%=60000;var s=String(Math.floor(d/1000)).padStart(2,'0');var t=document.getElementById('timer');if(t)t.textContent=h+':'+m+':'+s;}u();setInterval(u,1000);})();
+/* old timer removed — now using #cdTimer above */
 
 (function(){var t=document.getElementById('ttrack');if(!t)return;t.querySelectorAll('.tcard').forEach(function(c){t.appendChild(c.cloneNode(true));});})();
 
