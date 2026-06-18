@@ -537,12 +537,12 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
       <div class="rating"><span class="stars">★★★★★</span> 4,9/5 • Qualidade Premium Importada</div>
       <p class="hero-tag"><b>Versão Premium Importada</b> com tecido respirável e acabamento impecável. Vista a camisa do Hexa antes de todo mundo.</p>
       <div class="price-row">
-        <span class="price-old">R$ 149,90</span>
-        <span class="price-now"><sup>R$</sup>89<small>,90</small></span>
-        <span class="price-pill">-40% HOJE</span>
+        <span class="price-old">R$ 119,90</span>
+        <span class="price-now"><sup>R$</sup>59<small>,90</small></span>
+        <span class="price-pill">-50% HOJE</span>
         <span class="save-badge">💰 Economize R$ 60</span>
       </div>
-      <div class="installment">ou <b>3x de R$ 29,97</b> sem juros • <b>PIX com aprovação na hora</b></div>
+      <div class="installment">ou <b>3x de R$ 19,97</b> sem juros • <b>PIX com aprovação na hora</b></div>
       <div class="hero-cta">
         <a href="#camisas" class="btn btn-gold">🔥 GARANTIR A MINHA</a>
         <a href="#pedido" class="btn btn-ghost">🛒 Meu carrinho</a>
@@ -558,7 +558,7 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
       <div class="hero-feat">
         <span class="fb">LANÇAMENTO 2026</span>
         <img src="produtos/hero.webp" alt="Camisa do Brasil 2026">
-        <div class="fp"><b>Camisa Seleção Brasil I 2026/27</b><div>a partir de R$ 89,90 · 3x sem juros no PIX</div></div>
+        <div class="fp"><b>Camisa Seleção Brasil I 2026/27</b><div>a partir de R$ 49,90 · 3x sem juros no PIX</div></div>
       </div>
     </div>
   </div>
@@ -604,9 +604,9 @@ footer{background:#08080a;border-top:1px solid var(--line);padding:46px 0 28px;}
         <a href="#pedido" class="btn btn-gold" onclick="addKit()">Adicionar Kit Família</a>
       </div>
       <div class="kit-price-box">
-        <div class="kold">R$ 302,30</div>
-        <div class="know"><sup>R$</sup>269,70</div>
-        <div class="ksave">Economize R$ 32,60</div>
+        <div class="kold">R$ 239,70</div>
+        <div class="know"><sup>R$</sup>159,90</div>
+        <div class="ksave">Economize R$ 79,80</div>
         <div style="color:var(--muted);font-size:13px;">3 camisas premium • frete grátis</div>
         <div class="stock-wrap">
           <div class="stock-bar"><i></i></div>
@@ -882,16 +882,16 @@ function toggleMenu(){document.getElementById('mmenu').classList.toggle('open');
 function closeMenu(){document.getElementById('mmenu').classList.remove('open');document.body.style.overflow='';}
 
 var PRODUCTS=[
- {img:'produtos/p1.webp',name:'Camisa Seleção Brasil I 2026/27 — Masculina',old:159.90,now:119.90,tag:'Mais vendida'},
- {img:'produtos/p2.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Masculina (Azul)',old:169.90,now:129.90,tag:'Novo'},
- {img:'produtos/p3.webp',name:'Camisa Seleção Brasil I 2026/27 — Juvenil',old:129.90,now:99.90,tag:'Juvenil'},
- {img:'produtos/p4.webp',name:'Camisa Seleção Brasil I 2026/27 — Feminina',old:149.90,now:109.90,tag:'Favorita'},
- {img:'produtos/p5.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Juvenil (Azul)',old:124.90,now:94.90,tag:''},
- {img:'produtos/p6.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Masculina (Verde)',old:179.90,now:139.90,tag:'Edição'},
- {img:'produtos/p7.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Infantil (Azul)',old:119.90,now:89.90,tag:'Infantil'},
- {img:'produtos/p8.webp',name:'Camisa Goleiro Brasil 2026/27 — Juvenil',old:174.90,now:134.90,tag:'Goleiro'}
+ {img:'produtos/p1.webp',name:'Camisa Seleção Brasil I 2026/27 — Masculina',old:119.90,now:59.90,tag:'Mais vendida'},
+ {img:'produtos/p2.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Masculina (Azul)',old:139.90,now:69.90,tag:'Novo'},
+ {img:'produtos/p3.webp',name:'Camisa Seleção Brasil I 2026/27 — Juvenil',old:109.90,now:54.90,tag:'Juvenil'},
+ {img:'produtos/p4.webp',name:'Camisa Seleção Brasil I 2026/27 — Feminina',old:119.90,now:59.90,tag:'Favorita'},
+ {img:'produtos/p5.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Juvenil (Azul)',old:109.90,now:54.90,tag:''},
+ {img:'produtos/p6.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Masculina (Verde)',old:149.90,now:79.90,tag:'Edição'},
+ {img:'produtos/p7.webp',name:'Camisa Brasil Pré-Jogo 2026/27 — Infantil (Azul)',old:99.90,now:49.90,tag:'Infantil'},
+ {img:'produtos/p8.webp',name:'Camisa Goleiro Brasil 2026/27 — Juvenil',old:139.90,now:69.90,tag:'Goleiro'}
 ];
-var KIT={name:'Kit Família (3 camisas)',old:329.70,now:269.70};
+var KIT={name:'Kit Família (3 camisas)',old:239.70,now:159.90};
 var SIZES=['PP','P','M','G','GG','GGG'];
 function brl(n){return 'R$ '+n.toFixed(2).replace('.',',');}
 function fmt(n){return n.toFixed(2).replace('.',',');}
