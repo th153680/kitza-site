@@ -153,8 +153,8 @@ function createCheckoutModal() {
   if (document.getElementById('kitza-checkout-modal')) return;
   var modal = document.createElement('div');
   modal.id = 'kitza-checkout-modal';
-  modal.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);overflow-y:auto;padding:20px;';
-  modal.innerHTML = '<div style="max-width:500px;margin:40px auto;background:#fff;border-radius:16px;padding:32px;position:relative;">' +
+  modal.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);overflow-y:auto;padding:10px;';
+  modal.innerHTML = '<div style="max-width:500px;width:100%;margin:20px auto;background:#fff;border-radius:16px;padding:20px;position:relative;box-sizing:border-box;">' +
     '<button onclick="window.kitzaCloseCheckout()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:28px;cursor:pointer;">&times;</button>' +
     '<h2 style="font-size:20px;margin-bottom:20px;">Dados para envio</h2>' +
     '<div style="display:flex;flex-direction:column;gap:14px;" id="kitza-checkout-form">' +
@@ -162,10 +162,10 @@ function createCheckoutModal() {
     '<input type="tel" id="kz-tel" placeholder="WhatsApp (00) 00000-0000" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
     '<input type="text" id="kz-cep" placeholder="CEP" maxlength="9" oninput="window.kitzaBuscaCep(this)" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
     '<p style="font-size:12px;color:#666;margin:-8px 0 0;">Digite o CEP para preencher automaticamente</p>' +
-    '<div id="kz-addr-fields" style="display:none;display:flex;flex-direction:column;gap:14px;">' +
-    '<div style="display:flex;gap:10px;"><input type="text" id="kz-rua" placeholder="Endereço" style="flex:3;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;"><input type="text" id="kz-num" placeholder="Nº" style="flex:1;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;"></div>' +
-    '<div style="display:flex;gap:10px;"><input type="text" id="kz-complemento" placeholder="Complemento (opcional)" style="flex:1;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;"><input type="text" id="kz-bairro" placeholder="Bairro" style="flex:1;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;"></div>' +
-    '<div style="display:flex;gap:10px;"><input type="text" id="kz-cidade" placeholder="Cidade" style="flex:2;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;"><select id="kz-estado" style="flex:1;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;"><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>' +
+    '<div id="kz-addr-fields" style="display:none;flex-direction:column;gap:14px;">' +
+    '<div style="display:flex;gap:8px;"><input type="text" id="kz-rua" placeholder="Endereço" style="flex:3;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;min-width:0;box-sizing:border-box;"><input type="text" id="kz-num" placeholder="Nº" style="flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;min-width:0;box-sizing:border-box;"></div>' +
+    '<div style="display:flex;gap:8px;"><input type="text" id="kz-complemento" placeholder="Complemento (opcional)" style="flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;min-width:0;box-sizing:border-box;"><input type="text" id="kz-bairro" placeholder="Bairro" style="flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;min-width:0;box-sizing:border-box;"></div>' +
+    '<div style="display:flex;gap:8px;"><input type="text" id="kz-cidade" placeholder="Cidade" style="flex:2;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;min-width:0;box-sizing:border-box;"><select id="kz-estado" style="flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;min-width:0;box-sizing:border-box;"><option value="">UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div>' +
     '</div>' +
     '<input type="tel" id="kz-cpf" placeholder="CPF (necessário para PIX)" maxlength="14" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
     '<input type="email" id="kz-email" placeholder="E-mail (opcional)" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
@@ -339,7 +339,7 @@ window.kitzaBuscaCep = function(input) {
   fetch('https://viacep.com.br/ws/' + c + '/json/').then(function(r) { return r.json(); }).then(function(d) {
     if (!d.erro) {
       sv('kz-rua', d.logradouro || ''); sv('kz-bairro', d.bairro || ''); sv('kz-cidade', d.localidade || ''); sv('kz-estado', d.uf || '');
-      var f = document.getElementById('kz-addr-fields'); if (f) f.style.display = '';
+      var f = document.getElementById('kz-addr-fields'); if (f) f.style.display = 'flex';
       var n = document.getElementById('kz-num'); if (n) n.focus();
     }
   }).catch(function() {});
