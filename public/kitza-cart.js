@@ -80,7 +80,7 @@ function interceptForms() {
       var img = imgEl ? imgEl.src : '';
       addToCart(name, price, size, img);
       // Redirect to cart page
-      setTimeout(function() { window.location.href = '/cart.html'; }, 300);
+      setTimeout(function() { window.location.href = '/cart'; }, 300);
     });
   });
 }
@@ -358,11 +358,11 @@ function fixSizeSelector() {
 function fixCartLinks() {
   // Make cart icon go to cart.html instead of Shopify drawer
   document.querySelectorAll('a[href="/cart"], a[href="cart"], a[href="cart.html"]').forEach(function(link) {
-    link.setAttribute('href', 'cart.html');
+    link.setAttribute('href', '/cart');
     link.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = '/cart.html';
+      window.location.href = '/cart';
     });
   });
   // Hide Shopify cart drawer completely + replace logo
