@@ -2,6 +2,19 @@
 (function(){
 'use strict';
 
+/* === KILL SHOPIFY CHECKOUT === */
+window.Shopify = window.Shopify || {};
+window.Shopify.PaymentButton = { init: function(){} };
+window.Shopify.loadFeatures = function(){};
+// Block all fetch to Shopify cart API
+var origFetch = window.fetch;
+window.fetch = function(url) {
+  if (typeof url === 'string' && (url.indexOf('/cart/add') !== -1 || url.indexOf('cart/add') !== -1 || url.indexOf('/checkouts') !== -1)) {
+    return Promise.resolve(new Response(JSON.stringify({ok:true}), {status:200}));
+  }
+  return origFetch.apply(this, arguments);
+};
+
 var PIX_API = 'https://kitza-pay-api.netlify.app';
 var WA_NUMBER = '5575988231829';
 
