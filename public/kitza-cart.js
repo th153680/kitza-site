@@ -33,6 +33,8 @@ function addToCart(name, price, size, img) {
   updateCartBadge();
   showToast('Adicionado ao carrinho ✓');
   if (typeof fbq === 'function') fbq('track', 'AddToCart', { content_name: name, value: price, currency: 'BRL' });
+  // Track event in admin panel
+  try { fetch('/api/event', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ event:'add_to_cart', product: name, size: size, price: price }) }); } catch(e){}
 }
 
 function removeFromCart(idx) { cart.splice(idx, 1); saveCart(); renderCartPage(); updateCartBadge(); }
@@ -80,7 +82,7 @@ function interceptForms() {
       var img = imgEl ? imgEl.src : '';
       addToCart(name, price, size, img);
       // Redirect to cart page
-      setTimeout(function() { window.location.href = '/cart'; }, 300);
+      setTimeout(function() { window.location.href = '/carrinho'; }, 300);
     });
   });
 }
@@ -358,11 +360,11 @@ function fixSizeSelector() {
 function fixCartLinks() {
   // Make cart icon go to cart.html instead of Shopify drawer
   document.querySelectorAll('a[href="/cart"], a[href="cart"], a[href="cart.html"]').forEach(function(link) {
-    link.setAttribute('href', '/cart');
+    link.setAttribute('href', '/carrinho');
     link.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      window.location.href = '/cart';
+      window.location.href = '/carrinho';
     });
   });
   // Hide Shopify cart drawer completely + replace logo
