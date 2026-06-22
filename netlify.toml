@@ -46,3 +46,14 @@
   from = "/admin/logout"
   to = "/.netlify/functions/logout"
   status = 200
+
+# Clean URLs for pages
+[[redirects]]
+  from = "/cart"
+  to = "/cart.html"
+  status = 200
+
+[[redirects]]
+  from = "/search"
+  to = "/search.html"
+  status = 200
