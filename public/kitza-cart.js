@@ -16,7 +16,7 @@ window.fetch = function(url) {
 };
 
 var PIX_API = 'https://kitza-pay-api.netlify.app';
-var WA_NUMBER = '5527999589015';
+var WA_NUMBER = '5575988231829';
 
 /* === CART === */
 var cart = [];
@@ -365,10 +365,21 @@ function fixCartLinks() {
       window.location.href = '/cart.html';
     });
   });
-  // Hide Shopify cart drawer completely
+  // Hide Shopify cart drawer completely + replace logo
   var style = document.createElement('style');
-  style.textContent = 'cart-drawer, .cart-drawer, [id*="CartDrawer"] { display:none!important; } .cart-drawer-overlay { display:none!important; }';
+  style.textContent = 'cart-drawer, .cart-drawer, [id*="CartDrawer"] { display:none!important; } .cart-drawer-overlay { display:none!important; } .header__heading-logo, img[src*="JesusChrist"], img[alt="KITZA Store"][class*="header"] { display:none!important; } .kitza-logo-text { font-family: "Playfair Display",Georgia,serif; font-size:28px; font-weight:700; font-style:italic; color:#000; text-decoration:none; } footer .kitza-logo-text { color:#fff; }';
   document.head.appendChild(style);
+  // Replace logo images with text
+  document.querySelectorAll('img[src*="JesusChristLogo"]').forEach(function(img) {
+    var link = img.closest('a') || img.parentNode;
+    img.style.display = 'none';
+    if (!link.querySelector('.kitza-logo-text')) {
+      var span = document.createElement('span');
+      span.className = 'kitza-logo-text';
+      span.textContent = 'KITZA Store';
+      link.appendChild(span);
+    }
+  });
 }
 
 /* === INIT === */
