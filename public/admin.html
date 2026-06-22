@@ -265,13 +265,12 @@ function loadStats(days) {
       document.getElementById('sUniqueIPs').textContent = d.uniqueIPs.toLocaleString('pt-BR');
       var avg = d.visitsByDay.length ? Math.round(d.totalVisits / d.visitsByDay.length) : 0;
       document.getElementById('sAvgDay').textContent = avg.toLocaleString('pt-BR');
-      document.getElementById('sTopPage').textContent = d.topPages.length ? d.topPages[0].page : '—';
+      if (document.getElementById('sTopPage')) document.getElementById('sTopPage').textContent = d.topPages && d.topPages.length ? d.topPages[0].page : '—';
 
       // Chart
       renderChart(d.visitsByDay);
 
-      // Top pages
-      renderList('topPages', d.topPages, 'page', 'views');
+      // Top pages (removed from UI)
 
       // Browsers
       renderListPill('browsers', d.browsers, 'browser', 'views', browserPill);
