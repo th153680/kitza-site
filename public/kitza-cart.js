@@ -66,8 +66,21 @@ function interceptForms() {
       var imgEl = document.querySelector('.product__media img, .product-single__photo img, media-gallery img, .product__media-item img');
       var img = imgEl ? imgEl.src : '';
       addToCart(name, price, size, img);
+      // Close any Shopify drawer that might open
+      closeShopifyDrawer();
     });
   });
+}
+
+function closeShopifyDrawer() {
+  setTimeout(function() {
+    var drawers = document.querySelectorAll('cart-drawer, .cart-drawer, [id*="CartDrawer"], [id*="cart-drawer"]');
+    drawers.forEach(function(d) { d.style.display = 'none'; d.classList.remove('active', 'is-open'); });
+    var overlays = document.querySelectorAll('.cart-drawer-overlay, [id*="cart-overlay"]');
+    overlays.forEach(function(o) { o.style.display = 'none'; o.click(); });
+    document.body.classList.remove('overflow-hidden', 'js-drawer-open');
+    document.body.style.overflow = '';
+  }, 100);
 }
 
 /* === RENDER CART PAGE === */
@@ -328,11 +341,29 @@ function fixSizeSelector() {
   });
 }
 
+/* === FIX CART LINKS === */
+function fixCartLinks() {
+  // Make cart icon go to cart.html instead of Shopify drawer
+  document.querySelectorAll('a[href="/cart"], a[href="cart"], a[href="cart.html"]').forEach(function(link) {
+    link.setAttribute('href', 'cart.html');
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = '/cart.html';
+    });
+  });
+  // Hide Shopify cart drawer completely
+  var style = document.createElement('style');
+  style.textContent = 'cart-drawer, .cart-drawer, [id*="CartDrawer"] { display:none!important; } .cart-drawer-overlay { display:none!important; }';
+  document.head.appendChild(style);
+}
+
 /* === INIT === */
 function init() {
   interceptForms();
   updateCartBadge();
   fixSizeSelector();
+  fixCartLinks();
   
   // If on cart page, render custom cart
   if ((window.location.pathname === '/cart' || window.location.pathname === '/cart.html' || window.location.pathname.match(/\/cart(\/|$)/)) || document.title.indexOf('Carrinho') !== -1) {
