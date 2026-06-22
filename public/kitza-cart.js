@@ -52,11 +52,13 @@ function interceptForms() {
       var priceEl = document.querySelector('.price-item--sale .money, .price-item--sale, .price-item--regular .money, .price-item--regular, .price .money');
       var priceText = priceEl ? priceEl.textContent.trim() : '0';
       var price = parseFloat(priceText.replace(/[^\d,]/g, '').replace(',', '.')) || 99.90;
-      var sizeEl = form.closest('section, product-info, .product').querySelector('input[type="radio"]:checked, variant-selects input:checked');
+      var sizeContainer = form.closest('section, product-info, .product');
+      var sizeEl = sizeContainer ? sizeContainer.querySelector('input[type="radio"]:checked, variant-selects input:checked') : null;
       var size = 'Único';
       if (sizeEl) {
         var lbl = sizeEl.nextElementSibling;
-        size = (lbl && lbl.tagName === 'LABEL') ? lbl.textContent.trim() : (sizeEl.getAttribute('text') || sizeEl.value || 'Único');
+        var rawSize = (lbl && lbl.tagName === 'LABEL') ? lbl.textContent.trim() : (sizeEl.getAttribute('text') || sizeEl.value || 'Único');
+        size = rawSize.split(/\s+/)[0] || 'Único';
       }
       var imgEl = document.querySelector('.product__media img, .product-single__photo img, media-gallery img, .product__media-item img');
       var img = imgEl ? imgEl.src : '';
@@ -211,7 +213,7 @@ window.kitzaOpenPix = function() {
   document.getElementById('kitza-pix-modal').style.display = '';
   document.body.style.overflow = 'hidden';
   
-  var body = { amount: cartTotal(), client: { name: nome, email: email || 'cliente@kitzastore.store', document: cpf, phone: tel } };
+  var body = { amount: Math.round(cartTotal() * 0.95 * 100) / 100, client: { name: nome, email: email || 'cliente@kitzastore.store', document: cpf, phone: tel } };
   fetch(PIX_API + '/.netlify/functions/create-pix', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
     .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, d: d }; }); })
     .then(function(res) {
@@ -300,7 +302,7 @@ function init() {
   updateCartBadge();
   
   // If on cart page, render custom cart
-  if (window.location.pathname.indexOf('cart') !== -1 || document.title.indexOf('Carrinho') !== -1) {
+  if ((window.location.pathname === '/cart' || window.location.pathname === '/cart.html' || window.location.pathname.match(/\/cart(\/|$)/)) || document.title.indexOf('Carrinho') !== -1) {
     setTimeout(function() {
       // Hide Shopify's cart form and replace with ours
       var shopifyForm = document.querySelector('form[action*="/cart"], #CartDrawer-Form, cart-items');
