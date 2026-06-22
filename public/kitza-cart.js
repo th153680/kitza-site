@@ -16,7 +16,7 @@ window.fetch = function(url) {
 };
 
 var PIX_API = 'https://kitza-pay-api.netlify.app';
-var WA_NUMBER = '5575988231829';
+var WA_NUMBER = '5527999589015';
 
 /* === CART === */
 var cart = [];
