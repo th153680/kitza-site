@@ -52,13 +52,14 @@ function interceptForms() {
       var priceEl = document.querySelector('.price-item--sale .money, .price-item--sale, .price-item--regular .money, .price-item--regular, .price .money');
       var priceText = priceEl ? priceEl.textContent.trim() : '0';
       var price = parseFloat(priceText.replace(/[^\d,]/g, '').replace(',', '.')) || 99.90;
-      var sizeContainer = form.closest('section, product-info, .product');
-      var sizeEl = sizeContainer ? sizeContainer.querySelector('input[type="radio"]:checked, variant-selects input:checked') : null;
+      var sizeContainer = form.closest('section, product-info, .product') || document;
+      var sizeEl = sizeContainer.querySelector('input[type="radio"]:checked, variant-selects input:checked');
+      if (!sizeEl) sizeEl = document.querySelector('variant-selects input[type="radio"]:checked, .product-form__input--pill input[type="radio"]:checked');
       var size = 'Único';
       if (sizeEl) {
-        size = sizeEl.getAttribute('text') || sizeEl.getAttribute('data-value') || 'Único';
+        size = sizeEl.value || sizeEl.getAttribute('text') || sizeEl.getAttribute('data-value') || 'Único';
         if (size === 'Único') {
-          var lbl = sizeEl.nextElementSibling;
+          var lbl = document.querySelector('label[for="' + sizeEl.id + '"]') || sizeEl.nextElementSibling;
           if (lbl && lbl.tagName === 'LABEL') size = lbl.textContent.trim().split(/[^A-Za-z0-9]/)[0] || 'Único';
         }
       }
@@ -298,10 +299,40 @@ function sv(id, v) { var e = document.getElementById(id); if (e) e.value = v; }
 window.kitzaRemove = removeFromCart;
 window.kitzaQty = changeQty;
 
+/* === FIX SIZE SELECTOR === */
+function fixSizeSelector() {
+  document.querySelectorAll('variant-selects fieldset, .product-form__input--pill').forEach(function(fieldset) {
+    var radios = fieldset.querySelectorAll('input[type="radio"]');
+    var legend = fieldset.querySelector('legend [data-selected-value], legend span');
+    radios.forEach(function(radio) {
+      var label = fieldset.querySelector('label[for="' + radio.id + '"]');
+      if (!label) return;
+      // Style active on load
+      if (radio.checked) {
+        label.style.cssText = 'background:#000;color:#fff;border-color:#000;';
+      }
+      // Click handler
+      label.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        radios.forEach(function(r) {
+          r.checked = false;
+          var l = fieldset.querySelector('label[for="' + r.id + '"]');
+          if (l) l.style.cssText = '';
+        });
+        radio.checked = true;
+        label.style.cssText = 'background:#000;color:#fff;border-color:#000;';
+        if (legend) legend.textContent = radio.value || label.textContent.trim();
+      });
+    });
+  });
+}
+
 /* === INIT === */
 function init() {
   interceptForms();
   updateCartBadge();
+  fixSizeSelector();
   
   // If on cart page, render custom cart
   if ((window.location.pathname === '/cart' || window.location.pathname === '/cart.html' || window.location.pathname.match(/\/cart(\/|$)/)) || document.title.indexOf('Carrinho') !== -1) {
