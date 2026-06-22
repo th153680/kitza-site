@@ -169,6 +169,19 @@ function createCheckoutModal() {
     '</div>' +
     '<input type="tel" id="kz-cpf" placeholder="CPF (necessário para PIX)" maxlength="14" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
     '<input type="email" id="kz-email" placeholder="E-mail (opcional)" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
+    '<div style="border:1px solid #e5e5e5;border-radius:10px;padding:16px;margin-top:4px;">' +
+      '<p style="font-size:14px;font-weight:700;margin-bottom:12px;text-align:center;">Escolha seu brinde gratis</p>' +
+      '<div style="display:flex;gap:10px;">' +
+        '<label id="kz-brinde-stanley" onclick="window.kitzaSelectBrinde(\'stanley\')" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;border:2px solid #000;border-radius:10px;cursor:pointer;text-align:center;background:#fafafa;transition:all .2s;">' +
+          '<span style="font-size:28px;">🥤</span>' +
+          '<span style="font-size:13px;font-weight:600;">Copo Stanley</span>' +
+        '</label>' +
+        '<label id="kz-brinde-album" onclick="window.kitzaSelectBrinde(\'album\')" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;border:2px solid #e5e5e5;border-radius:10px;cursor:pointer;text-align:center;background:#fff;transition:all .2s;">' +
+          '<span style="font-size:28px;">📒</span>' +
+          '<span style="font-size:13px;font-weight:600;">Album Copa 2026</span>' +
+        '</label>' +
+      '</div>' +
+    '</div>' +
     '<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;text-align:center;"><strong>Total no PIX: ' + brl(cartTotal() * 0.95) + '</strong> <span style="color:#666;font-size:13px;">(5% OFF)</span></div>' +
     '<button onclick="window.kitzaOpenPix()" style="width:100%;background:#000;color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;">⚡ PAGAR VIA PIX — ' + brl(cartTotal() * 0.95) + '</button>' +
     '<button onclick="window.kitzaWhatsApp()" style="width:100%;background:#25d366;color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 Finalizar no WhatsApp</button>' +
@@ -284,6 +297,17 @@ window.kitzaCopyPix = function() {
   var b = document.getElementById('kz-pix-copy-btn'); b.textContent = 'Copiado ✓'; setTimeout(function() { b.textContent = 'Copiar código PIX'; }, 1600);
 };
 
+/* === BRINDE === */
+var selectedBrinde = 'stanley';
+window.kitzaSelectBrinde = function(type) {
+  selectedBrinde = type;
+  var s = document.getElementById('kz-brinde-stanley');
+  var a = document.getElementById('kz-brinde-album');
+  if (s) s.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;border:2px solid ' + (type === 'stanley' ? '#000' : '#e5e5e5') + ';border-radius:10px;cursor:pointer;text-align:center;background:' + (type === 'stanley' ? '#fafafa' : '#fff') + ';transition:all .2s;';
+  if (a) a.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;border:2px solid ' + (type === 'album' ? '#000' : '#e5e5e5') + ';border-radius:10px;cursor:pointer;text-align:center;background:' + (type === 'album' ? '#fafafa' : '#fff') + ';transition:all .2s;';
+};
+function getBrindeName() { return selectedBrinde === 'stanley' ? 'Copo Stanley' : 'Album Figurinhas Copa 2026'; }
+
 /* === CHECKOUT === */
 window.kitzaOpenCheckout = function() {
   if (!cart.length) return;
@@ -299,7 +323,8 @@ window.kitzaWhatsApp = function() {
   if (!cart.length) return;
   var parts = ['Olá! Quero finalizar meu pedido na KITZA:', ''];
   cart.forEach(function(it) { parts.push('• ' + it.qty + 'x ' + it.name + ' (Tam ' + it.size + ') — ' + brl(it.price * it.qty)); });
-  parts.push(''); parts.push('Total: ' + brl(cartTotal()));
+  parts.push(''); parts.push('Brinde escolhido: ' + getBrindeName());
+  parts.push('Total: ' + brl(cartTotal()));
   var nome = gv('kz-nome'), tel = gv('kz-tel'), cep = gv('kz-cep'), rua = gv('kz-rua'), num = gv('kz-num'), bairro = gv('kz-bairro'), cid = gv('kz-cidade'), uf = gv('kz-estado');
   if (nome) parts.push('Nome: ' + nome);
   if (tel) parts.push('WhatsApp: ' + tel);
