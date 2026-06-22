@@ -56,9 +56,11 @@ function interceptForms() {
       var sizeEl = sizeContainer ? sizeContainer.querySelector('input[type="radio"]:checked, variant-selects input:checked') : null;
       var size = 'Único';
       if (sizeEl) {
-        var lbl = sizeEl.nextElementSibling;
-        var rawSize = (lbl && lbl.tagName === 'LABEL') ? lbl.textContent.trim() : (sizeEl.getAttribute('text') || sizeEl.value || 'Único');
-        size = rawSize.split(/\s+/)[0] || 'Único';
+        size = sizeEl.getAttribute('text') || sizeEl.getAttribute('data-value') || 'Único';
+        if (size === 'Único') {
+          var lbl = sizeEl.nextElementSibling;
+          if (lbl && lbl.tagName === 'LABEL') size = lbl.textContent.trim().split(/[^A-Za-z0-9]/)[0] || 'Único';
+        }
       }
       var imgEl = document.querySelector('.product__media img, .product-single__photo img, media-gallery img, .product__media-item img');
       var img = imgEl ? imgEl.src : '';
@@ -69,7 +71,7 @@ function interceptForms() {
 
 /* === RENDER CART PAGE === */
 function renderCartPage() {
-  var container = document.querySelector('.cart__items, cart-items, .cart-items, #CartDrawer-CartItems');
+  var container = document.getElementById('kitza-cart-items') || document.querySelector('.cart__items, cart-items, .cart-items, #CartDrawer-CartItems');
   if (!container) return;
   
   if (cart.length === 0) {
@@ -98,11 +100,11 @@ function renderCartPage() {
 function updateCheckoutSection() {
   var total = cartTotal();
   var count = cartCount();
-  var ctas = document.querySelector('.cart__ctas, .cart__footer-ctas, #cart-ctas-kitza');
+  var ctas = document.getElementById('kitza-cart-ctas') || document.querySelector('.cart__ctas, .cart__footer-ctas, #cart-ctas-kitza');
   if (!ctas) {
     ctas = document.createElement('div');
-    ctas.id = 'cart-ctas-kitza';
-    var parent = document.querySelector('.cart__footer, .cart-footer, main');
+    ctas.id = 'kitza-cart-ctas';
+    var parent = document.querySelector('main');
     if (parent) parent.appendChild(ctas);
   }
   if (count === 0) { ctas.innerHTML = ''; return; }
@@ -304,22 +306,16 @@ function init() {
   // If on cart page, render custom cart
   if ((window.location.pathname === '/cart' || window.location.pathname === '/cart.html' || window.location.pathname.match(/\/cart(\/|$)/)) || document.title.indexOf('Carrinho') !== -1) {
     setTimeout(function() {
-      // Hide Shopify's cart form and replace with ours
-      var shopifyForm = document.querySelector('form[action*="/cart"], #CartDrawer-Form, cart-items');
-      if (shopifyForm) {
-        shopifyForm.innerHTML = '';
-        shopifyForm.id = 'kitza-cart-container';
-        shopifyForm.style.cssText = 'max-width:800px;margin:0 auto;padding:20px;';
-      }
-      var container = shopifyForm || document.querySelector('main');
-      if (container) {
-        container.innerHTML = '<div class="cart__items" style="max-width:800px;margin:0 auto;"></div><div class="cart__ctas"></div>';
+      // Replace main content entirely to avoid Shopify custom element conflicts
+      var mainEl = document.querySelector('main');
+      if (mainEl) {
+        mainEl.innerHTML = '<div style="max-width:800px;margin:0 auto;padding:20px;"><h1 style="font-size:2rem;margin-bottom:8px;">Carrinho</h1><a href="collections/all.html" style="color:#666;text-decoration:underline;font-size:14px;">Voltar à loja</a><div id="kitza-cart-items" style="margin-top:20px;"></div><div id="kitza-cart-ctas"></div></div>';
       }
       renderCartPage();
       // Hide Shopify checkout button
       var btn = document.getElementById('CartDrawer-Checkout');
       if (btn) btn.style.display = 'none';
-    }, 300);
+    }, 500);
   }
   
   // Observe for dynamically loaded forms
