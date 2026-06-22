@@ -66,7 +66,7 @@ function interceptForms() {
       var name = nameEl ? nameEl.textContent.trim().split('\n')[0].trim() : 'Produto';
       var priceEl = document.querySelector('.price-item--sale .money, .price-item--sale, .price-item--regular .money, .price-item--regular, .price .money');
       var priceText = priceEl ? priceEl.textContent.trim() : '0';
-      var price = parseFloat(priceText.replace(/[^\d,]/g, '').replace(',', '.')) || 99.90;
+      var price = parseFloat(priceText.replace(/[^\d,]/g, '').replace(',', '.')) || 59.90;
       var sizeContainer = form.closest('section, product-info, .product') || document;
       var sizeEl = sizeContainer.querySelector('input[type="radio"]:checked, variant-selects input:checked');
       if (!sizeEl) sizeEl = document.querySelector('variant-selects input[type="radio"]:checked, .product-form__input--pill input[type="radio"]:checked');
