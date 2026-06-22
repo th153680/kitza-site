@@ -79,8 +79,8 @@ function interceptForms() {
       var imgEl = document.querySelector('.product__media img, .product-single__photo img, media-gallery img, .product__media-item img');
       var img = imgEl ? imgEl.src : '';
       addToCart(name, price, size, img);
-      // Close any Shopify drawer that might open
-      closeShopifyDrawer();
+      // Redirect to cart page
+      setTimeout(function() { window.location.href = '/cart.html'; }, 300);
     });
   });
 }
@@ -170,7 +170,7 @@ function createCheckoutModal() {
     '<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;text-align:center;"><strong>Total no PIX: ' + brl(cartTotal() * 0.95) + '</strong> <span style="color:#666;font-size:13px;">(5% OFF)</span></div>' +
     '<button onclick="window.kitzaOpenPix()" style="width:100%;background:#000;color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;">⚡ PAGAR VIA PIX — ' + brl(cartTotal() * 0.95) + '</button>' +
     '<button onclick="window.kitzaWhatsApp()" style="width:100%;background:#25d366;color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 Finalizar no WhatsApp</button>' +
-    '<p style="text-align:center;font-size:11px;color:#666;margin-top:8px;">🔒 SSL · PIX instantâneo · Compra garantida · CNPJ 52.347.891/0001-04</p>' +
+    '<p style="text-align:center;font-size:11px;color:#666;margin-top:8px;">🔒 SSL · PIX instantâneo · Compra garantida · CNPJ 48.291.653/0001-72</p>' +
     '</div></div>';
   document.body.appendChild(modal);
   modal.addEventListener('click', function(e) { if (e.target === modal) window.kitzaCloseCheckout(); });
