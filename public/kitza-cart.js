@@ -140,7 +140,7 @@ function updateCheckoutSection() {
   
   ctas.innerHTML = '<div style="padding:20px 0;border-top:2px solid #000;margin-top:20px;">' +
     '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:16px;font-weight:600;">Subtotal</span><strong style="font-size:20px;">' + brl(total) + '</strong></div>' +
-    '<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:14px;color:#166534;">💰 No PIX: <strong>' + brl(total * 0.95) + '</strong> (5% OFF)</div>' +
+    '<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:14px;color:#166534;">💰 No PIX: <strong>' + brl(total * 0.90) + '</strong> (10% OFF)</div>' +
     '<button onclick="window.kitzaOpenCheckout()" style="width:100%;background:#000;color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-bottom:10px;">⚡ FINALIZAR COMPRA</button>' +
     '<button onclick="window.kitzaWhatsApp()" style="width:100%;background:#25d366;color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 Finalizar no WhatsApp</button>' +
     '<p style="text-align:center;margin-top:12px;font-size:12px;color:#666;">🔒 Pagamento seguro · PIX instantâneo · Troca em 7 dias</p>' +
@@ -170,7 +170,7 @@ function createCheckoutModal() {
     '<input type="tel" id="kz-cpf" placeholder="CPF (necessário para PIX)" maxlength="14" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
     '<input type="email" id="kz-email" placeholder="E-mail (opcional)" style="padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:15px;">' +
     '<div style="border:1px solid #e5e5e5;border-radius:10px;padding:16px;margin-top:4px;">' +
-      '<p style="font-size:14px;font-weight:700;margin-bottom:12px;text-align:center;">Escolha seu brinde gratis</p>' +
+      '<p style="font-size:14px;font-weight:700;margin-bottom:12px;text-align:center;">Escolha seu brinde</p>' +
       '<div style="display:flex;gap:10px;">' +
         '<label id="kz-brinde-stanley" onclick="window.kitzaSelectBrinde(\'stanley\')" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;border:2px solid #000;border-radius:10px;cursor:pointer;text-align:center;background:#fafafa;transition:all .2s;">' +
           '<span style="font-size:28px;">🥤</span>' +
@@ -182,8 +182,8 @@ function createCheckoutModal() {
         '</label>' +
       '</div>' +
     '</div>' +
-    '<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;text-align:center;"><strong>Total no PIX: ' + brl(cartTotal() * 0.95) + '</strong> <span style="color:#666;font-size:13px;">(5% OFF)</span></div>' +
-    '<button onclick="window.kitzaOpenPix()" style="width:100%;background:#000;color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;">⚡ PAGAR VIA PIX — ' + brl(cartTotal() * 0.95) + '</button>' +
+    '<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px;text-align:center;"><strong>Total no PIX: ' + brl(cartTotal() * 0.90) + '</strong> <span style="color:#666;font-size:13px;">(10% OFF)</span></div>' +
+    '<button onclick="window.kitzaOpenPix()" style="width:100%;background:#000;color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;">⚡ PAGAR VIA PIX — ' + brl(cartTotal() * 0.90) + '</button>' +
     '<button onclick="window.kitzaWhatsApp()" style="width:100%;background:#25d366;color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">💬 Finalizar no WhatsApp</button>' +
     '<p style="text-align:center;font-size:11px;color:#666;margin-top:8px;">🔒 SSL · PIX instantâneo · Compra garantida · CNPJ 48.291.653/0001-72</p>' +
     '</div></div>';
@@ -257,7 +257,7 @@ window.kitzaOpenPix = function() {
   document.getElementById('kitza-pix-modal').style.display = '';
   document.body.style.overflow = 'hidden';
   
-  var body = { amount: Math.round(cartTotal() * 0.95 * 100) / 100, client: { name: nome, email: email || 'cliente@kitzastore.store', document: cpf, phone: tel } };
+  var body = { amount: Math.round(cartTotal() * 0.90 * 100) / 100, client: { name: nome, email: email || 'cliente@kitzastore.store', document: cpf, phone: tel } };
   fetch(PIX_API + '/.netlify/functions/create-pix', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
     .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, d: d }; }); })
     .then(function(res) {
