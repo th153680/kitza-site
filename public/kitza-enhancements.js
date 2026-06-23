@@ -152,6 +152,12 @@
     }
 
     /* Enhance existing reviews visibility */
+    .rw-main-wrapper .lumin-text__fancy1 {
+      background-image: none !important;
+      -webkit-background-clip: unset !important;
+      background-clip: unset !important;
+      color: #d4af37 !important;
+    }
     .rw-main-wrapper {
       background: #111 !important;
       padding: 40px 0 !important;
