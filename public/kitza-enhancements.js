@@ -151,102 +151,56 @@
       margin-bottom: 4px;
     }
 
-    /* Reviews Section */
-    .kitza-reviews {
-      max-width: 700px;
-      margin: 32px auto;
-      padding: 0 16px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Enhance existing reviews visibility */
+    .rw-main-wrapper {
+      background: #111 !important;
+      padding: 40px 0 !important;
     }
-    .kitza-reviews h3 {
-      font-size: 20px;
-      margin: 0 0 8px;
-      color: #111;
+    .rw-sub-wrapper {
+      max-width: 900px !important;
+      margin: 0 auto !important;
     }
-    .kitza-reviews .kr-summary {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #666;
+    .rw-title {
+      font-size: 26px !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+      margin-bottom: 24px !important;
     }
-    .kitza-reviews .kr-stars {
-      color: #f59e0b;
-      font-size: 16px;
+    .rating-summary {
+      border: 2px solid #d4af37 !important;
+      padding: 24px !important;
+      margin-bottom: 24px !important;
     }
-    .kitza-reviews .kr-card {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 12px;
+    .rating-summary-score {
+      font-size: 48px !important;
+      font-weight: 800 !important;
     }
-    .kitza-reviews .kr-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+    .rating-summary-count {
+      font-size: 16px !important;
     }
-    .kitza-reviews .kr-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #e5e5e5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-      color: #555;
+    /* Review cards - bigger images, clearer text */
+    .review-item img, .rw-review-image img {
+      width: 100% !important;
+      max-width: 200px !important;
+      height: auto !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
     }
-    .kitza-reviews .kr-meta {
-      flex: 1;
+    .review-item, .rw-review-card {
+      background: #fff !important;
+      border-radius: 12px !important;
+      padding: 16px !important;
+      margin-bottom: 16px !important;
     }
-    .kitza-reviews .kr-name {
-      font-weight: 600;
-      font-size: 14px;
-      color: #111;
+    /* Testimonial slider images bigger */
+    image-testimony-slider-imagetestimonyhbrexr img {
+      border-radius: 10px !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
     }
-    .kitza-reviews .kr-date {
-      font-size: 12px;
-      color: #999;
-    }
-    .kitza-reviews .kr-verified {
-      font-size: 11px;
-      color: #10b981;
-      font-weight: 600;
-    }
-    .kitza-reviews .kr-text {
-      font-size: 14px;
-      color: #333;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-    .kitza-reviews .kr-photo {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      object-fit: cover;
-      border: 1px solid #e5e5e5;
-    }
-    .kitza-reviews .kr-photos {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .kitza-reviews .kr-badge {
-      display: inline-block;
-      background: #f0fdf4;
-      color: #166534;
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-    .kitza-reviews .kr-stars-sm {
-      color: #f59e0b;
-      font-size: 13px;
+    /* "Quem comprou, amou" section more prominent */
+    .image-testimony-title, [class*="testimony"] h2 {
+      font-size: 22px !important;
+      font-weight: 700 !important;
     }
   `;
   document.head.appendChild(css);
@@ -306,53 +260,7 @@
       '<span>\uD83D\uDCF1 Suporte via WhatsApp</span>' +
       '</div></div>';
 
-    // --- 4. REVIEWS WITH PHOTOS ---
-    var reviewsHTML = '<div class="kitza-reviews">' +
-      '<h3>Avalia\u00e7\u00f5es de Clientes</h3>' +
-      '<div class="kr-summary"><span class="kr-stars">\u2B50\u2B50\u2B50\u2B50\u2B50</span> 4.9/5 — Baseado em 327 avalia\u00e7\u00f5es</div>' +
-
-      // Review 1 - 5 stars with photo
-      '<div class="kr-card">' +
-      '<div class="kr-header"><div class="kr-avatar">RS</div><div class="kr-meta"><span class="kr-name">Rafael S.</span> <span class="kr-verified">\u2705 Compra verificada</span><br><span class="kr-stars-sm">\u2B50\u2B50\u2B50\u2B50\u2B50</span> <span class="kr-date">Jun 2026</span></div></div>' +
-      '<p class="kr-text">Camisa chegou em 4 dias, qualidade excelente! Tecido leve e confort\u00e1vel. J\u00e1 usei pra jogar e pra sair. Super recomendo.</p>' +
-      '<div class="kr-photos"><div style="width:80px;height:80px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:24px;border:1px solid #e5e5e5;">\uD83D\uDC55</div></div>' +
-      '</div>' +
-
-      // Review 2 - 5 stars with photo
-      '<div class="kr-card">' +
-      '<div class="kr-header"><div class="kr-avatar">JC</div><div class="kr-meta"><span class="kr-name">Juliana C.</span> <span class="kr-verified">\u2705 Compra verificada</span><br><span class="kr-stars-sm">\u2B50\u2B50\u2B50\u2B50\u2B50</span> <span class="kr-date">Jun 2026</span></div></div>' +
-      '<p class="kr-text">Comprei pro meu marido e ele amou! A estampa \u00e9 n\u00edtida e n\u00e3o desbota. Material dry-fit muito bom pra esse calor. Entrega r\u00e1pida.</p>' +
-      '<div class="kr-photos"><div style="width:80px;height:80px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:24px;border:1px solid #e5e5e5;">\uD83D\uDCE6</div></div>' +
-      '</div>' +
-
-      // Review 3 - 4 stars (important for credibility)
-      '<div class="kr-card">' +
-      '<div class="kr-header"><div class="kr-avatar">MA</div><div class="kr-meta"><span class="kr-name">Marcos A.</span> <span class="kr-verified">\u2705 Compra verificada</span><br><span class="kr-stars-sm">\u2B50\u2B50\u2B50\u2B50</span> <span class="kr-date">Mai 2026</span></div></div>' +
-      '<p class="kr-text">Camisa bonita, boa qualidade. Demorou 6 dias pra chegar (esperava menos). Mas o produto em si \u00e9 \u00f3timo, vesti certinho no tamanho M.</p>' +
-      '</div>' +
-
-      // Review 4 - 5 stars
-      '<div class="kr-card">' +
-      '<div class="kr-header"><div class="kr-avatar">FS</div><div class="kr-meta"><span class="kr-name">Felipe S.</span> <span class="kr-verified">\u2705 Compra verificada</span><br><span class="kr-stars-sm">\u2B50\u2B50\u2B50\u2B50\u2B50</span> <span class="kr-date">Mai 2026</span></div></div>' +
-      '<p class="kr-text">Segunda vez que compro aqui. Qualidade top, igual a foto. Dessa vez comprei a azul e a amarela. PIX caiu na hora e recebi r\u00e1pido.</p>' +
-      '</div>' +
-
-      // Review 5 - 5 stars with photo
-      '<div class="kr-card">' +
-      '<div class="kr-header"><div class="kr-avatar">AC</div><div class="kr-meta"><span class="kr-name">Ana C.</span> <span class="kr-verified">\u2705 Compra verificada</span><br><span class="kr-stars-sm">\u2B50\u2B50\u2B50\u2B50\u2B50</span> <span class="kr-date">Jun 2026</span></div></div>' +
-      '<p class="kr-text">Comprei pra fam\u00edlia toda! Kit com 3 camisas (pai, m\u00e3e e filho). Chegou tudo certinho, embalagem caprichada. A do meu filho de 6 anos ficou linda.</p>' +
-      '<div class="kr-photos"><div style="width:80px;height:80px;border-radius:8px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:24px;border:1px solid #e5e5e5;">\uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC66</div></div>' +
-      '</div>' +
-
-      // Review 6 - 4 stars
-      '<div class="kr-card">' +
-      '<div class="kr-header"><div class="kr-avatar">LP</div><div class="kr-meta"><span class="kr-name">Lucas P.</span> <span class="kr-verified">\u2705 Compra verificada</span><br><span class="kr-stars-sm">\u2B50\u2B50\u2B50\u2B50</span> <span class="kr-date">Mai 2026</span></div></div>' +
-      '<p class="kr-text">Boa camisa pelo pre\u00e7o. Material bom, costura firme. S\u00f3 achei que o dourado da gola podia ser um pouco mais vivo. Mas no geral recomendo.</p>' +
-      '</div>' +
-
-      '</div>';
-
-    // Insert guarantee + reviews after the product form section
+    // Insert guarantee after the product form section
     function insertSections() {
       var productSection = document.querySelector('.product, product-info, .product__info-wrapper');
       if (!productSection) {
@@ -360,14 +268,14 @@
       }
       if (productSection) {
         var container = document.createElement('div');
-        container.innerHTML = guaranteeHTML + reviewsHTML;
+        container.innerHTML = guaranteeHTML;
         productSection.parentNode.insertBefore(container, productSection.nextSibling);
       } else {
         // Fallback: insert before footer
         var footer = document.querySelector('footer, .footer');
         if (footer) {
           var container = document.createElement('div');
-          container.innerHTML = guaranteeHTML + reviewsHTML;
+          container.innerHTML = guaranteeHTML;
           footer.parentNode.insertBefore(container, footer);
         }
       }
