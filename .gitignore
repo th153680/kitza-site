@@ -1,5 +1,7 @@
 node_modules/
+.env
+.netlify/
 analytics.db
 analytics.db-wal
 analytics.db-shm
-.env
+local.db

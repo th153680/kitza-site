@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="pt-BR" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/shopify">
+  <id>https://www.jesuschristbrand.com/collections/all.atom</id>
+  <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/collections/all"/>
+  <link rel="self" type="application/atom+xml" href="https://www.jesuschristbrand.com/collections/mais-vendidos.atom"/>
+  <title>KITZA Store</title>
+  <updated>2026-06-12T21:19:49-03:00</updated>
+  <author>
+    <name>KITZA Store</name>
+  </author>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+    <published>2026-06-12T21:19:49-03:00</published>
+    <updated>2026-06-12T21:19:49-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul-copia"/>
+    <title>Camiseta Brasil Amarela Feminino</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/imagmefrentemodelo_1.png?v=1781309931"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            99.90 - 129.80
+            <a href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul-copia">(12 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Fé e estilo inspirada nas cores do Brasil. Conforto e qualidade em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><meta charset="utf-8">Ela combina conforto, qualidade e significado em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Detalhes do Produto:</strong></p>
+<ul class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Tecido Dry Fit 100% poliéster<meta charset="utf-8">
+</li>
+<li>Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">
+<meta charset="utf-8">Excelente durabilidade e resistência</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Estampa alta definição</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Modelagem confortável</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>PP / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>PP / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>P / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>P / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>M / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>M / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>G / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>G / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>GG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>GG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>EXG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7952723902507</id>
+      <title>EXG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+    <published>2026-06-04T09:01:16-03:00</published>
+    <updated>2026-06-04T09:01:16-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul-2"/>
+    <title>Camiseta Brasil Azul Feminino</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/imagemmulher2_274f0dff-f445-4739-a91b-fe5152104fb5.png?v=1780574635"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            99.90 - 129.80
+            <a href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul-2">(12 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Fé e estilo inspirada nas cores do Brasil. Conforto e qualidade em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><meta charset="utf-8">Ela combina conforto, qualidade e significado em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Detalhes do Produto:</strong></p>
+<ul class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Tecido Dry Fit 100% poliéster<meta charset="utf-8">
+</li>
+<li>Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">
+<meta charset="utf-8">Excelente durabilidade e resistência</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Estampa alta definição</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Modelagem confortável</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>PP / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>PP / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>P / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>P / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>M / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>M / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>G / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>G / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>GG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>GG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>EXG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941414158379</id>
+      <title>EXG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+    <published>2026-06-04T08:12:53-03:00</published>
+    <updated>2026-06-04T08:12:53-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul-1"/>
+    <title>Camiseta Brasil Azul Infantil</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/ec7e6c93-f8b6-48e8-9af1-af307f7bddd3_2_1_6de8986d-0280-444e-8f16-79c6be526fb1.png?v=1780574727"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            99.90 - 129.80
+            <a href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul-1">(16 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Fé e estilo inspirada nas cores do Brasil. Conforto e qualidade em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><meta charset="utf-8">Ela combina conforto, qualidade e significado em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Detalhes do Produto:</strong></p>
+<ul class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Tecido Dry Fit 100% poliéster<meta charset="utf-8">
+</li>
+<li>Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">
+<meta charset="utf-8">Excelente durabilidade e resistência</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Estampa alta definição</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Modelagem confortável</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>2 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>2 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>4 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>4 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>6 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>6 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>8 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>8 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>10 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>10 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>12 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>12 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>14 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>14 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>16 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941325324331</id>
+      <title>16 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+    <published>2026-06-04T07:52:49-03:00</published>
+    <updated>2026-06-04T07:52:49-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-amarela-1"/>
+    <title>Camiseta Brasil Amarela Infantil</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/Camiseta-Menino-Amarela6.png?v=1780569924"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            99.90 - 129.80
+            <a href="https://www.jesuschristbrand.com/products/camiseta-jesus-amarela-1">(16 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-start="38" data-end="120">A Camisa Brasil une propósito, estilo e personalidade em uma peça exclusiva.</p>
+<p data-start="122" data-end="283">Inspirada nas cores do Brasil e desenvolvida para quem deseja expressar sua fé de forma autêntica, ela combina conforto, qualidade e significado em cada detalhe.</p>
+<p data-start="285" data-end="560">Confeccionada em malha premium de poliéster com algodão, oferece toque macio, excelente respirabilidade e caimento confortável para o dia a dia. A estampa em alta definição garante cores vibrantes e ótima durabilidade, mantendo a aparência da peça mesmo após várias lavagens.</p>
+<h3 data-section-id="1bva9ik" data-start="703" data-end="724">Detalhes da peça:</h3>
+<p data-start="726" data-end="1038">• Malha premium de poliéster com algodão<br data-start="766" data-end="769">• Toque macio e confortável<br data-start="796" data-end="799">• Estampa frontal em alta definição<br data-start="834" data-end="837">• Tecido leve e respirável<br data-start="863" data-end="866">• Excelente durabilidade e resistência<br data-start="904" data-end="907">• Secagem rápida<br data-start="923" data-end="926">• Modelagem confortável para uso diário<br data-start="965" data-end="968">• Gola redonda reforçada<br data-start="1010" data-end="1013">• Acabamento de qualidade</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>2 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>2 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>4 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>4 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>6 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>6 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>8 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>8 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>10 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>10 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>12 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>12 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>14 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>14 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>16 ANOS / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7941296980011</id>
+      <title>16 ANOS / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7937717141547</id>
+    <published>2026-06-02T08:51:18-03:00</published>
+    <updated>2026-06-02T08:51:18-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-christ"/>
+    <title>Camiseta KITZA</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/ChatGPT_Image_2_de_jun._de_2026_01_32_42_1.png?v=1780401019"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            129.90
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-start="40" data-end="139">A <strong data-start="42" data-end="75">Camiseta Premium KITZA</strong> une propósito, qualidade e estilo em uma peça feita para durar.</p>
+<p data-start="141" data-end="355">Desenvolvida para quem deseja expressar sua fé com autenticidade, ela combina um visual atemporal com materiais de alta qualidade, proporcionando conforto excepcional e um caimento impecável para todas as ocasiões.</p>
+<p data-start="357" data-end="679">Confeccionada em <strong data-start="374" data-end="398">100% algodão peruano</strong>, reconhecido mundialmente por sua maciez e resistência, a peça oferece toque suave e sedoso, excelente respirabilidade e durabilidade superior. Sua construção premium garante conforto durante todo o dia, mantendo a qualidade e a aparência da camiseta mesmo após diversas lavagens.</p>
+<p data-start="681" data-end="897">Criada no Brasil e feita para o mundo, cada peça é produzida sob demanda especialmente para você, utilizando tecnologia de ponta em estamparia para garantir máxima definição, cores vibrantes e excelente durabilidade.</p>
+<p data-start="899" data-end="1296" data-is-last-node="" data-is-only-node=""><strong data-start="899" data-end="920">Detalhes da peça:</strong><br>• 100% algodão peruano premium<br data-start="951" data-end="954">• Toque macio e sedoso<br data-start="976" data-end="979">• Tecido resistente e durável<br data-start="1008" data-end="1011" data-is-only-node="">• Excelente respirabilidade<br data-start="1038" data-end="1041">• Estampa em alta definição<br data-start="1068" data-end="1071">• Cores vibrantes e duradouras<br data-start="1101" data-end="1104">• Caimento confortável e sofisticado<br data-start="1140" data-end="1143">• Gola reforçada para maior durabilidade<br data-start="1183" data-end="1186">• Acabamento premium de alta qualidade<br data-start="1224" data-end="1227">• Produção sob demanda<br data-start="1249" data-end="1252">• Ideal para uso diário e ocasiões especiais</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937717141547</id>
+      <title>P</title>
+      <s:price currency="BRL">129.90</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937717141547</id>
+      <title>M</title>
+      <s:price currency="BRL">129.90</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937717141547</id>
+      <title>G</title>
+      <s:price currency="BRL">129.90</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937717141547</id>
+      <title>GG</title>
+      <s:price currency="BRL">129.90</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937717141547</id>
+      <title>EXG</title>
+      <s:price currency="BRL">129.90</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7937715765291</id>
+    <published>2026-06-02T08:43:55-03:00</published>
+    <updated>2026-06-02T08:43:55-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/casaco-jesus-christ"/>
+    <title>Casaco KITZA</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/ChatGPTImage2dejun.de2026_01_28_42_1.png?v=1780400486"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            180.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-start="40" data-end="119">O <strong data-start="42" data-end="70">Hoodie Slim KITZA</strong> une fé, conforto e estilo em uma peça exclusiva.</p>
+<p data-start="121" data-end="357">Desenvolvido para quem busca um visual moderno e alinhado sem abrir mão do aconchego do moletom, ele possui modelagem slim com caimento mais ajustado ao corpo, proporcionando uma aparência elegante e contemporânea para qualquer ocasião.</p>
+<p data-start="359" data-end="655">Confeccionado em moletom premium com <strong data-start="396" data-end="427">50% algodão e 50% poliéster</strong>, oferece toque macio, excelente conforto térmico e alta durabilidade para o uso diário. Seu design minimalista, sem cadarço no capuz, traz um visual limpo e sofisticado, perfeito para compor looks versáteis em qualquer estação.</p>
+<p data-start="657" data-end="832">Criado no Brasil e produzido sob demanda, cada peça é confeccionada especialmente para você utilizando tecnologia de ponta em estamparia, garantindo qualidade e exclusividade.</p>
+<p data-start="834" data-end="1291" data-is-last-node="" data-is-only-node=""><strong data-start="834" data-end="855">Detalhes da peça:</strong><br>• Moletom premium 50% algodão e 50% poliéster<br data-start="901" data-end="904">• Modelagem Slim com caimento ajustado<br data-start="942" data-end="945">• Interior macio e aconchegante<br data-start="976" data-end="979" data-is-only-node="">• Capuz sem cadarço para visual moderno e minimalista<br data-start="1032" data-end="1035">• Excelente conforto térmico<br data-start="1063" data-end="1066">• Alta durabilidade e resistência<br data-start="1099" data-end="1102">• Punhos e barra canelados<br data-start="1128" data-end="1131">• Bolso canguru frontal<br data-start="1154" data-end="1157">• Acabamento de qualidade premium<br data-start="1190" data-end="1193">• Produção sob demanda com estampa de alta definição<br data-start="1245" data-end="1248">• Ideal para o dia a dia e ocasiões casuais</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937715765291</id>
+      <title>P</title>
+      <s:price currency="BRL">180.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937715765291</id>
+      <title>M</title>
+      <s:price currency="BRL">180.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937715765291</id>
+      <title>G</title>
+      <s:price currency="BRL">180.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937715765291</id>
+      <title>GG</title>
+      <s:price currency="BRL">180.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937715765291</id>
+      <title>EXG</title>
+      <s:price currency="BRL">180.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+    <published>2026-06-02T08:00:03-03:00</published>
+    <updated>2026-06-02T08:00:03-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-amarela"/>
+    <title>Camiseta Brasil Amarela Masculina</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/Camiseta-Brasil-Amarela-Masculino-6.png?v=1780570689"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            99.90 - 129.80
+            <a href="https://www.jesuschristbrand.com/products/camiseta-jesus-amarela">(12 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-start="38" data-end="120">A Camisa Brasil une propósito, estilo e personalidade em uma peça exclusiva.</p>
+<p data-start="122" data-end="283">Inspirada nas cores do Brasil e desenvolvida para quem deseja expressar sua fé de forma autêntica, ela combina conforto, qualidade e significado em cada detalhe.</p>
+<p data-start="285" data-end="560">Confeccionada em malha premium de poliéster com algodão, oferece toque macio, excelente respirabilidade e caimento confortável para o dia a dia. A estampa em alta definição garante cores vibrantes e ótima durabilidade, mantendo a aparência da peça mesmo após várias lavagens.</p>
+<h3 data-section-id="1bva9ik" data-start="703" data-end="724">Detalhes da peça:</h3>
+<p data-start="726" data-end="1038">• Malha premium de poliéster com algodão<br data-start="766" data-end="769">• Toque macio e confortável<br data-start="796" data-end="799">• Estampa frontal em alta definição<br data-start="834" data-end="837">• Tecido leve e respirável<br data-start="863" data-end="866">• Excelente durabilidade e resistência<br data-start="904" data-end="907">• Secagem rápida<br data-start="923" data-end="926">• Modelagem confortável para uso diário<br data-start="965" data-end="968">• Gola redonda reforçada<br data-start="1010" data-end="1013">• Acabamento de qualidade</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>PP / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>PP / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>P / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>P / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>M / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>M / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>G / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>G / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>GG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>GG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>EXG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7937634795563</id>
+      <title>EXG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+    <published>2026-06-01T16:56:45-03:00</published>
+    <updated>2026-06-01T16:56:45-03:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul"/>
+    <title>Camiseta Brasil Azul Masculina</title>
+    <s:type></s:type>
+    <s:vendor>KITZA</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0689/9502/2891/files/Camiseta-Brasil-Azul-Masculino-3.png?v=1780572817"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Fornecedor: </strong>KITZA<br>
+        <strong>Tipo: </strong><br>
+        <strong>Preço: </strong>
+            99.90 - 129.80
+            <a href="https://www.jesuschristbrand.com/products/camiseta-jesus-azul">(12 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">Fé e estilo inspirada nas cores do Brasil. Conforto e qualidade em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><meta charset="utf-8">Ela combina conforto, qualidade e significado em cada detalhe.</p>
+<p class="font-claude-response-body break-words whitespace-normal leading-[1.7]"><strong>Detalhes do Produto:</strong></p>
+<ul class="[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3">
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Tecido Dry Fit 100% poliéster<meta charset="utf-8">
+</li>
+<li>Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">
+<meta charset="utf-8">Excelente durabilidade e resistência</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Estampa alta definição</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Gola redonda reforçada</li>
+<li class="font-claude-response-body whitespace-normal break-words pl-2">Modelagem confortável</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>PP / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>PP / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>P / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>P / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>M / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>M / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>G / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>G / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>GG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>GG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>EXG / Não</title>
+      <s:price currency="BRL">99.90</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.jesuschristbrand.com/products/7936847675435</id>
+      <title>EXG / Sim</title>
+      <s:price currency="BRL">129.80</s:price>
+      <s:sku/>
+      <s:grams>200</s:grams>
+    </s:variant>
+  </entry>
+</feed>

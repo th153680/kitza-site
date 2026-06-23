@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login · KITZA Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f5c518;--gold-2:#ffd95a;--bg:#0b0b0d;--bg-2:#121216;--ink:#f4f4f5;--muted:#a9a9b2;--line:rgba(255,255,255,.08);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;}
+.login-box{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:40px 32px;width:100%;max-width:380px;text-align:center;}
+.login-box .logo{font-family:'Anton';font-size:28px;letter-spacing:1px;margin-bottom:6px;}
+.login-box .crown{color:var(--gold);}
+.login-box .sub{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;}
+.login-box label{display:block;text-align:left;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px;letter-spacing:.5px;}
+.login-box input{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:#0e0e12;color:#fff;font-size:15px;margin-bottom:18px;outline:none;transition:border-color .2s;}
+.login-box input:focus{border-color:var(--gold);}
+.login-box button{width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#1a1a00;font-weight:800;font-size:15px;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+.login-box button:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(245,197,24,.35);}
+.error{color:#ff6b6b;font-size:13px;margin-bottom:14px;display:none;}
+.error.show{display:block;}
+</style>
+</head>
+<body>
+<div class="login-box">
+  <div class="logo">KITZA <span class="crown">👑</span></div>
+  <div class="sub">Painel de Analytics</div>
+  <form method="POST" action="/api/login">
+    <label for="password">Senha de administrador</label>
+    <input type="password" id="password" name="password" placeholder="Digite a senha" required autofocus>
+    <div class="error" id="err">Senha incorreta. Tente novamente.</div>
+    <button type="submit">Entrar</button>
+  </form>
+</div>
+<script>
+if(location.search.includes('error=1'))document.getElementById('err').classList.add('show');
+</script>
+</body>
+</html>
