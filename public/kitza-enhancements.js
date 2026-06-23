@@ -151,6 +151,11 @@
       margin-bottom: 4px;
     }
 
+    /* Hide Jesus Christ brand packaging section */
+    #shopify-section-sections--26751223267371__lumin_mega_8AVaHA {
+      display: none !important;
+    }
+
     /* Enhance existing reviews visibility */
     .rw-main-wrapper .lumin-text__fancy1 {
       background-image: none !important;
